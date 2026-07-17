@@ -230,10 +230,7 @@ def get_google_access_token() -> str:
         raise
 
 def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
-    """Upload supplementary feed to Google Merchant Center"""
-    
-    logger.info("Getting Google API access token...")
-    access_token = get_google_access_token()
+    """Generate feed XML file for manual upload to Google Merchant Center"""
     
     # Build the XML feed content
     feed_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -255,80 +252,30 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
     feed_content += '</channel>\n'
     feed_content += '</rss>\n'
     
-    # Save feed to file for logging/debugging
+    # Save feed to file
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     feed_filename = f"/tmp/neto_gmc_feed_{timestamp}.xml"
     
     try:
         with open(feed_filename, 'w') as f:
             f.write(feed_content)
-        logger.info(f"Feed saved to {feed_filename}")
+        logger.info(f"✓ Feed XML generated: {feed_filename}")
+        logger.info(f"  File size: {len(feed_content)} bytes")
+        logger.info(f"  Entries: {len(feed_entries)}")
     except Exception as e:
-        logger.warning(f"Could not save feed file: {e}")
+        logger.error(f"Could not save feed file: {e}")
+        return False
     
-    # Upload to Google Merchant Center
-    logger.info(f"Uploading supplementary feed to GMC (Merchant ID: {GOOGLE_MERCHANT_ID})...")
+    logger.info("=" * 70)
+    logger.info("NEXT STEP: Upload feed to Google Merchant Center")
+    logger.info("=" * 70)
+    logger.info(f"1. Go to: https://merchantcenter.google.com")
+    logger.info(f"2. Click: Products → Feeds")
+    logger.info(f"3. Create or select 'Neto Categories' feed")
+    logger.info(f"4. Upload the XML file: {feed_filename}")
+    logger.info("=" * 70)
     
-    url = f"https://www.googleapis.com/content/v2.1/{GOOGLE_MERCHANT_ID}/datafeeds"
-    
-    headers = {
-        'Authorization': f'Bearer {access_token}',
-        'Content-Type': 'application/json',
-    }
-    
-    try:
-        # First, try to get existing supplementary feed
-        existing_feeds = get_existing_feeds(access_token)
-        feed_id = existing_feeds.get('neto_categories')
-        
-        # Create JSON payload with feed metadata
-        feed_payload = {
-            'name': 'Neto Categories',
-            'targets': [
-                {
-                    'country': 'AU',
-                    'language': 'en'
-                }
-            ],
-            'contentLanguage': 'en',
-            'contentType': 'products',
-            'fileFormat': 'xml',
-            'fetchSchedule': {
-                'dayOfWeek': 'daily',
-                'hour': 2,
-                'timeZone': 'Australia/Sydney'
-            }
-        }
-        
-        if feed_id:
-            logger.info(f"Updating existing feed {feed_id}...")
-            update_url = f"{url}/{feed_id}"
-            response = requests.patch(
-                update_url,
-                json=feed_payload,
-                headers=headers,
-                timeout=60
-            )
-        else:
-            logger.info("Creating new supplementary feed...")
-            response = requests.post(
-                url,
-                json=feed_payload,
-                headers=headers,
-                timeout=60
-            )
-        
-        response.raise_for_status()
-        logger.info(f"✓ Feed metadata created/updated successfully")
-        logger.info(f"Response status: {response.status_code}")
-        
-        return True
-    
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Failed to upload feed to GMC: {e}")
-        if hasattr(e, 'response') and hasattr(e.response, 'text'):
-            logger.error(f"Response: {e.response.text}")
-        raise
+    return True
 
 def get_existing_feeds(access_token: str) -> Dict[str, str]:
     """Get existing feeds from GMC to find our supplementary feed"""
@@ -400,7 +347,7 @@ def main():
             logger.error("No feed entries built. Aborting.")
             return False
         
-        # Upload to GMC
+        # Generate feed file for manual upload
         success = upload_supplementary_feed(feed_entries)
         
         if success:
