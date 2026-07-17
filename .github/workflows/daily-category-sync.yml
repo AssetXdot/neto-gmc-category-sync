@@ -2,14 +2,7 @@ name: Neto to Google Merchant Center - Daily Category Sync
 
 on:
   schedule:
-    # Runs at 3:00 PM UTC every day (approximately 2:00 AM Sydney time during AEDT)
-    # Note: Sydney observes daylight saving (AEDT, UTC+11) Oct-Apr and standard time (AEST, UTC+10) Apr-Oct
-    # Adjust the time below if needed:
-    # - For AEDT (summer): 15:00 UTC = 2:00 AM next day
-    # - For AEST (winter): 16:00 UTC = 2:00 AM next day
     - cron: '0 15 * * *'
-  
-  # Allow manual trigger from GitHub UI
   workflow_dispatch:
 
 jobs:
@@ -18,10 +11,10 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       
@@ -41,7 +34,7 @@ jobs:
       
       - name: Upload logs (on failure)
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sync-logs
           path: /tmp/neto_gmc_feed_*.xml
