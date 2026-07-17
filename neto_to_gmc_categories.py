@@ -26,7 +26,6 @@ logger = logging.getLogger(__name__)
 
 NETO_API_KEY = os.getenv('NETO_API_KEY', '')
 NETO_API_USERNAME = os.getenv('NETO_API_USERNAME', '')
-NETO_CUSTOMER_ID = os.getenv('NETO_CUSTOMER_ID', '')
 GOOGLE_MERCHANT_ID = os.getenv('GOOGLE_MERCHANT_ID', '5485680660')
 GOOGLE_CREDENTIALS_JSON = os.getenv('GOOGLE_CREDENTIALS_JSON', '')
 
@@ -35,8 +34,6 @@ if not NETO_API_KEY:
     raise ValueError("NETO_API_KEY not set in environment variables")
 if not NETO_API_USERNAME:
     raise ValueError("NETO_API_USERNAME not set in environment variables")
-if not NETO_CUSTOMER_ID:
-    raise ValueError("NETO_CUSTOMER_ID not set in environment variables")
 if not GOOGLE_CREDENTIALS_JSON:
     raise ValueError("GOOGLE_CREDENTIALS_JSON not set in environment variables")
 
