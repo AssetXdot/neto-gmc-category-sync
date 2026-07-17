@@ -33,12 +33,14 @@ jobs:
       - name: Run Neto to GMC sync
         env:
           NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
+          NETO_API_USERNAME: ${{ secrets.NETO_API_USERNAME }}
           NETO_CUSTOMER_ID: ${{ secrets.NETO_CUSTOMER_ID }}
           GOOGLE_MERCHANT_ID: ${{ secrets.GOOGLE_MERCHANT_ID }}
           GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
         run: |
           echo "DEBUG: Checking environment variables..."
           echo "NETO_API_KEY is set: $([ -z "$NETO_API_KEY" ] && echo 'NO' || echo 'YES')"
+          echo "NETO_API_USERNAME is set: $([ -z "$NETO_API_USERNAME" ] && echo 'NO' || echo 'YES')"
           echo "NETO_CUSTOMER_ID is set: $([ -z "$NETO_CUSTOMER_ID" ] && echo 'NO' || echo 'YES')"
           echo "GOOGLE_MERCHANT_ID: $GOOGLE_MERCHANT_ID"
           echo "GOOGLE_CREDENTIALS_JSON length: ${#GOOGLE_CREDENTIALS_JSON}"
