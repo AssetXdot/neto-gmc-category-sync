@@ -49,6 +49,19 @@ jobs:
             exit 1
           fi
       
+      - name: Commit feed to repo
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          # Copy the generated feed to repo root with fixed name
+          cp /tmp/neto_gmc_feed_*.xml neto_gmc_feed.xml 2>/dev/null || true
+          if [ -f neto_gmc_feed.xml ]; then
+            git add neto_gmc_feed.xml
+            git commit -m "Update Neto categories feed - $(date -u +'%Y-%m-%d %H:%M:%S')"
+            git push
+          fi
+      
       - name: Check for errors
         if: failure()
         run: |
