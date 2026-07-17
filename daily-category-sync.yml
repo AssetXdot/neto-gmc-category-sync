@@ -2,14 +2,7 @@ name: Neto to Google Merchant Center - Daily Category Sync
 
 on:
   schedule:
-    # Runs at 3:00 PM UTC every day (approximately 2:00 AM Sydney time during AEDT)
-    # Note: Sydney observes daylight saving (AEDT, UTC+11) Oct-Apr and standard time (AEST, UTC+10) Apr-Oct
-    # Adjust the time below if needed:
-    # - For AEDT (summer): 15:00 UTC = 2:00 AM next day
-    # - For AEST (winter): 16:00 UTC = 2:00 AM next day
     - cron: '0 15 * * *'
-  
-  # Allow manual trigger from GitHub UI
   workflow_dispatch:
 
 jobs:
