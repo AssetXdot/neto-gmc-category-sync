@@ -24,10 +24,10 @@ logger = logging.getLogger(__name__)
 # CONFIGURATION - Read from environment variables
 # ============================================================================
 
-NETO_API_KEY = os.getenv('NETO_API_KEY', '')
-NETO_API_USERNAME = os.getenv('NETO_API_USERNAME', '')
+NETO_API_KEY = os.getenv('NETO_API_KEY', '').strip()
+NETO_API_USERNAME = os.getenv('NETO_API_USERNAME', '').strip()
 GOOGLE_MERCHANT_ID = os.getenv('GOOGLE_MERCHANT_ID', '5485680660')
-GOOGLE_CREDENTIALS_JSON = os.getenv('GOOGLE_CREDENTIALS_JSON', '')
+GOOGLE_CREDENTIALS_JSON = os.getenv('GOOGLE_CREDENTIALS_JSON', '').strip()
 
 # Validate environment variables
 if not NETO_API_KEY:
