@@ -235,7 +235,7 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
     logger.info("Getting Google API access token...")
     access_token = get_google_access_token()
     
-    # Build the feed content
+    # Build the XML feed content
     feed_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
     feed_content += '<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">\n'
     feed_content += '<channel>\n'
@@ -273,7 +273,7 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
     
     headers = {
         'Authorization': f'Bearer {access_token}',
-        'Content-Type': 'application/xml',
+        'Content-Type': 'application/json',
     }
     
     try:
@@ -281,12 +281,31 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         existing_feeds = get_existing_feeds(access_token)
         feed_id = existing_feeds.get('neto_categories')
         
+        # Create JSON payload with feed metadata
+        feed_payload = {
+            'name': 'Neto Categories',
+            'targets': [
+                {
+                    'country': 'AU',
+                    'language': 'en'
+                }
+            ],
+            'contentLanguage': 'en',
+            'contentType': 'products',
+            'fileFormat': 'xml',
+            'fetchSchedule': {
+                'dayOfWeek': 'daily',
+                'hour': 2,
+                'timeZone': 'Australia/Sydney'
+            }
+        }
+        
         if feed_id:
             logger.info(f"Updating existing feed {feed_id}...")
             update_url = f"{url}/{feed_id}"
-            response = requests.put(
+            response = requests.patch(
                 update_url,
-                data=feed_content,
+                json=feed_payload,
                 headers=headers,
                 timeout=60
             )
@@ -294,20 +313,20 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
             logger.info("Creating new supplementary feed...")
             response = requests.post(
                 url,
-                data=feed_content,
+                json=feed_payload,
                 headers=headers,
                 timeout=60
             )
         
         response.raise_for_status()
-        logger.info(f"✓ Feed uploaded successfully")
+        logger.info(f"✓ Feed metadata created/updated successfully")
         logger.info(f"Response status: {response.status_code}")
         
         return True
     
     except requests.exceptions.RequestException as e:
         logger.error(f"Failed to upload feed to GMC: {e}")
-        if hasattr(e.response, 'text'):
+        if hasattr(e, 'response') and hasattr(e.response, 'text'):
             logger.error(f"Response: {e.response.text}")
         raise
 
