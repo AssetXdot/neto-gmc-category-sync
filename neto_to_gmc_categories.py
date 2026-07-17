@@ -242,22 +242,33 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     products_without_categories = 0
     products_not_in_datafeedwatch = 0
     
+    matched_skus = []
+    unmatched_skus = []
+    
     for product in products:
         # Extract Neto identifiers
         ids = extract_product_ids(product)
+        sku = ids.get('sku', 'NO_SKU')
         
         # Try to match with datafeedwatch using UPC
         datafeedwatch_id = None
+        matched_key = None
+        
         if 'upc' in ids and ids['upc'] in datafeedwatch_products:
             datafeedwatch_id = datafeedwatch_products[ids['upc']]['id']
+            matched_key = ids['upc']
         elif 'sku' in ids and ids['sku'] in datafeedwatch_products:
             # Fallback to SKU match
             datafeedwatch_id = datafeedwatch_products[ids['sku']]['id']
+            matched_key = ids['sku']
         
         # Skip products not in datafeedwatch
         if not datafeedwatch_id:
             products_not_in_datafeedwatch += 1
+            unmatched_skus.append(sku)
             continue
+        
+        matched_skus.append((sku, matched_key))
         
         # Extract categories
         categories = extract_categories(product)
@@ -274,10 +285,15 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             "product_type": product_type
         })
     
+    # Log debug info
     logger.info(f"Products with categories: {products_with_categories}")
     logger.info(f"Products without categories: {products_without_categories}")
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
+    logger.info(f"")
+    logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
+    logger.info(f"Sample unmatched SKUs: {unmatched_skus[:10]}")
+    logger.info(f"Available datafeedwatch keys (sample): {list(datafeedwatch_products.keys())[:10]}")
     
     return feed_entries
 
