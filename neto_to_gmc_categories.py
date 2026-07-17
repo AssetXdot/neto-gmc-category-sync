@@ -12,6 +12,7 @@ import requests
 from datetime import datetime
 from typing import List, Dict, Any
 import logging
+import xml.etree.ElementTree as ET
 
 # Setup logging
 logging.basicConfig(
@@ -28,6 +29,7 @@ NETO_API_KEY = os.getenv('NETO_API_KEY', '').strip()
 NETO_API_USERNAME = os.getenv('NETO_API_USERNAME', '').strip()
 GOOGLE_MERCHANT_ID = os.getenv('GOOGLE_MERCHANT_ID', '5485680660')
 GOOGLE_CREDENTIALS_JSON = os.getenv('GOOGLE_CREDENTIALS_JSON', '').strip()
+DATAFEEDWATCH_URL = 'https://feeds.datafeedwatch.com/115844/042694caec3d471f7315a426e3adf89b0f7ab2d5.xml'
 
 # Validate environment variables
 if not NETO_API_KEY:
@@ -42,6 +44,53 @@ try:
     GOOGLE_CREDS = json.loads(GOOGLE_CREDENTIALS_JSON)
 except json.JSONDecodeError as e:
     raise ValueError(f"GOOGLE_CREDENTIALS_JSON is not valid JSON: {e}")
+
+# ============================================================================
+# DATAFEEDWATCH FEED FUNCTIONS
+# ============================================================================
+
+def fetch_datafeedwatch_products() -> Dict[str, Dict[str, Any]]:
+    """
+    Fetch datafeedwatch feed and extract product ID to UPC mappings.
+    Returns: {"UPC": {"id": "datafeedwatch_id", "sku": "..."}, ...}
+    """
+    logger.info("Fetching datafeedwatch feed...")
+    
+    try:
+        response = requests.get(DATAFEEDWATCH_URL, timeout=30)
+        response.raise_for_status()
+        
+        root = ET.fromstring(response.content)
+        products = {}
+        
+        # Parse XML feed - namespace for Google Shopping
+        ns = {'g': 'http://base.google.com/ns/1.0'}
+        
+        for item in root.findall('.//item'):
+            # Get product ID (g:id)
+            product_id_elem = item.find('g:id', ns)
+            if product_id_elem is None:
+                continue
+            
+            product_id = product_id_elem.text.strip()
+            if not product_id:
+                continue
+            
+            # Try to extract UPC from g:gtin or other fields
+            gtin_elem = item.find('g:gtin', ns)
+            upc = gtin_elem.text.strip() if gtin_elem is not None else product_id
+            
+            products[upc] = {
+                'id': product_id,
+                'gtin': upc
+            }
+        
+        logger.info(f"Datafeedwatch products loaded: {len(products)} items")
+        return products
+    
+    except Exception as e:
+        logger.error(f"Error fetching datafeedwatch feed: {e}")
+        return {}
 
 # ============================================================================
 # NETO API FUNCTIONS
@@ -78,6 +127,27 @@ def neto_api_call(action: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     except requests.exceptions.RequestException as e:
         logger.error(f"Neto API error: {e}")
         raise
+
+def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
+    """
+    Extract product identifiers from Neto item.
+    Returns: {"sku": "...", "upc": "...", "gtin": "..."}
+    """
+    result = {}
+    
+    # Get SKU
+    sku = item.get("SKU", "").strip()
+    if sku:
+        result['sku'] = sku
+    
+    # Try to get UPC/GTIN/Barcode from various fields
+    for field in ["UPC", "GTIN", "Barcode", "EAN"]:
+        value = item.get(field, "").strip()
+        if value:
+            result['upc'] = value
+            break
+    
+    return result
 
 def extract_categories(item: Dict[str, Any]) -> List[str]:
     """
@@ -154,21 +224,35 @@ def fetch_all_products() -> List[Dict[str, Any]]:
     logger.info(f"Total products fetched: {len(all_items)}")
     return all_items
 
-def build_category_feed(products: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
-    Build feed entries with SKU and product_type (categories)
+    Build feed entries matching Neto products with datafeedwatch product IDs.
     
-    Format: [{"id": "SKU123", "product_type": "Cat1, Cat2, Cat3"}, ...]
+    Format: [{"id": "datafeedwatch_id", "product_type": "Cat1, Cat2, Cat3"}, ...]
     """
     feed_entries = []
     products_with_categories = 0
     products_without_categories = 0
+    products_not_in_datafeedwatch = 0
     
     for product in products:
-        sku = product.get("SKU", "").strip()
-        if not sku:
+        # Extract Neto identifiers
+        ids = extract_product_ids(product)
+        
+        # Try to match with datafeedwatch using UPC
+        datafeedwatch_id = None
+        if 'upc' in ids and ids['upc'] in datafeedwatch_products:
+            datafeedwatch_id = datafeedwatch_products[ids['upc']]['id']
+        elif 'sku' in ids and ids['sku'] in datafeedwatch_products:
+            # Fallback to SKU match
+            datafeedwatch_id = datafeedwatch_products[ids['sku']]['id']
+        
+        # Skip products not in datafeedwatch
+        if not datafeedwatch_id:
+            products_not_in_datafeedwatch += 1
             continue
         
+        # Extract categories
         categories = extract_categories(product)
         
         if categories:
@@ -179,12 +263,13 @@ def build_category_feed(products: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             product_type = ""
         
         feed_entries.append({
-            "id": sku,
+            "id": datafeedwatch_id,
             "product_type": product_type
         })
     
     logger.info(f"Products with categories: {products_with_categories}")
     logger.info(f"Products without categories: {products_without_categories}")
+    logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
     
     return feed_entries
@@ -333,21 +418,32 @@ def main():
     logger.info("=" * 70)
     
     try:
+        # Fetch datafeedwatch products first
+        logger.info("")
+        datafeedwatch_products = fetch_datafeedwatch_products()
+        
+        if not datafeedwatch_products:
+            logger.error("No products fetched from datafeedwatch. Aborting.")
+            return False
+        
         # Fetch products from Neto
+        logger.info("")
         products = fetch_all_products()
         
         if not products:
             logger.error("No products fetched from Neto. Aborting.")
             return False
         
-        # Build feed
-        feed_entries = build_category_feed(products)
+        # Build feed with datafeedwatch product matching
+        logger.info("")
+        feed_entries = build_category_feed(products, datafeedwatch_products)
         
         if not feed_entries:
             logger.error("No feed entries built. Aborting.")
             return False
         
         # Generate feed file for manual upload
+        logger.info("")
         success = upload_supplementary_feed(feed_entries)
         
         if success:
