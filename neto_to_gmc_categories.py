@@ -131,6 +131,8 @@ def fetch_all_products() -> List[Dict[str, Any]]:
             }
             
             data = neto_api_call("GetItem", payload)
+            logger.info(f"DEBUG: Full Neto response page {page}: {data}")
+            
             items = data.get("Item", [])
             
             if isinstance(items, dict):
