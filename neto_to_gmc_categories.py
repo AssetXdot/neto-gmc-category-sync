@@ -51,8 +51,9 @@ except json.JSONDecodeError as e:
 
 def fetch_datafeedwatch_products() -> Dict[str, Dict[str, Any]]:
     """
-    Fetch datafeedwatch feed and extract product ID to UPC mappings.
-    Returns: {"UPC": {"id": "datafeedwatch_id", "sku": "..."}, ...}
+    Fetch datafeedwatch feed and extract product ID mappings.
+    Creates mappings for both GTIN and SKU to handle different matching scenarios.
+    Returns: {"GTIN_or_SKU": {"id": "g:id_value", "gtin": "...", "sku": "..."}, ...}
     """
     logger.info("Fetching datafeedwatch feed...")
     
@@ -76,21 +77,29 @@ def fetch_datafeedwatch_products() -> Dict[str, Dict[str, Any]]:
             if not product_id:
                 continue
             
-            # Try to extract UPC from g:gtin or use product_id as fallback
+            # Extract GTIN
             gtin_elem = item.find('g:gtin', ns)
-            upc = None
-            if gtin_elem is not None and gtin_elem.text:
-                upc = gtin_elem.text.strip()
+            gtin = gtin_elem.text.strip() if gtin_elem is not None and gtin_elem.text else None
             
-            # Use product_id as the key if no UPC
-            key = upc if upc else product_id
+            # Extract SKU (both g:SKU and variations)
+            sku_elem = item.find('g:SKU', ns)
+            if sku_elem is None or not sku_elem.text:
+                sku_elem = item.find('{http://base.google.com/ns/1.0}SKU', ns)
+            sku = sku_elem.text.strip() if sku_elem is not None and sku_elem.text else None
             
-            products[key] = {
-                'id': product_id,
-                'gtin': upc if upc else product_id
-            }
+            # Create entry with both GTIN and SKU
+            entry = {'id': product_id}
+            if gtin:
+                entry['gtin'] = gtin
+                products[gtin] = entry  # Map by GTIN
+            if sku:
+                entry['sku'] = sku
+                products[sku] = entry   # Map by SKU
+            
+            # Also map by product ID itself
+            products[product_id] = entry
         
-        logger.info(f"Datafeedwatch products loaded: {len(products)} items")
+        logger.info(f"Datafeedwatch products loaded: {len(products)} mappings from items")
         return products
     
     except Exception as e:
