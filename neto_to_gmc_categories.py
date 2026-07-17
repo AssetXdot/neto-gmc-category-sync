@@ -69,20 +69,25 @@ def fetch_datafeedwatch_products() -> Dict[str, Dict[str, Any]]:
         for item in root.findall('.//item'):
             # Get product ID (g:id)
             product_id_elem = item.find('g:id', ns)
-            if product_id_elem is None:
+            if product_id_elem is None or not product_id_elem.text:
                 continue
             
             product_id = product_id_elem.text.strip()
             if not product_id:
                 continue
             
-            # Try to extract UPC from g:gtin or other fields
+            # Try to extract UPC from g:gtin or use product_id as fallback
             gtin_elem = item.find('g:gtin', ns)
-            upc = gtin_elem.text.strip() if gtin_elem is not None else product_id
+            upc = None
+            if gtin_elem is not None and gtin_elem.text:
+                upc = gtin_elem.text.strip()
             
-            products[upc] = {
+            # Use product_id as the key if no UPC
+            key = upc if upc else product_id
+            
+            products[key] = {
                 'id': product_id,
-                'gtin': upc
+                'gtin': upc if upc else product_id
             }
         
         logger.info(f"Datafeedwatch products loaded: {len(products)} items")
@@ -90,6 +95,8 @@ def fetch_datafeedwatch_products() -> Dict[str, Dict[str, Any]]:
     
     except Exception as e:
         logger.error(f"Error fetching datafeedwatch feed: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
         return {}
 
 # ============================================================================
