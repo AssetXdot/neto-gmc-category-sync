@@ -1,0 +1,56 @@
+name: Neto to Google Merchant Center - Daily Category Sync
+
+on:
+  schedule:
+    # Runs at 3:00 PM UTC every day (approximately 2:00 AM Sydney time during AEDT)
+    # Note: Sydney observes daylight saving (AEDT, UTC+11) Oct-Apr and standard time (AEST, UTC+10) Apr-Oct
+    # Adjust the time below if needed:
+    # - For AEDT (summer): 15:00 UTC = 2:00 AM next day
+    # - For AEST (winter): 16:00 UTC = 2:00 AM next day
+    - cron: '0 15 * * *'
+  
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  sync-categories:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.7
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5.1.1
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests PyJWT
+      
+      - name: Run Neto to GMC sync
+        env:
+          NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
+          NETO_CUSTOMER_ID: ${{ secrets.NETO_CUSTOMER_ID }}
+          GOOGLE_MERCHANT_ID: ${{ secrets.GOOGLE_MERCHANT_ID }}
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+        run: |
+          echo "DEBUG: Checking environment variables..."
+          echo "NETO_API_KEY is set: $([ -z "$NETO_API_KEY" ] && echo 'NO' || echo 'YES')"
+          echo "NETO_CUSTOMER_ID is set: $([ -z "$NETO_CUSTOMER_ID" ] && echo 'NO' || echo 'YES')"
+          echo "GOOGLE_MERCHANT_ID: $GOOGLE_MERCHANT_ID"
+          echo "GOOGLE_CREDENTIALS_JSON length: ${#GOOGLE_CREDENTIALS_JSON}"
+          echo "---"
+          python neto_to_gmc_categories.py 2>&1
+          if [ $? -ne 0 ]; then
+            echo "Script failed with exit code $?"
+            exit 1
+          fi
+      
+      - name: Check for errors
+        if: failure()
+        run: |
+          echo "❌ SYNC FAILED"
+          echo "Check the 'Run Neto to GMC sync' step above for detailed error message"
