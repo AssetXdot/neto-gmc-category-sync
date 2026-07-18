@@ -207,32 +207,76 @@ def extract_product_images(item: Dict[str, Any]) -> List[str]:
     """
     Extract all image URLs from Neto product.
     Returns list of URLs: [main_image, alt_1, alt_2, ... alt_12]
+    
+    Neto's Images field is structured as a list of image objects with URL keys.
+    Falls back to individual Alt1-Alt12 fields if Images list not available.
     """
     images = []
     
-    # Get main image (try multiple possible field names)
-    main_image = None
-    for field_name in ["ImageURL", "Image", "image_url", "MainImage", "main_image", "product.mainImage.URL"]:
-        main_image = item.get(field_name, "").strip()
-        if main_image:
-            images.append(main_image)
-            break
+    try:
+        # Method 1: Neto API returns an "Images" field (list of image objects)
+        images_field = item.get("Images", [])
+        
+        if isinstance(images_field, list):
+            # Images is a list - extract URLs from each object
+            logger.debug(f"Processing Images list with {len(images_field)} items")
+            for img_obj in images_field:
+                if isinstance(img_obj, dict):
+                    # Try multiple URL field names
+                    url = img_obj.get("URL") or img_obj.get("url") or img_obj.get("ImageURL")
+                    if url and isinstance(url, str):
+                        url = url.strip()
+                        if url and url not in images:  # Avoid duplicates
+                            images.append(url)
+                            logger.debug(f"Found image URL: {url[:80]}...")
+                elif isinstance(img_obj, str):
+                    # Sometimes it's just a string URL
+                    url = img_obj.strip()
+                    if url and url not in images:
+                        images.append(url)
+                        logger.debug(f"Found image URL: {url[:80]}...")
+        
+        elif isinstance(images_field, dict):
+            # Images might be a single dict with URL
+            url = images_field.get("URL") or images_field.get("url") or images_field.get("ImageURL")
+            if url and isinstance(url, str):
+                url = url.strip()
+                if url:
+                    images.append(url)
+                    logger.debug(f"Found image URL: {url[:80]}...")
+        
+        # Method 2: Fallback - look for individual image fields (Alt1, Alt2, etc)
+        if not images:
+            logger.debug("No Images list found, trying individual Alt fields...")
+            
+            # Try to get main image from various field names
+            for field_name in ["ImageURL", "Image", "image_url", "MainImage", "main_image", "product.mainImage.URL"]:
+                main_image = item.get(field_name, "").strip()
+                if main_image:
+                    images.append(main_image)
+                    logger.debug(f"Found main image in '{field_name}': {main_image[:80]}...")
+                    break
+            
+            # Get alternative images Alt1-Alt12
+            for i in range(1, 13):
+                for field_name in [f"Alt{i}", f"alt{i}", f"Alt{i} Image", f"Image{i}"]:
+                    alt_image = item.get(field_name, "").strip()
+                    if alt_image:
+                        images.append(alt_image)
+                        logger.debug(f"Found {field_name}: {alt_image[:80]}...")
+                        break
+        
+        if not images:
+            sku = item.get("SKU", "unknown")
+            all_keys = list(item.keys())
+            logger.debug(f"No images found for SKU {sku}. Available fields: {all_keys[:30]}")
+        
+        return images
     
-    # If still no main image, check all keys and log them once for debugging
-    if not main_image and len(images) == 0:
-        all_keys = list(item.keys())
-        logger.info(f"DEBUG: No main image found in product. First 30 keys: {all_keys[:30]}")
-    
-    # Get alternative images - try multiple patterns
-    # Pattern 1: Alt1, Alt2, ... Alt12
-    for i in range(1, 13):
-        for field_name in [f"Alt{i}", f"alt{i}", f"Alt{i} Image", f"Image{i}"]:
-            alt_image = item.get(field_name, "").strip()
-            if alt_image:
-                images.append(alt_image)
-                break
-    
-    return images
+    except Exception as e:
+        sku = item.get("SKU", "unknown")
+        logger.error(f"Error extracting images for SKU {sku}: {e}")
+        return images
 
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
     """
