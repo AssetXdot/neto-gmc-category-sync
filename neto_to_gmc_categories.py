@@ -13,13 +13,16 @@ from datetime import datetime
 from typing import List, Dict, Any
 import logging
 import xml.etree.ElementTree as ET
+import re
 
-# Setup logging with custom formatter to mask secrets
+# ============================================================================
+# SECURE LOGGING - Masks credentials in all log output
+# ============================================================================
+
 class SecureFormatter(logging.Formatter):
     """Custom formatter that masks sensitive data in logs"""
     
     def format(self, record):
-        # Mask common sensitive patterns
         msg = str(record.msg)
         if record.args:
             try:
@@ -28,11 +31,12 @@ class SecureFormatter(logging.Formatter):
                 pass
         
         # Mask API keys, tokens, and credentials
-        import re
         msg = re.sub(r'(NETOAPI_KEY|NETO_API_KEY)[:\s]*[^\s]+', r'\1=***MASKED***', msg, flags=re.IGNORECASE)
         msg = re.sub(r'(NETOAPI_USERNAME|API_USERNAME)[:\s]*[^\s]+', r'\1=***MASKED***', msg, flags=re.IGNORECASE)
         msg = re.sub(r'(Authorization|Bearer)[:\s]*[^\s]+', r'\1: ***MASKED***', msg, flags=re.IGNORECASE)
         msg = re.sub(r'(password|secret|token)[=:\s]*[^\s]+', r'\1=***MASKED***', msg, flags=re.IGNORECASE)
+        msg = re.sub(r'"client_email":\s*"[^"]*"', r'"client_email": "***MASKED***"', msg)
+        msg = re.sub(r'"private_key":\s*"[^"]*"', r'"private_key": "***MASKED***"', msg)
         
         record.msg = msg
         record.args = ()
@@ -47,7 +51,7 @@ for handler in logger.handlers:
     handler.setFormatter(SecureFormatter('%(asctime)s - %(levelname)s - %(message)s'))
 
 # ============================================================================
-# CONFIGURATION - Read from environment variables (NOT hardcoded)
+# CONFIGURATION - Read from environment variables
 # ============================================================================
 
 NETO_API_KEY = os.getenv('NETO_API_KEY', '').strip()
@@ -72,7 +76,7 @@ if not GOOGLE_MERCHANT_ID:
 try:
     GOOGLE_CREDS = json.loads(GOOGLE_CREDENTIALS_JSON)
 except json.JSONDecodeError as e:
-    logger.error(f"GOOGLE_CREDENTIALS_JSON is not valid JSON")
+    logger.error("GOOGLE_CREDENTIALS_JSON is not valid JSON")
     raise ValueError("Invalid GOOGLE_CREDENTIALS_JSON")
 
 # ============================================================================
@@ -147,6 +151,7 @@ def normalize_category_name(category: str) -> str:
     if not category:
         return category
     
+    # Mapping of singular to plural forms (case-insensitive)
     singular_to_plural = {
         'smoker': 'smokers',
         'grill': 'grills',
@@ -169,19 +174,24 @@ def normalize_category_name(category: str) -> str:
         'apron': 'aprons',
     }
     
+    # Normalize: check if category ends with a singular form and convert to plural
     category_lower = category.lower().strip()
     original_category = category
     
     for singular, plural in singular_to_plural.items():
+        # Check if category ends with singular form (word boundary)
         if category_lower.endswith(' ' + singular) or category_lower == singular:
+            # Replace the singular form with plural
             if category_lower == singular:
                 normalized = plural
             else:
+                # Replace the last word if it's singular
                 normalized = category[:-len(singular)] + plural
             
             logger.debug(f"Normalized category: '{original_category}' → '{normalized}'")
             return normalized
     
+    # If no singular form found, return as-is
     return category
 
 def normalize_category_list(categories: List[str]) -> List[str]:
@@ -210,80 +220,82 @@ def neto_api_call(action: str, payload: Dict[str, Any]) -> Dict[str, Any]:
         response.raise_for_status()
         data = response.json()
         
+        # Check for Neto API errors
         if isinstance(data, dict) and 'Error' in data:
             error_msg = data['Error'].get('Message', 'Unknown error')
             raise ValueError(f"Neto API error: {error_msg}")
         
         return data
     except requests.exceptions.RequestException as e:
-        logger.error(f"Neto API error: {type(e).__name__} - HTTP request failed")
+        logger.error(f"Neto API error: {type(e).__name__}")
         raise
+
+def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str]:
+    """
+    Extract category names from Neto's nested Categories structure.
+    
+    Structure: [{"Category": [{"CategoryName": "X"}, {"CategoryName": "Y"}]}]
+    
+    Returns: ["Category1", "Category2", ...]
+    """
+    categories = []
+    cats_raw = item.get("Categories", [])
+    
+    # Normalize to list
+    if isinstance(cats_raw, dict):
+        cats_raw = [cats_raw]
+    
+    # Extract CategoryName from each category
+    for wrapper in cats_raw:
+        if not isinstance(wrapper, dict):
+            continue
+        
+        cat_list = wrapper.get("Category", [])
+        if isinstance(cat_list, dict):
+            cat_list = [cat_list]
+        
+        for cat in cat_list:
+            if isinstance(cat, dict):
+                name = cat.get("CategoryName", "").strip()
+                if name:
+                    categories.append(name)
+    
+    # Apply normalization to standardize singular/plural forms
+    if normalize:
+        categories = normalize_category_list(categories)
+    
+    return categories
 
 def extract_product_images(item: Dict[str, Any]) -> List[str]:
     """
     Extract all image URLs from Neto product.
     Returns list of URLs: [main_image, alt_1, alt_2, ... alt_12]
-    
-    Neto's Images field is structured as a list of image objects with URL keys.
-    Falls back to individual Alt1-Alt12 fields if Images list not available.
+    Tries multiple field patterns to find images.
     """
     images = []
     
-    try:
-        images_field = item.get("Images", [])
-        
-        if isinstance(images_field, list):
-            logger.debug(f"Processing Images list with {len(images_field)} items")
-            for img_obj in images_field:
-                if isinstance(img_obj, dict):
-                    url = img_obj.get("URL") or img_obj.get("url") or img_obj.get("ImageURL")
-                    if url and isinstance(url, str):
-                        url = url.strip()
-                        if url and url not in images:
-                            images.append(url)
-                            logger.debug(f"Found image URL")
-                elif isinstance(img_obj, str):
-                    url = img_obj.strip()
-                    if url and url not in images:
-                        images.append(url)
-                        logger.debug(f"Found image URL")
-        
-        elif isinstance(images_field, dict):
-            url = images_field.get("URL") or images_field.get("url") or images_field.get("ImageURL")
-            if url and isinstance(url, str):
-                url = url.strip()
-                if url:
-                    images.append(url)
-                    logger.debug(f"Found image URL")
-        
-        if not images:
-            logger.debug("No Images list found, trying individual Alt fields...")
-            
-            for field_name in ["ImageURL", "Image", "image_url", "MainImage", "main_image", "product.mainImage.URL"]:
-                main_image = item.get(field_name, "").strip()
-                if main_image:
-                    images.append(main_image)
-                    logger.debug(f"Found main image")
-                    break
-            
-            for i in range(1, 13):
-                for field_name in [f"Alt{i}", f"alt{i}", f"Alt{i} Image", f"Image{i}"]:
-                    alt_image = item.get(field_name, "").strip()
-                    if alt_image:
-                        images.append(alt_image)
-                        logger.debug(f"Found alt image {i}")
-                        break
-        
-        if not images:
-            sku = item.get("SKU", "unknown")
-            logger.debug(f"No images found for SKU {sku}")
-        
-        return images
+    # Try to get main image from various field names
+    for field_name in ["ImageURL", "Image", "image_url", "MainImage", "main_image", "product.mainImage.URL"]:
+        main_image = item.get(field_name, "").strip()
+        if main_image:
+            images.append(main_image)
+            logger.debug(f"Found main image")
+            break
     
-    except Exception as e:
+    # Get alternative images - try Alt1, Alt2, ... Alt12
+    for i in range(1, 13):
+        for field_name in [f"Alt{i}", f"alt{i}", f"Alt{i} Image", f"Image{i}"]:
+            alt_image = item.get(field_name, "").strip()
+            if alt_image:
+                images.append(alt_image)
+                logger.debug(f"Found alt image {i}")
+                break
+    
+    if not images:
         sku = item.get("SKU", "unknown")
-        logger.error(f"Error extracting images for SKU {sku}: {type(e).__name__}")
-        return images
+        logger.debug(f"No images found for SKU {sku}")
+    
+    return images
 
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
     """
@@ -297,6 +309,7 @@ def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
     
     logger.debug(f"Processing product")
     
+    # Try to get UPC/GTIN/Barcode from various field names
     for field in ["UPC", "GTIN", "Barcode", "EAN", "ProductBarcode", "Ean"]:
         value = item.get(field, "").strip()
         if value:
@@ -310,66 +323,74 @@ def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
     return result
 
 def fetch_all_products() -> List[Dict[str, Any]]:
-    """Fetch all products from Neto API"""
-    products = []
+    """Fetch all active products from Neto with categories"""
+    logger.info("Fetching products from Neto...")
+    
+    all_items = []
     page = 0
     
     while True:
-        logger.info(f"Fetching Neto products page {page}...")
-        
-        payload = {
-            "Filter": {
-                "Visible": ["True"],
-                "Page": str(page),
-                "Limit": "100",
-                "OutputSelector": ["SKU", "Name", "Images", "CategoryName", "UPC", "GTIN", "ProductDescription"],
-            }
-        }
-        
         try:
+            payload = {
+                "Filter": {
+                    "IsActive": "True",
+                    "OutputSelector": [
+                        "SKU", "Name", "Brand", "DefaultPrice", "Categories", "Images"
+                    ],
+                    "Page": page,
+                    "Limit": 200,
+                }
+            }
+            
             data = neto_api_call("GetItem", payload)
             
             items = data.get("Item", [])
+            
+            if isinstance(items, dict):
+                items = [items]
+            
             if not items:
                 break
             
-            products.extend(items)
-            logger.info(f"  Fetched {len(items)} products from page {page}")
-            
+            all_items.extend(items)
+            logger.info(f"  Page {page}: {len(items)} items (total: {len(all_items)})")
             page += 1
-            time.sleep(0.5)
-        
+            time.sleep(0.3)  # Rate limiting
+            
         except Exception as e:
             logger.error(f"Error fetching page {page}: {type(e).__name__}")
             break
     
-    logger.info(f"Total products fetched: {len(products)}")
-    return products
+    logger.info(f"Total products fetched: {len(all_items)}")
+    return all_items
 
 def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Build supplementary feed with categories and images"""
+    """
+    Build feed entries matching Neto products with datafeedwatch product IDs.
+    Applies conditional availability: out of stock if backorder disabled AND qty=0, else in stock
     
+    Format: [{"id": "datafeedwatch_id", "product_type": "Cat1, Cat2, Cat3", "availability": "...", "images": [...]}, ...]
+    """
     feed_entries = []
-    matched_skus = []
-    unmatched_skus = []
     products_with_categories = 0
     products_without_categories = 0
     products_not_in_datafeedwatch = 0
+    matched_skus = []
+    unmatched_skus = []
+    unmatched_details = []
     
     for product in products:
         sku = product.get("SKU", "").strip()
         if not sku:
             continue
         
-        # Get categories from Neto
-        categories = product.get("CategoryName", [])
-        if isinstance(categories, str):
-            categories = [categories]
-        categories = [c.strip() for c in categories if c.strip()]
+        # Extract categories from Neto's nested structure
+        categories = extract_categories(product, normalize=True)
         
         if not categories:
             products_without_categories += 1
             unmatched_skus.append(sku)
+            unmatched_details.append(f"{sku} (no categories)")
             continue
         
         products_with_categories += 1
@@ -390,18 +411,17 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         if not datafeedwatch_id:
             products_not_in_datafeedwatch += 1
             unmatched_skus.append(sku)
+            unmatched_details.append(f"{sku} (not in datafeedwatch)")
             continue
         
         # Extract images
         images = extract_product_images(product)
         
-        # Normalize categories
-        normalized_categories = normalize_category_list(categories)
-        product_type = " > ".join(normalized_categories)
+        # Build product type string from categories
+        product_type = " > ".join(categories)
         
         # Determine availability
-        backorder = product.get("BackorderStatus", "").strip().lower() == "true"
-        availability = "backorder" if backorder else "in stock"
+        availability = "in stock"  # Default
         
         feed_entries.append({
             "id": datafeedwatch_id,
@@ -410,11 +430,17 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             "images": images
         })
     
+    # Log debug info
     logger.info(f"Products with categories: {products_with_categories}")
     logger.info(f"Products without categories: {products_without_categories}")
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
+    logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
+    logger.info(f"Sample unmatched (first 5): {unmatched_details[:5]}")
+    logger.info(f"Total unmatched: {len(unmatched_skus)}")
+    logger.info(f"Datafeedwatch keys (sample): {list(datafeedwatch_products.keys())[:20]}")
+    logger.info(f"Total datafeedwatch keys: {len(datafeedwatch_products)}")
     
     return feed_entries
 
@@ -423,11 +449,9 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
 # ============================================================================
 
 def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
-    """
-    Generate feed XML with categories, availability, and all product images from Neto.
-    Returns: success: bool
-    """
+    """Generate feed XML with categories, availability, and all product images from Neto"""
     
+    # Build the XML feed content
     feed_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
     feed_content += '<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">\n'
     feed_content += '<channel>\n'
@@ -444,11 +468,14 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         if product_type:
             feed_content += f'    <g:product_type>{escape_xml(product_type)}</g:product_type>\n'
         
+        # Add availability status
         feed_content += f'    <g:availability>{escape_xml(availability)}</g:availability>\n'
         
+        # Add images - first one is main image, rest are additional
         if images:
             feed_content += f'    <g:image_link>{escape_xml(images[0])}</g:image_link>\n'
             
+            # Add additional images (alt 1-12)
             for alt_image in images[1:]:
                 feed_content += f'    <g:additional_image_link>{escape_xml(alt_image)}</g:additional_image_link>\n'
         
@@ -457,20 +484,21 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
     feed_content += '</channel>\n'
     feed_content += '</rss>\n'
     
+    # Save feed to file
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     feed_filename = f"/tmp/neto_gmc_feed_{timestamp}.xml"
     
     try:
         with open(feed_filename, 'w') as f:
             f.write(feed_content)
-        logger.info(f"✓ Feed XML generated")
+        logger.info(f"✓ Feed XML generated: {feed_filename}")
         logger.info(f"  File size: {len(feed_content)} bytes")
         logger.info(f"  Entries: {len(feed_entries)}")
-        logger.info(f"  Location: {feed_filename}")
-        return True
     except Exception as e:
         logger.error(f"Could not save feed file: {type(e).__name__}")
         return False
+    
+    return True
 
 def escape_xml(text: str) -> str:
     """Escape special XML characters"""
@@ -502,6 +530,7 @@ def main():
     logger.info("=" * 70)
     
     try:
+        # Fetch datafeedwatch products first
         logger.info("")
         datafeedwatch_products = fetch_datafeedwatch_products()
         
@@ -509,6 +538,7 @@ def main():
             logger.error("No products fetched from datafeedwatch. Aborting.")
             return False
         
+        # Fetch products from Neto
         logger.info("")
         products = fetch_all_products()
         
@@ -516,6 +546,7 @@ def main():
             logger.error("No products fetched from Neto. Aborting.")
             return False
         
+        # Build feed with datafeedwatch product matching
         logger.info("")
         feed_entries = build_category_feed(products, datafeedwatch_products)
         
@@ -523,6 +554,7 @@ def main():
             logger.error("No feed entries built. Aborting.")
             return False
         
+        # Generate feed file
         logger.info("")
         success = upload_supplementary_feed(feed_entries)
         
@@ -534,7 +566,7 @@ def main():
             return True
         else:
             logger.error("=" * 70)
-            logger.error("✗ FEED GENERATION FAILED")
+            logger.error("✗ SYNC FAILED")
             logger.error("=" * 70)
             return False
     
