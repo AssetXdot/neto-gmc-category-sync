@@ -39,6 +39,7 @@ jobs:
           NETO_API_USERNAME: ${{ secrets.NETO_API_USERNAME }}
           GOOGLE_MERCHANT_ID: ${{ secrets.GOOGLE_MERCHANT_ID }}
           GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          DATAFEEDWATCH_URL: ${{ secrets.DATAFEEDWATCH_URL }}
         run: |
           echo "DEBUG: Checking environment variables..."
           echo "NETO_API_KEY is set: $([ -z "$NETO_API_KEY" ] && echo 'NO' || echo 'YES')"
