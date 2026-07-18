@@ -266,6 +266,19 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
     
     return categories
 
+def image_exists(url: str) -> bool:
+    """
+    Check if an image URL exists (returns 200 status).
+    Uses HEAD request for efficiency (doesn't download the full image).
+    """
+    try:
+        response = requests.head(url, timeout=5, allow_redirects=True)
+        # Accept 200-299 status codes as "exists"
+        return 200 <= response.status_code < 300
+    except Exception as e:
+        logger.debug(f"Could not check image: {url} - {type(e).__name__}")
+        return False
+
 def build_product_images(sku: str) -> List[str]:
     """
     Build image URLs for a product based on its SKU.
@@ -273,7 +286,9 @@ def build_product_images(sku: str) -> List[str]:
     URL pattern: https://www.thebbqstore.com.au/assets/{thumb}/{SKU}.png
     Where thumb is: full (main), alt_1, alt_2, ... alt_12
     
-    Returns: [main_image, alt_1, alt_2, ..., alt_12]
+    Only includes images that actually exist (returns 200 status).
+    
+    Returns: [main_image, alt_1_if_exists, alt_2_if_exists, ..., alt_12_if_exists]
     """
     images = []
     
@@ -282,18 +297,22 @@ def build_product_images(sku: str) -> List[str]:
     
     base_url = "https://www.thebbqstore.com.au/assets"
     
-    # Main image (using 'full' thumb)
+    # Main image (using 'full' thumb) - assume main always exists
     main_url = f"{base_url}/full/{sku}.png"
     images.append(main_url)
-    logger.debug(f"SKU {sku}: Built main image URL")
+    logger.debug(f"SKU {sku}: Added main image")
     
-    # Alt 1-12 images
+    # Alt 1-12 images - only add if they exist
     for i in range(1, 13):
         alt_url = f"{base_url}/alt_{i}/{sku}.png"
-        images.append(alt_url)
-        logger.debug(f"SKU {sku}: Built alt_{i} image URL")
+        
+        if image_exists(alt_url):
+            images.append(alt_url)
+            logger.debug(f"SKU {sku}: Added alt_{i} image (exists)")
+        else:
+            logger.debug(f"SKU {sku}: Skipped alt_{i} (does not exist)")
     
-    logger.debug(f"SKU {sku}: Built {len(images)} image URLs total")
+    logger.debug(f"SKU {sku}: Built {len(images)} image URLs total (main + existing alts)")
     return images
 
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
