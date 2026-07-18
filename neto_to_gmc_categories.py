@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """
 Neto to Google Merchant Center Category Feed
-Extracts multiple categories from Neto products and uploads to GMC as supplementary feed
-Runs daily via GitHub Actions
+Extracts multiple categories from Neto products and generates supplementary feed
+Git commit/push is handled by GitHub Actions workflow
 """
 
 import os
 import json
 import time
 import requests
-import subprocess
 from datetime import datetime
 from typing import List, Dict, Any
 import logging
@@ -420,49 +419,13 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     return feed_entries
 
 # ============================================================================
-# GOOGLE MERCHANT CENTER API FUNCTIONS
+# FEED GENERATION FUNCTIONS
 # ============================================================================
 
-def get_google_access_token() -> str:
-    """Get OAuth access token for Google API using service account"""
-    import jwt
-    
-    try:
-        now = int(time.time())
-        claim = {
-            'iss': GOOGLE_CREDS['client_email'],
-            'scope': 'https://www.googleapis.com/auth/content',
-            'aud': 'https://oauth2.googleapis.com/token',
-            'exp': now + 3600,
-            'iat': now,
-        }
-        
-        token = jwt.encode(
-            claim,
-            GOOGLE_CREDS['private_key'],
-            algorithm='RS256'
-        )
-        
-        response = requests.post(
-            'https://oauth2.googleapis.com/token',
-            data={
-                'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-                'assertion': token,
-            },
-            timeout=30
-        )
-        response.raise_for_status()
-        
-        return response.json()['access_token']
-    
-    except Exception as e:
-        logger.error(f"Failed to get Google access token: {type(e).__name__}")
-        raise
-
-def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> tuple[bool, str]:
+def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
     """
     Generate feed XML with categories, availability, and all product images from Neto.
-    Returns: (success: bool, feed_content: str)
+    Returns: success: bool
     """
     
     feed_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -503,36 +466,11 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> tuple[bool,
         logger.info(f"✓ Feed XML generated")
         logger.info(f"  File size: {len(feed_content)} bytes")
         logger.info(f"  Entries: {len(feed_entries)}")
+        logger.info(f"  Location: {feed_filename}")
+        return True
     except Exception as e:
         logger.error(f"Could not save feed file: {type(e).__name__}")
-        return False, ""
-    
-    return True, feed_content
-
-def get_existing_feeds(access_token: str) -> Dict[str, str]:
-    """Get existing feeds from GMC to find our supplementary feed"""
-    url = f"https://www.googleapis.com/content/v2.1/{GOOGLE_MERCHANT_ID}/datafeeds"
-    
-    headers = {
-        'Authorization': f'Bearer {access_token}',
-    }
-    
-    try:
-        response = requests.get(url, headers=headers, timeout=30)
-        response.raise_for_status()
-        
-        feeds = response.json().get('resources', [])
-        feed_ids = {}
-        
-        for feed in feeds:
-            if feed.get('name', '').lower() == 'neto categories':
-                feed_ids['neto_categories'] = feed.get('id')
-        
-        return feed_ids
-    
-    except Exception as e:
-        logger.warning(f"Could not retrieve existing feeds: {type(e).__name__}")
-        return {}
+        return False
 
 def escape_xml(text: str) -> str:
     """Escape special XML characters"""
@@ -551,92 +489,6 @@ def escape_xml(text: str) -> str:
         text = text.replace(char, escaped)
     
     return text
-
-def push_feed_to_github(feed_content: str, feed_filename: str = "neto_gmc_feed.xml") -> bool:
-    """
-    Commit and push the generated feed to GitHub repository.
-    Uses GitHub Actions GITHUB_TOKEN for authentication (automatic).
-    No credentials are logged.
-    """
-    try:
-        logger.info("=" * 70)
-        logger.info("Pushing feed to GitHub repository...")
-        logger.info("=" * 70)
-        
-        repo_dir = os.getcwd()
-        feed_path = os.path.join(repo_dir, "main", feed_filename)
-        
-        os.makedirs(os.path.dirname(feed_path), exist_ok=True)
-        
-        with open(feed_path, 'w') as f:
-            f.write(feed_content)
-        logger.info(f"✓ Feed file written to: main/{feed_filename}")
-        
-        subprocess.run(
-            ["git", "config", "user.name", "GitHub Actions"],
-            cwd=repo_dir,
-            check=True,
-            capture_output=True
-        )
-        subprocess.run(
-            ["git", "config", "user.email", "actions@github.com"],
-            cwd=repo_dir,
-            check=True,
-            capture_output=True
-        )
-        logger.info("✓ Git user configured")
-        
-        subprocess.run(
-            ["git", "add", f"main/{feed_filename}"],
-            cwd=repo_dir,
-            check=True,
-            capture_output=True
-        )
-        logger.info(f"✓ Added {feed_filename} to git")
-        
-        commit_msg = f"Auto-update Neto GMC feed - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-        result = subprocess.run(
-            ["git", "commit", "-m", commit_msg],
-            cwd=repo_dir,
-            capture_output=True,
-            text=True
-        )
-        
-        if result.returncode != 0:
-            if "nothing to commit" in result.stdout or "nothing to commit" in result.stderr:
-                logger.info("✓ No changes to commit (feed unchanged)")
-                return True
-            else:
-                logger.error(f"Git commit failed - check repository state")
-                return False
-        
-        logger.info(f"✓ Committed: {commit_msg}")
-        
-        push_result = subprocess.run(
-            ["git", "push", "origin", "main"],
-            cwd=repo_dir,
-            capture_output=True,
-            text=True
-        )
-        
-        if push_result.returncode != 0:
-            logger.error(f"Git push failed - check repository permissions")
-            return False
-        
-        logger.info("✓ Pushed to GitHub (main branch)")
-        logger.info("=" * 70)
-        logger.info("✓ Feed is now live at:")
-        logger.info("  https://raw.githubusercontent.com/AssetXdot/neto-gmc-category-sync/main/neto_gmc_feed.xml")
-        logger.info("=" * 70)
-        
-        return True
-    
-    except subprocess.CalledProcessError as e:
-        logger.error(f"Git command failed: {type(e).__name__}")
-        return False
-    except Exception as e:
-        logger.error(f"Error pushing to GitHub: {type(e).__name__}")
-        return False
 
 # ============================================================================
 # MAIN EXECUTION
@@ -672,7 +524,26 @@ def main():
             return False
         
         logger.info("")
-        success, feed_content = upload_supplementary_feed(feed_entries)
+        success = upload_supplementary_feed(feed_entries)
         
-        if not success:
+        if success:
+            logger.info("=" * 70)
+            logger.info("✓ SYNC COMPLETED SUCCESSFULLY")
+            logger.info("  Feed generated and ready for workflow to commit to GitHub")
+            logger.info("=" * 70)
+            return True
+        else:
             logger.error("=" * 70)
+            logger.error("✗ FEED GENERATION FAILED")
+            logger.error("=" * 70)
+            return False
+    
+    except Exception as e:
+        logger.error("=" * 70)
+        logger.error(f"✗ FATAL ERROR: {type(e).__name__}")
+        logger.error("=" * 70)
+        return False
+
+if __name__ == '__main__':
+    success = main()
+    exit(0 if success else 1)
