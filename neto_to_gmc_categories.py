@@ -150,18 +150,23 @@ def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
     Returns: {"sku": "...", "upc": "...", "gtin": "..."}
     """
     result = {}
-    
-    # Get SKU
     sku = item.get("SKU", "").strip()
     if sku:
         result['sku'] = sku
     
-    # Try to get UPC/GTIN/Barcode from various fields
-    for field in ["UPC", "GTIN", "Barcode", "EAN"]:
+    # Log all fields in the item to see what's available
+    logger.debug(f"Neto item fields: {list(item.keys())}")
+    
+    # Try to get UPC/GTIN/Barcode from various field names
+    for field in ["UPC", "GTIN", "Barcode", "EAN", "ProductBarcode", "Ean"]:
         value = item.get(field, "").strip()
         if value:
             result['upc'] = value
+            logger.debug(f"Found {field}: {value}")
             break
+    
+    if 'upc' not in result:
+        logger.debug(f"No UPC found for SKU {sku}. Available fields: {item.keys()}")
     
     return result
 
@@ -253,28 +258,37 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     
     matched_skus = []
     unmatched_skus = []
+    unmatched_details = []
     
-    for product in products:
+    for i, product in enumerate(products):
         # Extract Neto identifiers
         ids = extract_product_ids(product)
         sku = ids.get('sku', 'NO_SKU')
+        upc = ids.get('upc', 'NO_UPC')
         
         # Try to match with datafeedwatch using UPC
         datafeedwatch_id = None
         matched_key = None
         
-        if 'upc' in ids and ids['upc'] in datafeedwatch_products:
-            datafeedwatch_id = datafeedwatch_products[ids['upc']]['id']
-            matched_key = ids['upc']
-        elif 'sku' in ids and ids['sku'] in datafeedwatch_products:
+        if upc != 'NO_UPC' and upc in datafeedwatch_products:
+            datafeedwatch_id = datafeedwatch_products[upc]['id']
+            matched_key = f"UPC:{upc}"
+        elif sku != 'NO_SKU' and sku in datafeedwatch_products:
             # Fallback to SKU match
-            datafeedwatch_id = datafeedwatch_products[ids['sku']]['id']
-            matched_key = ids['sku']
+            datafeedwatch_id = datafeedwatch_products[sku]['id']
+            matched_key = f"SKU:{sku}"
         
         # Skip products not in datafeedwatch
         if not datafeedwatch_id:
             products_not_in_datafeedwatch += 1
             unmatched_skus.append(sku)
+            unmatched_details.append({
+                'sku': sku,
+                'upc': upc,
+                'name': product.get('Name', '')[:50]
+            })
+            if i < 5:  # Log first 5 unmatched for debugging
+                logger.info(f"  UNMATCHED: SKU={sku}, UPC={upc}, Name={product.get('Name', '')[:50]}")
             continue
         
         matched_skus.append((sku, matched_key))
@@ -301,8 +315,10 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     logger.info(f"Total feed entries: {len(feed_entries)}")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
-    logger.info(f"Sample unmatched SKUs: {unmatched_skus[:10]}")
-    logger.info(f"Available datafeedwatch keys (sample): {list(datafeedwatch_products.keys())[:10]}")
+    logger.info(f"Sample unmatched (first 5): {unmatched_details[:5]}")
+    logger.info(f"Total unmatched: {len(unmatched_skus)}")
+    logger.info(f"Datafeedwatch keys (sample): {list(datafeedwatch_products.keys())[:20]}")
+    logger.info(f"Total datafeedwatch keys: {len(datafeedwatch_products)}")
     
     return feed_entries
 
@@ -347,7 +363,7 @@ def get_google_access_token() -> str:
         raise
 
 def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
-    """Generate feed XML file for manual upload to Google Merchant Center"""
+    """Generate feed XML file with categories and availability status (all products set to 'in stock')"""
     
     # Build the XML feed content
     feed_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -363,6 +379,9 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         
         if product_type:
             feed_content += f'    <g:product_type>{escape_xml(product_type)}</g:product_type>\n'
+        
+        # Add availability status - set ALL products to "in stock"
+        feed_content += '    <g:availability>in stock</g:availability>\n'
         
         feed_content += '  </item>\n'
     
