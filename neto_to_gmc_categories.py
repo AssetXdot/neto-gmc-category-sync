@@ -27,9 +27,9 @@ logger = logging.getLogger(__name__)
 
 NETO_API_KEY = os.getenv('NETO_API_KEY', '').strip()
 NETO_API_USERNAME = os.getenv('NETO_API_USERNAME', '').strip()
-GOOGLE_MERCHANT_ID = os.getenv('GOOGLE_MERCHANT_ID', '5485680660')
+GOOGLE_MERCHANT_ID = os.getenv('GOOGLE_MERCHANT_ID', '').strip()
 GOOGLE_CREDENTIALS_JSON = os.getenv('GOOGLE_CREDENTIALS_JSON', '').strip()
-DATAFEEDWATCH_URL = 'https://feeds.datafeedwatch.com/115844/042694caec3d471f7315a426e3adf89b0f7ab2d5.xml'
+DATAFEEDWATCH_URL = os.getenv('DATAFEEDWATCH_URL', '').strip()
 
 # Validate environment variables
 if not NETO_API_KEY:
@@ -38,6 +38,10 @@ if not NETO_API_USERNAME:
     raise ValueError("NETO_API_USERNAME not set in environment variables")
 if not GOOGLE_CREDENTIALS_JSON:
     raise ValueError("GOOGLE_CREDENTIALS_JSON not set in environment variables")
+if not DATAFEEDWATCH_URL:
+    raise ValueError("DATAFEEDWATCH_URL not set in environment variables")
+if not GOOGLE_MERCHANT_ID:
+    raise ValueError("GOOGLE_MERCHANT_ID not set in environment variables")
 
 # Parse Google credentials
 try:
@@ -248,8 +252,9 @@ def fetch_all_products() -> List[Dict[str, Any]]:
 def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
     Build feed entries matching Neto products with datafeedwatch product IDs.
+    Applies conditional availability: out of stock if backorder disabled AND qty=0, else in stock
     
-    Format: [{"id": "datafeedwatch_id", "product_type": "Cat1, Cat2, Cat3"}, ...]
+    Format: [{"id": "datafeedwatch_id", "product_type": "Cat1, Cat2, Cat3", "availability": "..."}, ...]
     """
     feed_entries = []
     products_with_categories = 0
@@ -303,9 +308,31 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             products_without_categories += 1
             product_type = ""
         
+        # Determine availability based on backorder setting and stock level
+        # Check if backorder is enabled and qty on hand is 0
+        backorder_enabled = product.get("EnableBackorderButton", "False")
+        qty_on_hand = product.get("QtyOnHand", 0)
+        
+        # Convert to appropriate types for comparison
+        if isinstance(backorder_enabled, str):
+            backorder_enabled = backorder_enabled.lower() == "true"
+        if isinstance(qty_on_hand, str):
+            try:
+                qty_on_hand = int(qty_on_hand)
+            except (ValueError, TypeError):
+                qty_on_hand = 0
+        
+        # Logic: if backorder is enabled AND stock is 0, mark as out of stock
+        # Otherwise, mark as in stock
+        if backorder_enabled and qty_on_hand == 0:
+            availability = "out of stock"
+        else:
+            availability = "in stock"
+        
         feed_entries.append({
             "id": datafeedwatch_id,
-            "product_type": product_type
+            "product_type": product_type,
+            "availability": availability
         })
     
     # Log debug info
@@ -363,7 +390,7 @@ def get_google_access_token() -> str:
         raise
 
 def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
-    """Generate feed XML file with categories and availability status (all products set to 'in stock')"""
+    """Generate feed XML with categories and conditional availability based on backorder settings"""
     
     # Build the XML feed content
     feed_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -373,6 +400,7 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
     for entry in feed_entries:
         sku = entry['id']
         product_type = entry['product_type']
+        availability = entry.get('availability', 'in stock')  # Default to in stock if not set
         
         feed_content += '  <item>\n'
         feed_content += f'    <g:id>{escape_xml(sku)}</g:id>\n'
@@ -380,8 +408,8 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         if product_type:
             feed_content += f'    <g:product_type>{escape_xml(product_type)}</g:product_type>\n'
         
-        # Add availability status - set ALL products to "in stock"
-        feed_content += '    <g:availability>in stock</g:availability>\n'
+        # Add availability status - conditional based on backorder and stock
+        feed_content += f'    <g:availability>{escape_xml(availability)}</g:availability>\n'
         
         feed_content += '  </item>\n'
     
