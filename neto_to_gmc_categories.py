@@ -203,7 +203,26 @@ def neto_api_call(action: str, payload: Dict[str, Any]) -> Dict[str, Any]:
         logger.error(f"Neto API error: {e}")
         raise
 
-def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
+def extract_product_images(item: Dict[str, Any]) -> List[str]:
+    """
+    Extract all image URLs from Neto product.
+    Returns list of URLs: [main_image, alt_1, alt_2, ... alt_12]
+    """
+    images = []
+    
+    # Get main image
+    main_image = item.get("ImageURL", "").strip()
+    if main_image:
+        images.append(main_image)
+    
+    # Get alternative images (Alt1, Alt2, Alt3, ... Alt12)
+    for i in range(1, 13):
+        alt_field = f"Alt{i}"
+        alt_image = item.get(alt_field, "").strip()
+        if alt_image:
+            images.append(alt_image)
+    
+    return images
     """
     Extract product identifiers from Neto item.
     Returns: {"sku": "...", "upc": "...", "gtin": "..."}
@@ -360,6 +379,9 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         # Extract categories
         categories = extract_categories(product)
         
+        # Extract images from Neto
+        images = extract_product_images(product)
+        
         if categories:
             products_with_categories += 1
             product_type = ", ".join(categories)
@@ -391,7 +413,8 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         feed_entries.append({
             "id": datafeedwatch_id,
             "product_type": product_type,
-            "availability": availability
+            "availability": availability,
+            "images": images  # Add images to feed entry
         })
     
     # Log debug info
@@ -449,7 +472,7 @@ def get_google_access_token() -> str:
         raise
 
 def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
-    """Generate feed XML with categories and conditional availability based on backorder settings"""
+    """Generate feed XML with categories, availability, and all product images from Neto"""
     
     # Build the XML feed content
     feed_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -459,7 +482,8 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
     for entry in feed_entries:
         sku = entry['id']
         product_type = entry['product_type']
-        availability = entry.get('availability', 'in stock')  # Default to in stock if not set
+        availability = entry.get('availability', 'in stock')
+        images = entry.get('images', [])
         
         feed_content += '  <item>\n'
         feed_content += f'    <g:id>{escape_xml(sku)}</g:id>\n'
@@ -469,6 +493,14 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         
         # Add availability status - conditional based on backorder and stock
         feed_content += f'    <g:availability>{escape_xml(availability)}</g:availability>\n'
+        
+        # Add images - first one is main image, rest are additional
+        if images:
+            feed_content += f'    <g:image_link>{escape_xml(images[0])}</g:image_link>\n'
+            
+            # Add additional images (alt 1-10)
+            for alt_image in images[1:]:
+                feed_content += f'    <g:additional_image_link>{escape_xml(alt_image)}</g:additional_image_link>\n'
         
         feed_content += '  </item>\n'
     
