@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Neto to Google Merchant Center Category Feed
-Extracts multiple categories from Neto products and generates supplementary feed
+Extracts multiple categories from Neto products and generates supplementary feed with images
 Git commit/push is handled by GitHub Actions workflow
 """
 
@@ -266,35 +266,34 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
     
     return categories
 
-def extract_product_images(item: Dict[str, Any]) -> List[str]:
+def build_product_images(sku: str) -> List[str]:
     """
-    Extract all image URLs from Neto product.
-    Returns list of URLs: [main_image, alt_1, alt_2, ... alt_12]
-    Tries multiple field patterns to find images.
+    Build image URLs for a product based on its SKU.
+    
+    URL pattern: https://www.thebbqstore.com.au/assets/{thumb}/{SKU}.png
+    Where thumb is: full (main), alt_1, alt_2, ... alt_12
+    
+    Returns: [main_image, alt_1, alt_2, ..., alt_12]
     """
     images = []
     
-    # Try to get main image from various field names
-    for field_name in ["ImageURL", "Image", "image_url", "MainImage", "main_image", "product.mainImage.URL"]:
-        main_image = item.get(field_name, "").strip()
-        if main_image:
-            images.append(main_image)
-            logger.debug(f"Found main image")
-            break
+    if not sku:
+        return images
     
-    # Get alternative images - try Alt1, Alt2, ... Alt12
+    base_url = "https://www.thebbqstore.com.au/assets"
+    
+    # Main image (using 'full' thumb)
+    main_url = f"{base_url}/full/{sku}.png"
+    images.append(main_url)
+    logger.debug(f"SKU {sku}: Built main image URL")
+    
+    # Alt 1-12 images
     for i in range(1, 13):
-        for field_name in [f"Alt{i}", f"alt{i}", f"Alt{i} Image", f"Image{i}"]:
-            alt_image = item.get(field_name, "").strip()
-            if alt_image:
-                images.append(alt_image)
-                logger.debug(f"Found alt image {i}")
-                break
+        alt_url = f"{base_url}/alt_{i}/{sku}.png"
+        images.append(alt_url)
+        logger.debug(f"SKU {sku}: Built alt_{i} image URL")
     
-    if not images:
-        sku = item.get("SKU", "unknown")
-        logger.debug(f"No images found for SKU {sku}")
-    
+    logger.debug(f"SKU {sku}: Built {len(images)} image URLs total")
     return images
 
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
@@ -335,7 +334,7 @@ def fetch_all_products() -> List[Dict[str, Any]]:
                 "Filter": {
                     "IsActive": "True",
                     "OutputSelector": [
-                        "SKU", "Name", "Brand", "DefaultPrice", "Categories", "Images"
+                        "SKU", "Name", "Brand", "DefaultPrice", "Categories"
                     ],
                     "Page": page,
                     "Limit": 200,
@@ -378,6 +377,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     matched_skus = []
     unmatched_skus = []
     unmatched_details = []
+    total_images_built = 0
     
     for product in products:
         sku = product.get("SKU", "").strip()
@@ -414,8 +414,9 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             unmatched_details.append(f"{sku} (not in datafeedwatch)")
             continue
         
-        # Extract images
-        images = extract_product_images(product)
+        # Build image URLs based on SKU
+        images = build_product_images(sku)
+        total_images_built += len(images)
         
         # Build product type string from categories
         product_type = " > ".join(categories)
@@ -435,6 +436,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     logger.info(f"Products without categories: {products_without_categories}")
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
+    logger.info(f"Total image URLs built: {total_images_built}")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
     logger.info(f"Sample unmatched (first 5): {unmatched_details[:5]}")
