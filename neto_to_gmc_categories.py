@@ -15,7 +15,6 @@ from typing import List, Dict, Any
 import logging
 import xml.etree.ElementTree as ET
 import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 
 # ============================================================================
@@ -313,46 +312,23 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
     
     return categories
 
-# Global thread pool for parallel format checking
-IMAGE_CHECK_POOL = ThreadPoolExecutor(max_workers=10)
-
-def find_image_format(base_url: str) -> str:
-    """
-    Try to find image in multiple formats (jpg, png, gif, webp).
-    Returns the URL if found, None if not found.
-    Checks in order of likelihood: jpg > png > webp > gif
-    Uses 2-second timeout for each format.
-    """
-    formats = ['jpg', 'png', 'webp', 'gif']
-    
-    for fmt in formats:
-        url = f"{base_url}.{fmt}"
-        try:
-            response = requests.head(url, timeout=2, allow_redirects=True)
-            if 200 <= response.status_code < 300:
-                logger.debug(f"Found {fmt} image")
-                return url
-        except Exception:
-            # Try next format
-            continue
-    
-    return None
+# REMOVED: No more HEAD request checking - too slow and gets blocked
+# Just build URLs for all formats in order, GMC will validate them
 
 def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dict[str, Any]]) -> List[str]:
     """
     Build image URLs for a product based on its SKU.
-    Intelligently detects format for EACH image individually.
     
-    SMART CACHING: Only re-checks images if product data changed (SKU/Name/Price).
+    STRATEGY: Just build URLs for all common formats.
+    Don't check if they exist - GMC handles 404s automatically.
     
     URL pattern: https://www.thebbqstore.com.au/assets/{thumb}/{SKU}.{format}
     
-    For each image (main + alts 1-12):
-    - Tries all formats: jpg, png, webp, gif
-    - Uses first one that exists
-    - Skips if none exist
+    Tries formats in order: jpg, png, webp, gif
+    Builds URLs for all 4 formats for both main and alts.
     
-    Returns: [main_image, alt_1_if_exists, alt_2_if_exists, ..., alt_12_if_exists]
+    Returns: [main urls, alt_1 urls, alt_2 urls, ..., alt_12 urls]
+            Each position has 4 format variations
     """
     images = []
     
@@ -360,6 +336,7 @@ def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dic
         return images
     
     base_url = "https://www.thebbqstore.com.au/assets"
+    formats = ['jpg', 'png', 'webp', 'gif']
     
     # Calculate current product hash to detect changes
     current_hash = get_product_hash(product)
@@ -375,46 +352,23 @@ def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dic
             logger.debug(f"SKU {sku}: Product unchanged, using cached images ({len(cached_images)} images)")
             return cached_images
         
-        # If product changed, re-check (fall through to format detection)
-        logger.debug(f"SKU {sku}: Product changed (hash mismatch), re-checking images")
+        # If product changed, re-build (fall through)
+        logger.debug(f"SKU {sku}: Product changed, re-building image URLs")
     
-    # Find main image - try all formats
-    logger.debug(f"SKU {sku}: Detecting images for all formats")
+    # Build URLs for main image - try all 4 formats
     main_base = f"{base_url}/full/{sku}"
-    main_url = find_image_format(main_base)
+    for fmt in formats:
+        url = f"{main_base}.{fmt}"
+        images.append(url)
     
-    if main_url:
-        images.append(main_url)
-        logger.debug(f"SKU {sku}: Main image found")
-    else:
-        logger.debug(f"SKU {sku}: No main image found in any format")
-        # Cache even if no main image
-        cache[sku] = {
-            'images': [],
-            'hash': current_hash,
-            'last_checked': datetime.now().isoformat(),
-            'count': 0
-        }
-        return images
-    
-    # Find alt 1-12 images in parallel
-    # Submit all alt image checks to thread pool at once
-    futures = {}
-    
+    # Build URLs for alt 1-12 - try all 4 formats for each
     for i in range(1, 13):
         alt_base = f"{base_url}/alt_{i}/{sku}"
-        futures[i] = IMAGE_CHECK_POOL.submit(find_image_format, alt_base)
+        for fmt in formats:
+            url = f"{alt_base}.{fmt}"
+            images.append(url)
     
-    # Collect results as they complete (maintains order by checking futures dict)
-    for i in range(1, 13):
-        try:
-            alt_url = futures[i].result(timeout=15)  # 15 sec max for all 4 formats
-            if alt_url:
-                images.append(alt_url)
-                logger.debug(f"SKU {sku}: Alt_{i} found")
-            # If alt not found, just skip it
-        except Exception as e:
-            logger.debug(f"SKU {sku}: alt_{i} check failed - {type(e).__name__}")
+    logger.debug(f"SKU {sku}: Built {len(images)} image URLs (4 formats each for main + 12 alts)")
     
     # Update cache with hash and new images
     cache[sku] = {
@@ -424,7 +378,6 @@ def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dic
         'count': len(images)
     }
     
-    logger.debug(f"SKU {sku}: Re-checked and built {len(images)} image URLs (main + {len(images)-1} alts)")
     return images
 
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
@@ -581,6 +534,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
     logger.info(f"Total image URLs built: {total_images_built}")
+    logger.info(f"  (4 formats × main + 12 alts = 52 URLs per product)")
     logger.info(f"Cache hits (unchanged): {cache_hits} | Cache misses/changes: {cache_misses} | Products changed: {products_changed}")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
@@ -731,9 +685,6 @@ def main():
         logger.error(f"✗ FATAL ERROR: {type(e).__name__}")
         logger.error("=" * 70)
         return False
-    finally:
-        # Clean up thread pool
-        IMAGE_CHECK_POOL.shutdown(wait=True)
 
 if __name__ == '__main__':
     success = main()
