@@ -308,40 +308,42 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
     
     return categories
 
-# Global thread pool for parallel image checking
+# Global thread pool for parallel format checking
 IMAGE_CHECK_POOL = ThreadPoolExecutor(max_workers=10)
 
-def get_image_url(base_url: str) -> str:
+def find_image_format(base_url: str) -> str:
     """
-    Try to find image in multiple formats (jpg, png, gif).
+    Try to find image in multiple formats (jpg, png, gif, webp).
     Returns the URL if found, None if not found.
-    Checks in order of likelihood: jpg > png > gif
+    Checks in order of likelihood: jpg > png > webp > gif
+    Uses 2-second timeout for each format.
     """
-    formats = ['jpg', 'png', 'gif']
+    formats = ['jpg', 'png', 'webp', 'gif']
     
     for fmt in formats:
         url = f"{base_url}.{fmt}"
         try:
-            response = requests.head(url, timeout=5, allow_redirects=True)
+            response = requests.head(url, timeout=2, allow_redirects=True)
             if 200 <= response.status_code < 300:
                 logger.debug(f"Found {fmt} image")
                 return url
         except Exception:
-            pass
+            # Try next format
+            continue
     
-    logger.debug(f"No image found for {base_url}")
     return None
 
 def build_product_images(sku: str, cache: Dict[str, Dict[str, Any]], use_cache: bool = True) -> List[str]:
     """
     Build image URLs for a product based on its SKU.
+    Intelligently detects format for EACH image individually.
     
     URL pattern: https://www.thebbqstore.com.au/assets/{thumb}/{SKU}.{format}
-    Where thumb is: full (main), alt_1, alt_2, ... alt_12
-    Where format is: jpg, png, or gif (auto-detected)
     
-    Uses cache for efficiency - only re-verifies images if not in cache.
-    For cached products, does quick main image check to verify cache validity.
+    For each image (main + alts 1-12):
+    - Tries all formats: jpg, png, webp, gif
+    - Uses first one that exists
+    - Skips if none exist
     
     Returns: [main_image, alt_1_if_exists, alt_2_if_exists, ..., alt_12_if_exists]
     """
@@ -352,37 +354,25 @@ def build_product_images(sku: str, cache: Dict[str, Dict[str, Any]], use_cache: 
     
     base_url = "https://www.thebbqstore.com.au/assets"
     
-    # Check if in cache and use_cache is True
+    # Check cache first
     if use_cache and sku in cache:
         cached_data = cache[sku]
         cached_images = cached_data.get('images', [])
-        
-        # Quick validation: check if main image still exists
         if cached_images:
-            main_url = cached_images[0]
-            try:
-                response = requests.head(main_url, timeout=5, allow_redirects=True)
-                if 200 <= response.status_code < 300:
-                    logger.debug(f"SKU {sku}: Using cached images ({len(cached_images)} images)")
-                    return cached_images
-            except Exception:
-                pass
-            
-            logger.debug(f"SKU {sku}: Cache invalid (main image missing), re-verifying")
+            logger.debug(f"SKU {sku}: Using cached images ({len(cached_images)} images)")
+            return cached_images
     
-    # Full verification - check all images in parallel with multi-format support
-    logger.debug(f"SKU {sku}: Full image verification")
-    
-    # Main image - try multiple formats
+    # Find main image - try all formats
+    logger.debug(f"SKU {sku}: Detecting images for all formats")
     main_base = f"{base_url}/full/{sku}"
-    main_url = get_image_url(main_base)
+    main_url = find_image_format(main_base)
     
     if main_url:
         images.append(main_url)
-        logger.debug(f"SKU {sku}: Added main image")
+        logger.debug(f"SKU {sku}: Main image found")
     else:
-        logger.debug(f"SKU {sku}: No main image found")
-        # Cache even if no images found
+        logger.debug(f"SKU {sku}: No main image found in any format")
+        # Cache even if no main image
         cache[sku] = {
             'images': [],
             'last_checked': datetime.now().isoformat(),
@@ -390,23 +380,22 @@ def build_product_images(sku: str, cache: Dict[str, Dict[str, Any]], use_cache: 
         }
         return images
     
-    # Alt 1-12 images - check in parallel with multi-format support
-    alt_bases = {}
+    # Find alt 1-12 images in parallel
+    # Submit all alt image checks to thread pool at once
     futures = {}
     
     for i in range(1, 13):
         alt_base = f"{base_url}/alt_{i}/{sku}"
-        alt_bases[i] = alt_base
-        # Submit check to thread pool (non-blocking)
-        futures[i] = IMAGE_CHECK_POOL.submit(get_image_url, alt_base)
+        futures[i] = IMAGE_CHECK_POOL.submit(find_image_format, alt_base)
     
-    # Collect results as they complete
-    for i, future in futures.items():
+    # Collect results as they complete (maintains order by checking futures dict)
+    for i in range(1, 13):
         try:
-            url = future.result(timeout=10)  # Wait up to 10 seconds
-            if url:
-                images.append(url)
-                logger.debug(f"SKU {sku}: Found alt_{i}")
+            alt_url = futures[i].result(timeout=15)  # 15 sec max for all 4 formats
+            if alt_url:
+                images.append(alt_url)
+                logger.debug(f"SKU {sku}: Alt_{i} found")
+            # If alt not found, just skip it
         except Exception as e:
             logger.debug(f"SKU {sku}: alt_{i} check failed - {type(e).__name__}")
     
@@ -417,7 +406,7 @@ def build_product_images(sku: str, cache: Dict[str, Dict[str, Any]], use_cache: 
         'count': len(images)
     }
     
-    logger.debug(f"SKU {sku}: Verified {len(images)} images (main + {len(images)-1} alts)")
+    logger.debug(f"SKU {sku}: Built {len(images)} image URLs (main + {len(images)-1} alts)")
     return images
 
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
