@@ -1,21 +1,8 @@
-- name: Run Neto to GMC sync
-        env:
-          NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
-          ...
-        run: |
-          python neto_to_gmc_categories.py
 name: Neto to Google Merchant Center - Daily Category Sync
 
 on:
   schedule:
-    # Runs at 3:00 PM UTC every day (approximately 2:00 AM Sydney time during AEDT)
-    # Note: Sydney observes daylight saving (AEDT, UTC+11) Oct-Apr and standard time (AEST, UTC+10) Apr-Oct
-    # Adjust the time below if needed:
-    # - For AEDT (summer): 15:00 UTC = 2:00 AM next day
-    # - For AEST (winter): 16:00 UTC = 2:00 AM next day
     - cron: '0 15 * * *'
-  
-  # Allow manual trigger from GitHub UI
   workflow_dispatch:
 
 permissions:
@@ -38,6 +25,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      
+      # ← ADD THIS NEW STEP ↓
+      - name: Debug Neto API Response
+        env:
+          NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
+          NETO_API_USERNAME: ${{ secrets.NETO_API_USERNAME }}
+        run: python debug_neto_response.py
+      # ← END NEW STEP ↑
       
       - name: Run Neto to GMC sync
         env:
@@ -64,7 +59,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # Copy the generated feed to repo root with fixed name
           cp /tmp/neto_gmc_feed_*.xml neto_gmc_feed.xml 2>/dev/null || true
           if [ -f neto_gmc_feed.xml ]; then
             git add neto_gmc_feed.xml
