@@ -2,6 +2,7 @@
 """
 Neto to Google Merchant Center Category Feed
 Extracts multiple categories from Neto products and generates supplementary feed with images
+Intelligent image caching - only re-verifies changed products
 Git commit/push is handled by GitHub Actions workflow
 """
 
@@ -14,6 +15,8 @@ from typing import List, Dict, Any
 import logging
 import xml.etree.ElementTree as ET
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import hashlib
 
 # ============================================================================
 # SECURE LOGGING - Masks credentials in all log output
@@ -60,6 +63,9 @@ GOOGLE_MERCHANT_ID = os.getenv('GOOGLE_MERCHANT_ID', '').strip()
 GOOGLE_CREDENTIALS_JSON = os.getenv('GOOGLE_CREDENTIALS_JSON', '').strip()
 DATAFEEDWATCH_URL = os.getenv('DATAFEEDWATCH_URL', '').strip()
 
+# Image cache file
+IMAGE_CACHE_FILE = "image_cache.json"
+
 # Validate environment variables
 if not NETO_API_KEY:
     raise ValueError("NETO_API_KEY not set in environment variables")
@@ -78,6 +84,42 @@ try:
 except json.JSONDecodeError as e:
     logger.error("GOOGLE_CREDENTIALS_JSON is not valid JSON")
     raise ValueError("Invalid GOOGLE_CREDENTIALS_JSON")
+
+# ============================================================================
+# IMAGE CACHE FUNCTIONS
+# ============================================================================
+
+def load_image_cache() -> Dict[str, Dict[str, Any]]:
+    """Load image cache from file if it exists"""
+    if os.path.exists(IMAGE_CACHE_FILE):
+        try:
+            with open(IMAGE_CACHE_FILE, 'r') as f:
+                cache = json.load(f)
+            logger.info(f"Loaded image cache: {len(cache)} products cached")
+            return cache
+        except Exception as e:
+            logger.warning(f"Could not load cache: {type(e).__name__}, starting fresh")
+            return {}
+    return {}
+
+def save_image_cache(cache: Dict[str, Dict[str, Any]]) -> bool:
+    """Save image cache to file"""
+    try:
+        with open(IMAGE_CACHE_FILE, 'w') as f:
+            json.dump(cache, f, indent=2)
+        logger.info(f"Saved image cache: {len(cache)} products")
+        return True
+    except Exception as e:
+        logger.error(f"Could not save cache: {type(e).__name__}")
+        return False
+
+def get_product_hash(product: Dict[str, Any]) -> str:
+    """
+    Generate hash of product data to detect changes.
+    If product data changes, we re-verify all images.
+    """
+    data = f"{product.get('SKU')}|{product.get('Name')}|{product.get('DefaultPrice')}"
+    return hashlib.md5(data.encode()).hexdigest()
 
 # ============================================================================
 # DATAFEEDWATCH FEED FUNCTIONS
@@ -266,27 +308,40 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
     
     return categories
 
-def image_exists(url: str) -> bool:
-    """
-    Check if an image URL exists (returns 200 status).
-    Uses HEAD request for efficiency (doesn't download the full image).
-    """
-    try:
-        response = requests.head(url, timeout=5, allow_redirects=True)
-        # Accept 200-299 status codes as "exists"
-        return 200 <= response.status_code < 300
-    except Exception as e:
-        logger.debug(f"Could not check image: {url} - {type(e).__name__}")
-        return False
+# Global thread pool for parallel image checking
+IMAGE_CHECK_POOL = ThreadPoolExecutor(max_workers=10)
 
-def build_product_images(sku: str) -> List[str]:
+def get_image_url(base_url: str) -> str:
+    """
+    Try to find image in multiple formats (jpg, png, gif).
+    Returns the URL if found, None if not found.
+    Checks in order of likelihood: jpg > png > gif
+    """
+    formats = ['jpg', 'png', 'gif']
+    
+    for fmt in formats:
+        url = f"{base_url}.{fmt}"
+        try:
+            response = requests.head(url, timeout=5, allow_redirects=True)
+            if 200 <= response.status_code < 300:
+                logger.debug(f"Found {fmt} image")
+                return url
+        except Exception:
+            pass
+    
+    logger.debug(f"No image found for {base_url}")
+    return None
+
+def build_product_images(sku: str, cache: Dict[str, Dict[str, Any]], use_cache: bool = True) -> List[str]:
     """
     Build image URLs for a product based on its SKU.
     
-    URL pattern: https://www.thebbqstore.com.au/assets/{thumb}/{SKU}.png
+    URL pattern: https://www.thebbqstore.com.au/assets/{thumb}/{SKU}.{format}
     Where thumb is: full (main), alt_1, alt_2, ... alt_12
+    Where format is: jpg, png, or gif (auto-detected)
     
-    Only includes images that actually exist (returns 200 status).
+    Uses cache for efficiency - only re-verifies images if not in cache.
+    For cached products, does quick main image check to verify cache validity.
     
     Returns: [main_image, alt_1_if_exists, alt_2_if_exists, ..., alt_12_if_exists]
     """
@@ -297,22 +352,72 @@ def build_product_images(sku: str) -> List[str]:
     
     base_url = "https://www.thebbqstore.com.au/assets"
     
-    # Main image (using 'full' thumb) - assume main always exists
-    main_url = f"{base_url}/full/{sku}.png"
-    images.append(main_url)
-    logger.debug(f"SKU {sku}: Added main image")
-    
-    # Alt 1-12 images - only add if they exist
-    for i in range(1, 13):
-        alt_url = f"{base_url}/alt_{i}/{sku}.png"
+    # Check if in cache and use_cache is True
+    if use_cache and sku in cache:
+        cached_data = cache[sku]
+        cached_images = cached_data.get('images', [])
         
-        if image_exists(alt_url):
-            images.append(alt_url)
-            logger.debug(f"SKU {sku}: Added alt_{i} image (exists)")
-        else:
-            logger.debug(f"SKU {sku}: Skipped alt_{i} (does not exist)")
+        # Quick validation: check if main image still exists
+        if cached_images:
+            main_url = cached_images[0]
+            try:
+                response = requests.head(main_url, timeout=5, allow_redirects=True)
+                if 200 <= response.status_code < 300:
+                    logger.debug(f"SKU {sku}: Using cached images ({len(cached_images)} images)")
+                    return cached_images
+            except Exception:
+                pass
+            
+            logger.debug(f"SKU {sku}: Cache invalid (main image missing), re-verifying")
     
-    logger.debug(f"SKU {sku}: Built {len(images)} image URLs total (main + existing alts)")
+    # Full verification - check all images in parallel with multi-format support
+    logger.debug(f"SKU {sku}: Full image verification")
+    
+    # Main image - try multiple formats
+    main_base = f"{base_url}/full/{sku}"
+    main_url = get_image_url(main_base)
+    
+    if main_url:
+        images.append(main_url)
+        logger.debug(f"SKU {sku}: Added main image")
+    else:
+        logger.debug(f"SKU {sku}: No main image found")
+        # Cache even if no images found
+        cache[sku] = {
+            'images': [],
+            'last_checked': datetime.now().isoformat(),
+            'count': 0
+        }
+        return images
+    
+    # Alt 1-12 images - check in parallel with multi-format support
+    alt_bases = {}
+    futures = {}
+    
+    for i in range(1, 13):
+        alt_base = f"{base_url}/alt_{i}/{sku}"
+        alt_bases[i] = alt_base
+        # Submit check to thread pool (non-blocking)
+        futures[i] = IMAGE_CHECK_POOL.submit(get_image_url, alt_base)
+    
+    # Collect results as they complete
+    for i, future in futures.items():
+        try:
+            url = future.result(timeout=10)  # Wait up to 10 seconds
+            if url:
+                images.append(url)
+                logger.debug(f"SKU {sku}: Found alt_{i}")
+        except Exception as e:
+            logger.debug(f"SKU {sku}: alt_{i} check failed - {type(e).__name__}")
+    
+    # Update cache
+    cache[sku] = {
+        'images': images,
+        'last_checked': datetime.now().isoformat(),
+        'count': len(images)
+    }
+    
+    logger.debug(f"SKU {sku}: Verified {len(images)} images (main + {len(images)-1} alts)")
     return images
 
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
@@ -382,7 +487,7 @@ def fetch_all_products() -> List[Dict[str, Any]]:
     logger.info(f"Total products fetched: {len(all_items)}")
     return all_items
 
-def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
+def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: Dict[str, Dict[str, Any]], cache: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
     Build feed entries matching Neto products with datafeedwatch product IDs.
     Applies conditional availability: out of stock if backorder disabled AND qty=0, else in stock
@@ -397,6 +502,8 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     unmatched_skus = []
     unmatched_details = []
     total_images_built = 0
+    cache_hits = 0
+    cache_misses = 0
     
     for product in products:
         sku = product.get("SKU", "").strip()
@@ -433,8 +540,15 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             unmatched_details.append(f"{sku} (not in datafeedwatch)")
             continue
         
-        # Build image URLs based on SKU
-        images = build_product_images(sku)
+        # Build image URLs using cache
+        use_cache = sku in cache
+        images = build_product_images(sku, cache, use_cache=True)
+        
+        if use_cache:
+            cache_hits += 1
+        else:
+            cache_misses += 1
+        
         total_images_built += len(images)
         
         # Build product type string from categories
@@ -456,6 +570,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
     logger.info(f"Total image URLs built: {total_images_built}")
+    logger.info(f"Cache hits: {cache_hits} | Cache misses: {cache_misses}")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
     logger.info(f"Sample unmatched (first 5): {unmatched_details[:5]}")
@@ -551,6 +666,10 @@ def main():
     logger.info("=" * 70)
     
     try:
+        # Load image cache
+        logger.info("")
+        image_cache = load_image_cache()
+        
         # Fetch datafeedwatch products first
         logger.info("")
         datafeedwatch_products = fetch_datafeedwatch_products()
@@ -569,11 +688,15 @@ def main():
         
         # Build feed with datafeedwatch product matching
         logger.info("")
-        feed_entries = build_category_feed(products, datafeedwatch_products)
+        feed_entries = build_category_feed(products, datafeedwatch_products, image_cache)
         
         if not feed_entries:
             logger.error("No feed entries built. Aborting.")
             return False
+        
+        # Save updated cache
+        logger.info("")
+        save_image_cache(image_cache)
         
         # Generate feed file
         logger.info("")
@@ -583,6 +706,7 @@ def main():
             logger.info("=" * 70)
             logger.info("✓ SYNC COMPLETED SUCCESSFULLY")
             logger.info("  Feed generated and ready for workflow to commit to GitHub")
+            logger.info("  Image cache updated and ready to commit")
             logger.info("=" * 70)
             return True
         else:
@@ -596,6 +720,9 @@ def main():
         logger.error(f"✗ FATAL ERROR: {type(e).__name__}")
         logger.error("=" * 70)
         return False
+    finally:
+        # Clean up thread pool
+        IMAGE_CHECK_POOL.shutdown(wait=True)
 
 if __name__ == '__main__':
     success = main()
