@@ -26,13 +26,58 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      # ← ADD THIS NEW STEP ↓
       - name: Debug Neto API Response
         env:
           NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
           NETO_API_USERNAME: ${{ secrets.NETO_API_USERNAME }}
-        run: python debug_neto_response.py
-      # ← END NEW STEP ↑
+        run: |
+          python << 'EOF'
+          import os
+          import json
+          import requests
+          
+          NETO_API_KEY = os.getenv('NETO_API_KEY', '').strip()
+          NETO_API_USERNAME = os.getenv('NETO_API_USERNAME', '').strip()
+          
+          url = "https://www.thebbqstore.com.au/do/WS/NetoAPI"
+          headers = {
+              'NETOAPI_ACTION': 'GetItem',
+              'NETOAPI_USERNAME': NETO_API_USERNAME,
+              'NETOAPI_KEY': NETO_API_KEY,
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+          }
+          
+          payload = {
+              "Filter": {
+                  "IsActive": "True",
+                  "Page": 0,
+                  "Limit": 1,
+              }
+          }
+          
+          print("Fetching 1 product from Neto API...")
+          print("=" * 80)
+          response = requests.post(url, json=payload, headers=headers, timeout=30)
+          data = response.json()
+          
+          items = data.get("Item", [])
+          if isinstance(items, dict):
+              items = [items]
+          
+          if items:
+              product = items[0]
+              print("\nFULL PRODUCT RESPONSE:")
+              print("=" * 80)
+              print(json.dumps(product, indent=2))
+              
+              print("\n\nFIELD NAMES:")
+              print("=" * 80)
+              for key in sorted(product.keys()):
+                  print(f"  - {key}")
+          else:
+              print("No products returned")
+          EOF
       
       - name: Run Neto to GMC sync
         env:
