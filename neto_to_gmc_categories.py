@@ -210,34 +210,27 @@ def extract_product_images(item: Dict[str, Any]) -> List[str]:
     """
     images = []
     
-    # Debug: Log all fields that contain "image" or "alt" (case insensitive)
-    image_fields = [k for k in item.keys() if 'image' in k.lower() or 'alt' in k.lower()]
-    if image_fields:
-        logger.debug(f"Found image-related fields: {image_fields}")
-    
     # Get main image (try multiple possible field names)
     main_image = None
-    for field_name in ["ImageURL", "Image", "image_url", "MainImage", "main_image"]:
+    for field_name in ["ImageURL", "Image", "image_url", "MainImage", "main_image", "product.mainImage.URL"]:
         main_image = item.get(field_name, "").strip()
         if main_image:
-            logger.debug(f"Found main image in field '{field_name}': {main_image[:50]}...")
             images.append(main_image)
             break
     
-    if not main_image:
-        logger.debug(f"No main image found. Available fields: {list(item.keys())[:20]}")
+    # If still no main image, check all keys and log them once for debugging
+    if not main_image and len(images) == 0:
+        all_keys = list(item.keys())
+        logger.info(f"DEBUG: No main image found in product. First 30 keys: {all_keys[:30]}")
     
-    # Get alternative images (Alt1, Alt2, Alt3, ... Alt12)
+    # Get alternative images - try multiple patterns
+    # Pattern 1: Alt1, Alt2, ... Alt12
     for i in range(1, 13):
-        for field_pattern in [f"Alt{i}", f"alt{i}", f"Alt {i}", f"Image{i}", f"image{i}"]:
-            alt_image = item.get(field_pattern, "").strip()
+        for field_name in [f"Alt{i}", f"alt{i}", f"Alt{i} Image", f"Image{i}"]:
+            alt_image = item.get(field_name, "").strip()
             if alt_image:
-                logger.debug(f"Found alt image {i} in field '{field_pattern}'")
                 images.append(alt_image)
                 break
-    
-    if images:
-        logger.debug(f"Extracted {len(images)} images total")
     
     return images
 
