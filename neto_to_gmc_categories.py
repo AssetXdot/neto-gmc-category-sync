@@ -116,9 +116,14 @@ def save_image_cache(cache: Dict[str, Dict[str, Any]]) -> bool:
 def get_product_hash(product: Dict[str, Any]) -> str:
     """
     Generate hash of product data to detect changes.
-    If product data changes, we re-verify all images.
+    Hash includes: SKU, Name, Price (key fields that affect image availability).
+    If any of these change, we re-check images.
     """
-    data = f"{product.get('SKU')}|{product.get('Name')}|{product.get('DefaultPrice')}"
+    sku = product.get('SKU', '')
+    name = product.get('Name', '')
+    price = product.get('DefaultPrice', '')
+    
+    data = f"{sku}|{name}|{price}"
     return hashlib.md5(data.encode()).hexdigest()
 
 # ============================================================================
@@ -333,10 +338,12 @@ def find_image_format(base_url: str) -> str:
     
     return None
 
-def build_product_images(sku: str, cache: Dict[str, Dict[str, Any]], use_cache: bool = True) -> List[str]:
+def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dict[str, Any]]) -> List[str]:
     """
     Build image URLs for a product based on its SKU.
     Intelligently detects format for EACH image individually.
+    
+    SMART CACHING: Only re-checks images if product data changed (SKU/Name/Price).
     
     URL pattern: https://www.thebbqstore.com.au/assets/{thumb}/{SKU}.{format}
     
@@ -354,13 +361,22 @@ def build_product_images(sku: str, cache: Dict[str, Dict[str, Any]], use_cache: 
     
     base_url = "https://www.thebbqstore.com.au/assets"
     
-    # Check cache first
-    if use_cache and sku in cache:
+    # Calculate current product hash to detect changes
+    current_hash = get_product_hash(product)
+    
+    # Check cache for this SKU
+    if sku in cache:
         cached_data = cache[sku]
+        cached_hash = cached_data.get('hash')
         cached_images = cached_data.get('images', [])
-        if cached_images:
-            logger.debug(f"SKU {sku}: Using cached images ({len(cached_images)} images)")
+        
+        # If product hasn't changed, use cached images
+        if cached_hash == current_hash and cached_images:
+            logger.debug(f"SKU {sku}: Product unchanged, using cached images ({len(cached_images)} images)")
             return cached_images
+        
+        # If product changed, re-check (fall through to format detection)
+        logger.debug(f"SKU {sku}: Product changed (hash mismatch), re-checking images")
     
     # Find main image - try all formats
     logger.debug(f"SKU {sku}: Detecting images for all formats")
@@ -375,6 +391,7 @@ def build_product_images(sku: str, cache: Dict[str, Dict[str, Any]], use_cache: 
         # Cache even if no main image
         cache[sku] = {
             'images': [],
+            'hash': current_hash,
             'last_checked': datetime.now().isoformat(),
             'count': 0
         }
@@ -399,14 +416,15 @@ def build_product_images(sku: str, cache: Dict[str, Dict[str, Any]], use_cache: 
         except Exception as e:
             logger.debug(f"SKU {sku}: alt_{i} check failed - {type(e).__name__}")
     
-    # Update cache
+    # Update cache with hash and new images
     cache[sku] = {
         'images': images,
+        'hash': current_hash,
         'last_checked': datetime.now().isoformat(),
         'count': len(images)
     }
     
-    logger.debug(f"SKU {sku}: Built {len(images)} image URLs (main + {len(images)-1} alts)")
+    logger.debug(f"SKU {sku}: Re-checked and built {len(images)} image URLs (main + {len(images)-1} alts)")
     return images
 
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
@@ -479,7 +497,6 @@ def fetch_all_products() -> List[Dict[str, Any]]:
 def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: Dict[str, Dict[str, Any]], cache: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
     Build feed entries matching Neto products with datafeedwatch product IDs.
-    Applies conditional availability: out of stock if backorder disabled AND qty=0, else in stock
     
     Format: [{"id": "datafeedwatch_id", "product_type": "Cat1, Cat2, Cat3", "availability": "...", "images": [...]}, ...]
     """
@@ -493,6 +510,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     total_images_built = 0
     cache_hits = 0
     cache_misses = 0
+    products_changed = 0
     
     for product in products:
         sku = product.get("SKU", "").strip()
@@ -529,12 +547,16 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             unmatched_details.append(f"{sku} (not in datafeedwatch)")
             continue
         
-        # Build image URLs using cache
-        use_cache = sku in cache
-        images = build_product_images(sku, cache, use_cache=True)
+        # Build image URLs using smart cache with change detection
+        images = build_product_images(sku, product, cache)
         
-        if use_cache:
-            cache_hits += 1
+        # Track cache hit/miss/change
+        if sku in cache:
+            if cache[sku].get('hash') == get_product_hash(product):
+                cache_hits += 1
+            else:
+                cache_misses += 1
+                products_changed += 1
         else:
             cache_misses += 1
         
@@ -559,7 +581,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
     logger.info(f"Total image URLs built: {total_images_built}")
-    logger.info(f"Cache hits: {cache_hits} | Cache misses: {cache_misses}")
+    logger.info(f"Cache hits (unchanged): {cache_hits} | Cache misses/changes: {cache_misses} | Products changed: {products_changed}")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
     logger.info(f"Sample unmatched (first 5): {unmatched_details[:5]}")
