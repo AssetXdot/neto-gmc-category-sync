@@ -223,6 +223,8 @@ def extract_product_images(item: Dict[str, Any]) -> List[str]:
             images.append(alt_image)
     
     return images
+
+def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
     """
     Extract product identifiers from Neto item.
     Returns: {"sku": "...", "upc": "...", "gtin": "..."}
