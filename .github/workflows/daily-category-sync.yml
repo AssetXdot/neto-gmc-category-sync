@@ -1,3 +1,9 @@
+- name: Run Neto to GMC sync
+        env:
+          NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
+          ...
+        run: |
+          python neto_to_gmc_categories.py
 name: Neto to Google Merchant Center - Daily Category Sync
 
 on:
