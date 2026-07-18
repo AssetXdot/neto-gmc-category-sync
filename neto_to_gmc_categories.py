@@ -113,8 +113,63 @@ def fetch_datafeedwatch_products() -> Dict[str, Dict[str, Any]]:
         return {}
 
 # ============================================================================
-# NETO API FUNCTIONS
+# CATEGORY NORMALIZATION FUNCTIONS
 # ============================================================================
+
+def normalize_category_name(category: str) -> str:
+    """
+    Normalize category names to a standard format.
+    Converts singular forms to plural and standardizes capitalization.
+    """
+    if not category:
+        return category
+    
+    # Mapping of singular to plural forms (case-insensitive)
+    singular_to_plural = {
+        'smoker': 'smokers',
+        'grill': 'grills',
+        'bbq': 'bbqs',
+        'oven': 'ovens',
+        'heater': 'heaters',
+        'cover': 'covers',
+        'accessory': 'accessories',
+        'burner': 'burners',
+        'rotisserie': 'rotisseries',
+        'grate': 'grates',
+        'thermometer': 'thermometers',
+        'light': 'lights',
+        'basket': 'baskets',
+        'rack': 'racks',
+        'tool': 'tools',
+        'brush': 'brushes',
+        'cleaner': 'cleaners',
+        'mat': 'mats',
+        'apron': 'aprons',
+    }
+    
+    # Normalize: check if category ends with a singular form and convert to plural
+    category_lower = category.lower().strip()
+    original_category = category
+    
+    for singular, plural in singular_to_plural.items():
+        # Check if category ends with singular form (word boundary)
+        if category_lower.endswith(' ' + singular) or category_lower == singular:
+            # Replace the singular form with plural
+            if category_lower == singular:
+                normalized = plural
+            else:
+                # Replace the last word if it's singular
+                normalized = category[:-len(singular)] + plural
+            
+            logger.debug(f"Normalized category: '{original_category}' → '{normalized}'")
+            return normalized
+    
+    # If no singular form found, return as-is
+    return category
+
+def normalize_category_list(categories: List[str]) -> List[str]:
+    """Normalize a list of categories"""
+    return [normalize_category_name(cat) for cat in categories]
 
 def neto_api_call(action: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     """Make authenticated call to Neto API"""
@@ -174,7 +229,7 @@ def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
     
     return result
 
-def extract_categories(item: Dict[str, Any]) -> List[str]:
+def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str]:
     """
     Extract category names from Neto's nested Categories structure.
     
@@ -203,6 +258,10 @@ def extract_categories(item: Dict[str, Any]) -> List[str]:
                 name = cat.get("CategoryName", "").strip()
                 if name:
                     categories.append(name)
+    
+    # Apply normalization to standardize singular/plural forms
+    if normalize:
+        categories = normalize_category_list(categories)
     
     return categories
 
