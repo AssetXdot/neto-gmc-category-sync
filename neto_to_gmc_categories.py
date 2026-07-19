@@ -315,20 +315,43 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
 # REMOVED: No more HEAD request checking - too slow and gets blocked
 # Just build URLs for all formats in order, GMC will validate them
 
+def find_alt_image_format(base_url: str) -> str:
+    """
+    Check which format exists for an ALT image.
+    Tries formats in order: jpg → webp → png
+    Returns the URL of the first format that exists (200 status).
+    Returns None if none exist.
+    """
+    formats = ['jpg', 'webp', 'png']
+    
+    for fmt in formats:
+        url = f"{base_url}.{fmt}"
+        try:
+            response = requests.head(url, timeout=2, allow_redirects=True)
+            if 200 <= response.status_code < 300:
+                logger.debug(f"Found {fmt}")
+                return url
+        except Exception:
+            # Try next format
+            continue
+    
+    return None
+
 def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dict[str, Any]]) -> List[str]:
     """
-    Build image URLs for a product based on its SKU.
+    Build image URLs for a product including main + ALT images.
     
-    STRATEGY: Just build URLs for all common formats.
-    Don't check if they exist - GMC handles 404s automatically.
+    SMART DETECTION: For each image, find which format exists (jpg/webp/png).
+    Only include the URL that works - avoids blank images in GMC.
     
-    URL pattern: https://www.thebbqstore.com.au/assets/{thumb}/{SKU}.{format}
+    SMART CACHING: Only re-checks if product data changed (SKU/Name/Price).
     
-    Tries formats in order: jpg, png, webp, gif
-    Builds URLs for all 4 formats for both main and alts.
+    URL pattern: 
+    - Main: https://www.thebbqstore.com.au/assets/full/{SKU}.{format}
+    - Alts: https://www.thebbqstore.com.au/assets/alt_{1-12}/{SKU}.{format}
     
-    Returns: [main urls, alt_1 urls, alt_2 urls, ..., alt_12 urls]
-            Each position has 4 format variations
+    Returns: [main.{format}, alt_1.{format}, alt_2.{format}, ..., alt_12.{format}]
+             Each image included ONLY if that format exists
     """
     images = []
     
@@ -336,7 +359,6 @@ def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dic
         return images
     
     base_url = "https://www.thebbqstore.com.au/assets"
-    formats = ['jpg', 'png', 'webp', 'gif']
     
     # Calculate current product hash to detect changes
     current_hash = get_product_hash(product)
@@ -352,25 +374,33 @@ def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dic
             logger.debug(f"SKU {sku}: Product unchanged, using cached images ({len(cached_images)} images)")
             return cached_images
         
-        # If product changed, re-build (fall through)
-        logger.debug(f"SKU {sku}: Product changed, re-building image URLs")
+        # If product changed, re-check (fall through)
+        logger.debug(f"SKU {sku}: Product changed, re-checking image formats")
     
-    # Build URLs for main image - try all 4 formats
+    # Check MAIN image first
+    logger.debug(f"SKU {sku}: Detecting image formats (main + alts)")
     main_base = f"{base_url}/full/{sku}"
-    for fmt in formats:
-        url = f"{main_base}.{fmt}"
-        images.append(url)
+    main_url = find_alt_image_format(main_base)
     
-    # Build URLs for alt 1-12 - try all 4 formats for each
+    if main_url:
+        images.append(main_url)
+        logger.debug(f"SKU {sku}: Main image found")
+    else:
+        logger.debug(f"SKU {sku}: No main image found")
+    
+    # Check each ALT image (1-12) and find which format exists
     for i in range(1, 13):
         alt_base = f"{base_url}/alt_{i}/{sku}"
-        for fmt in formats:
-            url = f"{alt_base}.{fmt}"
-            images.append(url)
+        alt_url = find_alt_image_format(alt_base)
+        
+        if alt_url:
+            images.append(alt_url)
+            logger.debug(f"SKU {sku}: ALT_{i} found")
+        # If alt doesn't exist in any format, just skip it
     
-    logger.debug(f"SKU {sku}: Built {len(images)} image URLs (4 formats each for main + 12 alts)")
+    logger.debug(f"SKU {sku}: Found {len(images)} images total (main + alts)")
     
-    # Update cache with hash and new images
+    # Update cache with hash and images
     cache[sku] = {
         'images': images,
         'hash': current_hash,
@@ -534,7 +564,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
     logger.info(f"Total image URLs built: {total_images_built}")
-    logger.info(f"  (4 formats × main + 12 alts = 52 URLs per product)")
+    logger.info(f"  (Main image + up to 12 ALT images per product)")
     logger.info(f"Cache hits (unchanged): {cache_hits} | Cache misses/changes: {cache_misses} | Products changed: {products_changed}")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
