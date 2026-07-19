@@ -230,13 +230,31 @@ def neto_api_call(action: str, payload: Dict[str, Any]) -> Dict[str, Any]:
 
 def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str]:
     """
-    Extract category names from Neto's nested Categories structure.
+    Extract category names from Neto's nested Categories structure, sorted by priority.
     
-    Structure: [{"Category": [{"CategoryName": "X"}, {"CategoryName": "Y"}]}]
+    Actual Neto API structure:
+    {
+      "Categories": [
+        {
+          "Category": {
+            "CategoryID": "123",
+            "Priority": "10",
+            "CategoryName": "Category Name"
+          }
+        },
+        {
+          "Category": {
+            "CategoryID": "456",
+            "Priority": "2",
+            "CategoryName": "Another Category"
+          }
+        }
+      ]
+    }
     
-    Returns: ["Category1", "Category2", ...]
+    Returns: List of category names sorted by Priority (highest first)
     """
-    categories = []
+    categories_with_priority = []
     cats_raw = item.get("Categories", [])
     sku = item.get("SKU", "")
     
@@ -246,25 +264,47 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
     if isinstance(cats_raw, dict):
         cats_raw = [cats_raw]
     
-    # Extract CategoryName from each category
+    # Extract CategoryName and Priority from each wrapper
     for wrapper in cats_raw:
         if not isinstance(wrapper, dict):
             logger.debug(f"SKU {sku}: Wrapper is not dict, skipping: {type(wrapper)}")
             continue
         
-        cat_list = wrapper.get("Category", [])
-        if isinstance(cat_list, dict):
-            cat_list = [cat_list]
-        
-        logger.debug(f"SKU {sku}: Found {len(cat_list)} categories in wrapper")
+        # "Category" is a dict for single-category products,
+        # or a LIST of dicts for multi-category products - handle both
+        cat_obj = wrapper.get("Category")
+        if isinstance(cat_obj, dict):
+            cat_list = [cat_obj]
+        elif isinstance(cat_obj, list):
+            cat_list = cat_obj
+        else:
+            logger.debug(f"SKU {sku}: Category is neither dict nor list, skipping")
+            continue
         
         for cat in cat_list:
-            if isinstance(cat, dict):
-                name = cat.get("CategoryName", "").strip()
-                if name:
-                    categories.append(name)
-                    logger.debug(f"SKU {sku}: Extracted category: {name}")
+            if not isinstance(cat, dict):
+                continue
+            
+            name = cat.get("CategoryName", "").strip()
+            priority_str = cat.get("Priority", "0")
+            
+            # Convert priority to int for sorting (API returns it as string)
+            try:
+                priority = int(priority_str)
+            except (ValueError, TypeError):
+                priority = 0
+            
+            if name:
+                categories_with_priority.append({
+                    "name": name,
+                    "priority": priority
+                })
+                logger.debug(f"SKU {sku}: Extracted category: {name} (Priority: {priority})")
     
+    # Sort by priority descending (highest first)
+    categories_with_priority.sort(key=lambda x: x["priority"], reverse=True)
+    
+    categories = [cat["name"] for cat in categories_with_priority]
     logger.debug(f"SKU {sku}: Total extracted categories: {len(categories)} → {categories}")
     
     # Apply normalization to standardize singular/plural forms
@@ -394,18 +434,24 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             logger.debug(f"SKU {sku}: ✓ MATCHED in datafeedwatch (by UPC: {product_ids['upc']})")
         
         if not datafeedwatch_id:
+            # Not in datafeedwatch - skip. Products >$200 not in datafeedwatch
+            # are handled by the SEPARATE high-price feed (neto_high_price_feed.py)
+            # so they must NOT also be added here (would create duplicate/orphan IDs)
             products_not_in_datafeedwatch += 1
             unmatched_skus.append(sku)
             unmatched_details.append(f"{sku} (not in datafeedwatch)")
-            logger.debug(f"SKU {sku}: ✗ NOT FOUND in datafeedwatch - Skipping")
+            logger.debug(f"SKU {sku}: ✗ NOT FOUND in datafeedwatch - Skipping (high-price feed handles >$200)")
             continue
         
-        # Build product type as a hierarchy path.
-        # IMPORTANT: Google requires each item ID to appear only ONCE per feed
-        # (duplicate IDs get dropped/overwritten), so we create ONE item per
-        # product and join its categories into a single hierarchy path.
-        # Google Ads splits on " > " to build listing group levels,
-        # e.g. "Pizza ovens > Gas" appears as pizza ovens → gas.
+        # Build product type as ONE joined hierarchy path, ordered by priority.
+        # Why joined (not multiple tags): Google Ads only uses the FIRST
+        # product_type value for listing groups and ignores the rest, and a
+        # joined path like "Pizza ovens > Gas" gives multi-level subdivision
+        # (pizza ovens → gas) in listing groups.
+        # Categories are already sorted by Neto Priority (highest first), so
+        # the highest-priority category becomes listing-group level 1.
+        # Equal priorities keep Neto's original order (stable sort), which
+        # preserves existing behavior for products without priorities set.
         product_type = " > ".join(categories)
         
         # Determine availability based on stock quantity and backorder status.
@@ -503,13 +549,14 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
     
     for entry in feed_entries:
         sku = entry['id']
-        product_type = entry['product_type']
+        product_type = entry.get('product_type')
         availability = entry.get('availability')
         sale_price = entry.get('sale_price')
         
         feed_content += '  <item>\n'
         feed_content += f'    <g:id>{escape_xml(sku)}</g:id>\n'
         
+        # Single joined hierarchy path, priority-ordered (see build_category_feed)
         if product_type:
             feed_content += f'    <g:product_type>{escape_xml(product_type)}</g:product_type>\n'
         
