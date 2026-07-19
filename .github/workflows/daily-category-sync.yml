@@ -58,9 +58,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           cp /tmp/neto_gmc_feed_*.xml neto_gmc_feed.xml 2>/dev/null || true
-          if [ -f neto_gmc_feed.xml ] || [ -f image_cache.json ]; then
-            git add neto_gmc_feed.xml image_cache.json
-            git commit -m "Update Neto feed & image cache - $(date -u +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          if [ -f neto_gmc_feed.xml ]; then
+            git add neto_gmc_feed.xml
+            git commit -m "Update Neto category feed - $(date -u +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
             git push || echo "Nothing to push"
           fi
       
