@@ -118,6 +118,8 @@ def fetch_datafeedwatch_products() -> Dict[str, Dict[str, Any]]:
         
         root = ET.fromstring(response.content)
         products = {}
+        sku_count = 0
+        gtin_count = 0
         
         # Parse XML feed - namespace for Google Shopping
         ns = {'g': 'http://base.google.com/ns/1.0'}
@@ -147,13 +149,20 @@ def fetch_datafeedwatch_products() -> Dict[str, Dict[str, Any]]:
             if gtin:
                 entry['gtin'] = gtin
                 products[gtin] = entry
+                gtin_count += 1
             if sku:
                 entry['sku'] = sku
                 products[sku] = entry
+                sku_count += 1
+                logger.debug(f"Datafeedwatch: Loaded SKU={sku}, GTIN={gtin}, ID={product_id}")
             
             products[product_id] = entry
         
-        logger.info(f"Datafeedwatch products loaded: {len(products)} mappings from items")
+        logger.info(f"Datafeedwatch products loaded: {len(products)} total mappings")
+        logger.info(f"  SKU mappings: {sku_count}")
+        logger.info(f"  GTIN mappings: {gtin_count}")
+        logger.info(f"  Sample keys in products dict: {list(products.keys())[:10]}")
+        
         return products
     
     except Exception as e:
@@ -261,6 +270,9 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
     """
     categories = []
     cats_raw = item.get("Categories", [])
+    sku = item.get("SKU", "")
+    
+    logger.debug(f"SKU {sku}: Raw categories type: {type(cats_raw)}, value: {str(cats_raw)[:200]}")
     
     # Normalize to list
     if isinstance(cats_raw, dict):
@@ -269,21 +281,28 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
     # Extract CategoryName from each category
     for wrapper in cats_raw:
         if not isinstance(wrapper, dict):
+            logger.debug(f"SKU {sku}: Wrapper is not dict, skipping: {type(wrapper)}")
             continue
         
         cat_list = wrapper.get("Category", [])
         if isinstance(cat_list, dict):
             cat_list = [cat_list]
         
+        logger.debug(f"SKU {sku}: Found {len(cat_list)} categories in wrapper")
+        
         for cat in cat_list:
             if isinstance(cat, dict):
                 name = cat.get("CategoryName", "").strip()
                 if name:
                     categories.append(name)
+                    logger.debug(f"SKU {sku}: Extracted category: {name}")
+    
+    logger.debug(f"SKU {sku}: Total extracted categories: {len(categories)} → {categories}")
     
     # Apply normalization to standardize singular/plural forms
     if normalize:
         categories = normalize_category_list(categories)
+        logger.debug(f"SKU {sku}: After normalization: {categories}")
     
     return categories
 
@@ -395,9 +414,11 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             products_without_categories += 1
             unmatched_skus.append(sku)
             unmatched_details.append(f"{sku} (no categories)")
+            logger.debug(f"SKU {sku}: SKIPPED - No categories found")
             continue
         
         products_with_categories += 1
+        logger.debug(f"SKU {sku}: Has {len(categories)} categories: {categories}")
         
         # Try to find in datafeedwatch by SKU, GTIN, or product ID
         datafeedwatch_id = None
@@ -407,15 +428,20 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         if sku in datafeedwatch_products:
             datafeedwatch_id = datafeedwatch_products[sku].get('id')
             matched_skus.append(sku)
+            logger.debug(f"SKU {sku}: ✓ MATCHED in datafeedwatch (by SKU)")
         # Try UPC
         elif 'upc' in product_ids and product_ids['upc'] in datafeedwatch_products:
             datafeedwatch_id = datafeedwatch_products[product_ids['upc']].get('id')
             matched_skus.append(sku)
+            logger.debug(f"SKU {sku}: ✓ MATCHED in datafeedwatch (by UPC: {product_ids['upc']})")
         
         if not datafeedwatch_id:
             products_not_in_datafeedwatch += 1
             unmatched_skus.append(sku)
             unmatched_details.append(f"{sku} (not in datafeedwatch)")
+            logger.debug(f"SKU {sku}: ✗ NOT FOUND in datafeedwatch - Skipping")
+            logger.debug(f"  Product IDs searched: {product_ids}")
+            logger.debug(f"  Categories found: {categories}")
             continue
         
         # Build product type string from categories
@@ -465,6 +491,21 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     logger.info(f"Total unmatched: {len(unmatched_skus)}")
     logger.info(f"Datafeedwatch keys (sample): {list(datafeedwatch_products.keys())[:20]}")
     logger.info(f"Total datafeedwatch keys: {len(datafeedwatch_products)}")
+    
+    # DEBUG: Check specific problem SKUs
+    problem_skus = ['THX4000DC', 'TREK2.0', 'TFT18KLDA']
+    logger.info(f"\n=== DEBUG: Checking problem SKUs ===")
+    for problem_sku in problem_skus:
+        in_datafeedwatch = problem_sku in datafeedwatch_products
+        in_unmatched = problem_sku in unmatched_skus
+        in_matched = problem_sku in matched_skus
+        logger.info(f"{problem_sku}:")
+        logger.info(f"  In datafeedwatch: {in_datafeedwatch}")
+        logger.info(f"  In unmatched list: {in_unmatched}")
+        logger.info(f"  In matched list: {in_matched}")
+        if in_unmatched:
+            details = [d for d in unmatched_details if problem_sku in d]
+            logger.info(f"  Reason: {details}")
     
     return feed_entries
 
