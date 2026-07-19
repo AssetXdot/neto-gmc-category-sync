@@ -2,7 +2,7 @@ name: Neto to Google Merchant Center - Daily Category Sync
 
 on:
   schedule:
-    - cron: '0 15 * * *'
+    - cron: '0 11 * * *'  # 10pm AEDT (UTC+11) / 9pm AEST (UTC+10) - ensures feed ready before GMC's midnight update
   workflow_dispatch:
 
 permissions:
@@ -25,59 +25,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      
-      - name: Debug Neto API Response
-        env:
-          NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
-          NETO_API_USERNAME: ${{ secrets.NETO_API_USERNAME }}
-        run: |
-          python << 'EOF'
-          import os
-          import json
-          import requests
-          
-          NETO_API_KEY = os.getenv('NETO_API_KEY', '').strip()
-          NETO_API_USERNAME = os.getenv('NETO_API_USERNAME', '').strip()
-          
-          url = "https://www.thebbqstore.com.au/do/WS/NetoAPI"
-          headers = {
-              'NETOAPI_ACTION': 'GetItem',
-              'NETOAPI_USERNAME': NETO_API_USERNAME,
-              'NETOAPI_KEY': NETO_API_KEY,
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-          }
-          
-          payload = {
-              "Filter": {
-                  "IsActive": "True",
-                  "Page": 0,
-                  "Limit": 1,
-              }
-          }
-          
-          print("Fetching 1 product from Neto API...")
-          print("=" * 80)
-          response = requests.post(url, json=payload, headers=headers, timeout=30)
-          data = response.json()
-          
-          items = data.get("Item", [])
-          if isinstance(items, dict):
-              items = [items]
-          
-          if items:
-              product = items[0]
-              print("\nFULL PRODUCT RESPONSE:")
-              print("=" * 80)
-              print(json.dumps(product, indent=2))
-              
-              print("\n\nFIELD NAMES:")
-              print("=" * 80)
-              for key in sorted(product.keys()):
-                  print(f"  - {key}")
-          else:
-              print("No products returned")
-          EOF
       
       - name: Run Neto to GMC sync
         env:
@@ -105,9 +52,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           cp /tmp/neto_gmc_feed_*.xml neto_gmc_feed.xml 2>/dev/null || true
-          if [ -f neto_gmc_feed.xml ]; then
-            git add neto_gmc_feed.xml
-            git commit -m "Update Neto categories feed - $(date -u +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          if [ -f neto_gmc_feed.xml ] || [ -f image_cache.json ]; then
+            git add neto_gmc_feed.xml image_cache.json
+            git commit -m "Update Neto feed & image cache - $(date -u +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
             git push || echo "Nothing to push"
           fi
       
