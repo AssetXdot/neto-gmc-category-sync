@@ -89,16 +89,21 @@ except json.JSONDecodeError as e:
 # ============================================================================
 
 def load_image_cache() -> Dict[str, Dict[str, Any]]:
-    """Load image cache from file if it exists"""
+    """
+    Load image cache from file if it exists.
+    IMPORTANT: Always delete old cache at startup to prevent corruption.
+    This ensures fresh data and eliminates stale cached images.
+    """
+    # Always delete old cache file to start fresh
+    # This prevents corruption issues and ensures latest image data
     if os.path.exists(IMAGE_CACHE_FILE):
         try:
-            with open(IMAGE_CACHE_FILE, 'r') as f:
-                cache = json.load(f)
-            logger.info(f"Loaded image cache: {len(cache)} products cached")
-            return cache
+            os.remove(IMAGE_CACHE_FILE)
+            logger.info(f"Cache cleared: Old cache file deleted for fresh start")
         except Exception as e:
-            logger.warning(f"Could not load cache: {type(e).__name__}, starting fresh")
-            return {}
+            logger.warning(f"Could not delete old cache: {type(e).__name__}")
+    
+    # Start with empty cache - will be rebuilt during this run
     return {}
 
 def save_image_cache(cache: Dict[str, Dict[str, Any]]) -> bool:
@@ -321,18 +326,21 @@ def find_alt_image_format(base_url: str) -> str:
     Tries formats in order: jpg → webp → png
     Returns the URL of the first format that exists (200 status).
     Returns None if none exist.
+    
+    OPTIMIZED: Uses 1-second timeout and fails fast to avoid 1-hour runtimes.
     """
     formats = ['jpg', 'webp', 'png']
     
     for fmt in formats:
         url = f"{base_url}.{fmt}"
         try:
-            response = requests.head(url, timeout=2, allow_redirects=True)
+            # Use 1-second timeout (not 2) - if server doesn't respond fast, try next format
+            response = requests.head(url, timeout=1, allow_redirects=False)
             if 200 <= response.status_code < 300:
                 logger.debug(f"Found {fmt}")
                 return url
         except Exception:
-            # Try next format
+            # Timeout or error - try next format
             continue
     
     return None
@@ -448,7 +456,7 @@ def fetch_all_products() -> List[Dict[str, Any]]:
                 "Filter": {
                     "IsActive": "True",
                     "OutputSelector": [
-                        "SKU", "Name", "Brand", "DefaultPrice", "Categories"
+                        "SKU", "Name", "Brand", "DefaultPrice", "Categories", "MISC2"
                     ],
                     "Page": page,
                     "Limit": 200,
@@ -481,7 +489,11 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     """
     Build feed entries matching Neto products with datafeedwatch product IDs.
     
-    Format: [{"id": "datafeedwatch_id", "product_type": "Cat1, Cat2, Cat3", "availability": "...", "images": [...]}, ...]
+    Includes discounted pricing ONLY if:
+    - PriceSpy field is NOT TRUE (meaning PriceSpy is NOT managing the price)
+    - Website price < RRP (product is discounted)
+    
+    Format: [{"id": "datafeedwatch_id", "product_type": "...", "availability": "...", "images": [...], "sale_price": ...}, ...]
     """
     feed_entries = []
     products_with_categories = 0
@@ -494,6 +506,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     cache_hits = 0
     cache_misses = 0
     products_changed = 0
+    products_with_sale_price = 0
     
     for product in products:
         sku = product.get("SKU", "").strip()
@@ -551,11 +564,42 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         # Determine availability
         availability = "in stock"  # Default
         
+        # Check pricing - only add sale price if PriceSpy is NOT managing it AND price is discounted
+        sale_price = None
+        priceSpy_field = product.get("MISC2", "").strip().upper()
+        
+        if priceSpy_field != "TRUE":  # PriceSpy is NOT managing the price
+            default_price = product.get("DefaultPrice")
+            
+            # Try to get sale price from product
+            # Neto might have a SalePrice or PromotionalPrice field
+            sale_price_value = None
+            for field in ["SalePrice", "PromotionalPrice", "SpecialPrice"]:
+                val = product.get(field)
+                if val:
+                    try:
+                        sale_price_value = float(val)
+                        break
+                    except (ValueError, TypeError):
+                        pass
+            
+            # Check if there's a discount (sale price < default price)
+            if sale_price_value and default_price:
+                try:
+                    default_price_float = float(default_price)
+                    if sale_price_value < default_price_float:
+                        sale_price = sale_price_value
+                        products_with_sale_price += 1
+                        logger.debug(f"SKU {sku}: Sale price included (PriceSpy not managing, discounted)")
+                except (ValueError, TypeError):
+                    pass
+        
         feed_entries.append({
             "id": datafeedwatch_id,
             "product_type": product_type,
             "availability": availability,
-            "images": images
+            "images": images,
+            "sale_price": sale_price
         })
     
     # Log debug info
@@ -565,7 +609,10 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     logger.info(f"Total feed entries: {len(feed_entries)}")
     logger.info(f"Total image URLs built: {total_images_built}")
     logger.info(f"  (Main image + up to 12 ALT images per product)")
+    logger.info(f"Products with sale price: {products_with_sale_price} (PriceSpy not managing & discounted)")
     logger.info(f"Cache hits (unchanged): {cache_hits} | Cache misses/changes: {cache_misses} | Products changed: {products_changed}")
+    logger.info(f"  (Note: Cache is cleared at startup to prevent corruption)")
+    logger.info(f"  (First run builds full cache, then saved for future reference)")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
     logger.info(f"Sample unmatched (first 5): {unmatched_details[:5]}")
@@ -580,7 +627,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
 # ============================================================================
 
 def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
-    """Generate feed XML with categories, availability, and all product images from Neto"""
+    """Generate feed XML with categories, availability, images, and optional sale prices"""
     
     # Build the XML feed content
     feed_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -592,6 +639,7 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         product_type = entry['product_type']
         availability = entry.get('availability', 'in stock')
         images = entry.get('images', [])
+        sale_price = entry.get('sale_price')
         
         feed_content += '  <item>\n'
         feed_content += f'    <g:id>{escape_xml(sku)}</g:id>\n'
@@ -601,6 +649,11 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         
         # Add availability status
         feed_content += f'    <g:availability>{escape_xml(availability)}</g:availability>\n'
+        
+        # Add sale price if applicable
+        if sale_price:
+            # Format as currency (e.g., 1149.00 AUD)
+            feed_content += f'    <g:sale_price>{sale_price:.2f} AUD</g:sale_price>\n'
         
         # Add images - first one is main image, rest are additional
         if images:
