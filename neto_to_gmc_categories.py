@@ -335,7 +335,7 @@ def fetch_all_products() -> List[Dict[str, Any]]:
                 "Filter": {
                     "IsActive": "True",
                     "OutputSelector": [
-                        "SKU", "Name", "Brand", "DefaultPrice", "Categories", "MISC2"
+                        "SKU", "Name", "Brand", "DefaultPrice", "Categories", "MISC2", "[@retail@]", "[@store_price@]"
                     ],
                     "Page": page,
                     "Limit": 200,
@@ -429,28 +429,20 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         priceSpy_field = product.get("MISC2", "").strip().upper()
         
         if priceSpy_field != "TRUE":  # PriceSpy is NOT managing the price
-            default_price = product.get("DefaultPrice")
+            # Get RRP (retail/recommended price) and website price
+            rrp = product.get("[@retail@]")
+            website_price = product.get("[@store_price@]")
             
-            # Try to get sale price from product
-            # Neto might have a SalePrice or PromotionalPrice field
-            sale_price_value = None
-            for field in ["SalePrice", "PromotionalPrice", "SpecialPrice"]:
-                val = product.get(field)
-                if val:
-                    try:
-                        sale_price_value = float(val)
-                        break
-                    except (ValueError, TypeError):
-                        pass
-            
-            # Check if there's a discount (sale price < default price)
-            if sale_price_value and default_price:
+            # Check if there's a discount (website price < RRP)
+            if website_price and rrp:
                 try:
-                    default_price_float = float(default_price)
-                    if sale_price_value < default_price_float:
-                        sale_price = sale_price_value
+                    website_price_float = float(website_price)
+                    rrp_float = float(rrp)
+                    # Only include sale price if website price is less than RRP
+                    if website_price_float < rrp_float:
+                        sale_price = website_price_float
                         products_with_sale_price += 1
-                        logger.debug(f"SKU {sku}: Sale price included (PriceSpy not managing, discounted)")
+                        logger.debug(f"SKU {sku}: Sale price included (PriceSpy not managing, discounted: ${rrp_float} → ${website_price_float})")
                 except (ValueError, TypeError):
                     pass
         
