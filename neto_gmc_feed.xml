@@ -575,7 +575,7 @@
   </item>
   <item>
     <g:id>0602573008881</g:id>
-    <g:product_type>Accessories &gt; Pizza ovens &gt; Pizza ovens</g:product_type>
+    <g:product_type>Pizza ovens &gt; Pizza ovens &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -815,7 +815,7 @@
   </item>
   <item>
     <g:id>9343332001132</g:id>
-    <g:product_type>Outdoor Heating</g:product_type>
+    <g:product_type>Electric Heaters</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -930,7 +930,7 @@
   </item>
   <item>
     <g:id>9314388007157</g:id>
-    <g:product_type>Outdoor Heating &gt; Outdoor Gas Heaters</g:product_type>
+    <g:product_type>Outdoor Gas Heaters &gt; Outdoor Heating</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2696,7 +2696,7 @@
   </item>
   <item>
     <g:id>MB20181722</g:id>
-    <g:product_type>Pizza ovens</g:product_type>
+    <g:product_type>Pizza ovens &gt; Pizza ovens &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2866,32 +2866,32 @@
   </item>
   <item>
     <g:id>3760316020013</g:id>
-    <g:product_type>Wood &gt; Pellet</g:product_type>
+    <g:product_type>Pellet</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>3760316020020</g:id>
-    <g:product_type>Wood &gt; Pellet</g:product_type>
+    <g:product_type>Pellet</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>3760316020037</g:id>
-    <g:product_type>Wood &gt; Pellet</g:product_type>
+    <g:product_type>Pellet</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>3760316020044</g:id>
-    <g:product_type>Wood &gt; Pellet</g:product_type>
+    <g:product_type>Pellet</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>3760316020709</g:id>
-    <g:product_type>Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>3760316020716</g:id>
-    <g:product_type>Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2963,7 +2963,7 @@
   </item>
   <item>
     <g:id>5713958300140</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2978,7 +2978,7 @@
   </item>
   <item>
     <g:id>830014-BUNDLE</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3367,32 +3367,32 @@
   </item>
   <item>
     <g:id>5707582024770</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5707582024794</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5707582024800</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>5707582024732</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5707582024756</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5707582024763</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3417,17 +3417,17 @@
   </item>
   <item>
     <g:id>ZiiPa22-001-BUNDLE</g:id>
-    <g:product_type>Wood &gt; Pellet</g:product_type>
+    <g:product_type>Pellet</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5707582035790</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>5707582035806</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
   <item>
@@ -3765,7 +3765,7 @@
   </item>
   <item>
     <g:id>5060967393954</g:id>
-    <g:product_type>Pizza ovens &gt; Wood</g:product_type>
+    <g:product_type>Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3790,12 +3790,12 @@
   </item>
   <item>
     <g:id>UU-P2EE00-BUNDLE</g:id>
-    <g:product_type>Pizza ovens &gt; Wood</g:product_type>
+    <g:product_type>Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>80650139-BUNDLE</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>1899.00 AUD</g:sale_price>
   </item>
@@ -3881,12 +3881,12 @@
   </item>
   <item>
     <g:id>5060967396245</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5060967394821</g:id>
-    <g:product_type>Pizza ovens &gt; Wood</g:product_type>
+    <g:product_type>Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3971,7 +3971,7 @@
   </item>
   <item>
     <g:id>9314388086046</g:id>
-    <g:product_type>Outdoor Heating &gt; Electric Heaters</g:product_type>
+    <g:product_type>Electric Heaters &gt; Indoor Heating &gt; Outdoor Heating</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3993,7 +3993,7 @@
   </item>
   <item>
     <g:id>5060967395118</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4053,22 +4053,22 @@
   </item>
   <item>
     <g:id>5056591608175</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591608069</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591608397</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591608281</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4099,12 +4099,12 @@
   </item>
   <item>
     <g:id>5056591603811</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591603866</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4129,13 +4129,13 @@
   </item>
   <item>
     <g:id>5056591606331</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>749.99 AUD</g:sale_price>
   </item>
   <item>
     <g:id>5056591607055</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>749.99 AUD</g:sale_price>
   </item>
@@ -4392,17 +4392,17 @@
   </item>
   <item>
     <g:id>5060967395071</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5060967396849</g:id>
-    <g:product_type>Pizza ovens &gt; Electric</g:product_type>
+    <g:product_type>Electric &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5060967396627</g:id>
-    <g:product_type>Pizza ovens &gt; Electric</g:product_type>
+    <g:product_type>Electric &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4688,7 +4688,7 @@
   </item>
   <item>
     <g:id>5056591609936</g:id>
-    <g:product_type>Pizza ovens</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4703,7 +4703,7 @@
   </item>
   <item>
     <g:id>5056591609103</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>3999.00 AUD</g:sale_price>
   </item>
@@ -5288,7 +5288,7 @@
   </item>
   <item>
     <g:id>5056591607260</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5603,7 +5603,7 @@
   </item>
   <item>
     <g:id>GMNOBAU1826-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5743,12 +5743,12 @@
   </item>
   <item>
     <g:id>GTPOBAU1225-STAND</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>GTPOLAU1225-STAND</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6356,12 +6356,12 @@
   </item>
   <item>
     <g:id>100001413</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>100001414</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6382,7 +6382,7 @@
   </item>
   <item>
     <g:id>GMPOBAU1825-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6457,7 +6457,7 @@
   </item>
   <item>
     <g:id>ARCXL-BUN-BLK</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>2007.00 AUD</g:sale_price>
   </item>
@@ -6483,7 +6483,7 @@
   </item>
   <item>
     <g:id>ARCXL-BUN-BNE</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>1980.00 AUD</g:sale_price>
   </item>
@@ -6669,7 +6669,7 @@
   </item>
   <item>
     <g:id>GMPBNAU1625-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7101,7 +7101,7 @@
   </item>
   <item>
     <g:id>ARC-STARTER-BUN</g:id>
-    <g:product_type>Wood &gt; Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7111,47 +7111,47 @@
   </item>
   <item>
     <g:id>ARCXL-PERF-BUN</g:id>
-    <g:product_type>Wood &gt; Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>ARCXL-ENT-BUN</g:id>
-    <g:product_type>Wood &gt; Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>DOME-ESSENTIALS-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>DOME-COOKING-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>DOMEXL-COOKING-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>TREAD-ADVENTURE-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>TREAD-TRAVEL-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>PIZZANIGHT-ACC-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>PRO-TOOLKIT-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7301,72 +7301,72 @@
   </item>
   <item>
     <g:id>ARC-ESSENTIALS-BUNDLE</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>DOMEGEN2-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>ARCLITE-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>TREAD-TRAIL-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>TREAD-TRAIL-OL-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>TREAD-PEAK-OL-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>TREAD-PEAK-BLK-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>ARCXL-BONE-TABLETOP-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>ARCXL-BLK-TABLETOP-BUN</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>GMPOBAU1625-STAND</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>GMPOBAU1825-BUNDLE</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>GMNOBAU1826-BUNDLE</g:id>
-    <g:product_type>Pizza ovens &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>GMPBNAU1625-BUNDLE</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>GMPOBAU1625-BUNDLE</g:id>
-    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
