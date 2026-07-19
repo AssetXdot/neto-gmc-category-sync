@@ -89,46 +89,16 @@ except json.JSONDecodeError as e:
 # ============================================================================
 
 def load_image_cache() -> Dict[str, Dict[str, Any]]:
-    """
-    Load image cache from file if it exists.
-    IMPORTANT: Always delete old cache at startup to prevent corruption.
-    This ensures fresh data and eliminates stale cached images.
-    """
-    # Always delete old cache file to start fresh
-    # This prevents corruption issues and ensures latest image data
-    if os.path.exists(IMAGE_CACHE_FILE):
-        try:
-            os.remove(IMAGE_CACHE_FILE)
-            logger.info(f"Cache cleared: Old cache file deleted for fresh start")
-        except Exception as e:
-            logger.warning(f"Could not delete old cache: {type(e).__name__}")
-    
-    # Start with empty cache - will be rebuilt during this run
+    """Not used - images removed from feed"""
     return {}
 
 def save_image_cache(cache: Dict[str, Dict[str, Any]]) -> bool:
-    """Save image cache to file"""
-    try:
-        with open(IMAGE_CACHE_FILE, 'w') as f:
-            json.dump(cache, f, indent=2)
-        logger.info(f"Saved image cache: {len(cache)} products")
-        return True
-    except Exception as e:
-        logger.error(f"Could not save cache: {type(e).__name__}")
-        return False
+    """Not used - images removed from feed"""
+    return True
 
 def get_product_hash(product: Dict[str, Any]) -> str:
-    """
-    Generate hash of product data to detect changes.
-    Hash includes: SKU, Name, Price (key fields that affect image availability).
-    If any of these change, we re-check images.
-    """
-    sku = product.get('SKU', '')
-    name = product.get('Name', '')
-    price = product.get('DefaultPrice', '')
-    
-    data = f"{sku}|{name}|{price}"
-    return hashlib.md5(data.encode()).hexdigest()
+    """Not used - images removed from feed"""
+    return ""
 
 # ============================================================================
 # DATAFEEDWATCH FEED FUNCTIONS
@@ -320,103 +290,12 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
 # REMOVED: No more HEAD request checking - too slow and gets blocked
 # Just build URLs for all formats in order, GMC will validate them
 
-def find_alt_image_format(base_url: str) -> str:
-    """
-    Check which format exists for an ALT image.
-    Tries formats in order: jpg → webp → png
-    Returns the URL of the first format that exists (200 status).
-    Returns None if none exist.
-    
-    OPTIMIZED: Uses 1-second timeout and fails fast to avoid 1-hour runtimes.
-    """
-    formats = ['jpg', 'webp', 'png']
-    
-    for fmt in formats:
-        url = f"{base_url}.{fmt}"
-        try:
-            # Use 1-second timeout (not 2) - if server doesn't respond fast, try next format
-            response = requests.head(url, timeout=1, allow_redirects=False)
-            if 200 <= response.status_code < 300:
-                logger.debug(f"Found {fmt}")
-                return url
-        except Exception:
-            # Timeout or error - try next format
-            continue
-    
-    return None
-
 def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dict[str, Any]]) -> List[str]:
     """
-    Build image URLs for a product including main + ALT images.
-    
-    SMART DETECTION: For each image, find which format exists (jpg/webp/png).
-    Only include the URL that works - avoids blank images in GMC.
-    
-    SMART CACHING: Only re-checks if product data changed (SKU/Name/Price).
-    
-    URL pattern: 
-    - Main: https://www.thebbqstore.com.au/assets/full/{SKU}.{format}
-    - Alts: https://www.thebbqstore.com.au/assets/alt_{1-12}/{SKU}.{format}
-    
-    Returns: [main.{format}, alt_1.{format}, alt_2.{format}, ..., alt_12.{format}]
-             Each image included ONLY if that format exists
+    NOT USED - Images removed from feed
+    Kept as stub to avoid errors
     """
-    images = []
-    
-    if not sku:
-        return images
-    
-    base_url = "https://www.thebbqstore.com.au/assets"
-    
-    # Calculate current product hash to detect changes
-    current_hash = get_product_hash(product)
-    
-    # Check cache for this SKU
-    if sku in cache:
-        cached_data = cache[sku]
-        cached_hash = cached_data.get('hash')
-        cached_images = cached_data.get('images', [])
-        
-        # If product hasn't changed, use cached images
-        if cached_hash == current_hash and cached_images:
-            logger.debug(f"SKU {sku}: Product unchanged, using cached images ({len(cached_images)} images)")
-            return cached_images
-        
-        # If product changed, re-check (fall through)
-        logger.debug(f"SKU {sku}: Product changed, re-checking image formats")
-    
-    # Check MAIN image first
-    logger.debug(f"SKU {sku}: Detecting image formats (main + alts)")
-    main_base = f"{base_url}/full/{sku}"
-    main_url = find_alt_image_format(main_base)
-    
-    if main_url:
-        images.append(main_url)
-        logger.debug(f"SKU {sku}: Main image found")
-    else:
-        logger.debug(f"SKU {sku}: No main image found")
-    
-    # Check each ALT image (1-12) and find which format exists
-    for i in range(1, 13):
-        alt_base = f"{base_url}/alt_{i}/{sku}"
-        alt_url = find_alt_image_format(alt_base)
-        
-        if alt_url:
-            images.append(alt_url)
-            logger.debug(f"SKU {sku}: ALT_{i} found")
-        # If alt doesn't exist in any format, just skip it
-    
-    logger.debug(f"SKU {sku}: Found {len(images)} images total (main + alts)")
-    
-    # Update cache with hash and images
-    cache[sku] = {
-        'images': images,
-        'hash': current_hash,
-        'last_checked': datetime.now().isoformat(),
-        'count': len(images)
-    }
-    
-    return images
+    return []
 
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
     """
@@ -502,10 +381,6 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     matched_skus = []
     unmatched_skus = []
     unmatched_details = []
-    total_images_built = 0
-    cache_hits = 0
-    cache_misses = 0
-    products_changed = 0
     products_with_sale_price = 0
     
     for product in products:
@@ -542,21 +417,6 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             unmatched_skus.append(sku)
             unmatched_details.append(f"{sku} (not in datafeedwatch)")
             continue
-        
-        # Build image URLs using smart cache with change detection
-        images = build_product_images(sku, product, cache)
-        
-        # Track cache hit/miss/change
-        if sku in cache:
-            if cache[sku].get('hash') == get_product_hash(product):
-                cache_hits += 1
-            else:
-                cache_misses += 1
-                products_changed += 1
-        else:
-            cache_misses += 1
-        
-        total_images_built += len(images)
         
         # Build product type string from categories
         product_type = " > ".join(categories)
@@ -598,7 +458,6 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             "id": datafeedwatch_id,
             "product_type": product_type,
             "availability": availability,
-            "images": images,
             "sale_price": sale_price
         })
     
@@ -607,12 +466,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
     logger.info(f"Products without categories: {products_without_categories}")
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
-    logger.info(f"Total image URLs built: {total_images_built}")
-    logger.info(f"  (Main image + up to 12 ALT images per product)")
     logger.info(f"Products with sale price: {products_with_sale_price} (PriceSpy not managing & discounted)")
-    logger.info(f"Cache hits (unchanged): {cache_hits} | Cache misses/changes: {cache_misses} | Products changed: {products_changed}")
-    logger.info(f"  (Note: Cache is cleared at startup to prevent corruption)")
-    logger.info(f"  (First run builds full cache, then saved for future reference)")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
     logger.info(f"Sample unmatched (first 5): {unmatched_details[:5]}")
@@ -627,7 +481,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
 # ============================================================================
 
 def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
-    """Generate feed XML with categories, availability, images, and optional sale prices"""
+    """Generate feed XML with categories, availability, and optional sale prices (NO images)"""
     
     # Build the XML feed content
     feed_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -638,7 +492,6 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         sku = entry['id']
         product_type = entry['product_type']
         availability = entry.get('availability', 'in stock')
-        images = entry.get('images', [])
         sale_price = entry.get('sale_price')
         
         feed_content += '  <item>\n'
@@ -654,14 +507,6 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         if sale_price:
             # Format as currency (e.g., 1149.00 AUD)
             feed_content += f'    <g:sale_price>{sale_price:.2f} AUD</g:sale_price>\n'
-        
-        # Add images - first one is main image, rest are additional
-        if images:
-            feed_content += f'    <g:image_link>{escape_xml(images[0])}</g:image_link>\n'
-            
-            # Add additional images (alt 1-12)
-            for alt_image in images[1:]:
-                feed_content += f'    <g:additional_image_link>{escape_xml(alt_image)}</g:additional_image_link>\n'
         
         feed_content += '  </item>\n'
     
