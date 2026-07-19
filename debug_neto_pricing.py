@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Debug script - Shows all Neto API fields to identify the pricing field name
+Debug script - Verify pricing and custom field access from Neto API
+Uses correct API field names from Neto documentation
 """
 
 import os
@@ -26,11 +27,11 @@ def neto_api_call(action: str, payload: dict) -> dict:
     response.raise_for_status()
     return response.json()
 
-# Fetch 1 product with pricing fields to verify they're available
+# Fetch 1 product with pricing and custom fields
 payload = {
     "Filter": {
         "IsActive": "True",
-        "OutputSelector": ["SKU", "Name", "[@retail@]", "[@store_price@]", "MISC2"],
+        "OutputSelector": ["SKU", "Name", "RRP", "DefaultPrice", "Misc02"],
         "Page": 0,
         "Limit": 1,
     }
@@ -55,11 +56,11 @@ try:
             value = product[key]
             print(f"{key}: {str(value)[:150]}")
         
-        print("\n\nPRICING FIELDS:")
+        print("\n\nPRICING & CUSTOM FIELDS:")
         print("=" * 80)
-        print(f"[@retail@] (RRP): {product.get('[@retail@]', 'NOT FOUND')}")
-        print(f"[@store_price@] (Website Price): {product.get('[@store_price@]', 'NOT FOUND')}")
-        print(f"MISC2 (PriceSpy): {product.get('MISC2', 'NOT FOUND')}")
+        print(f"RRP (Recommended Retail Price): {product.get('RRP', 'NOT FOUND')}")
+        print(f"DefaultPrice (Website Price): {product.get('DefaultPrice', 'NOT FOUND')}")
+        print(f"Misc02 (PriceSpy): {product.get('Misc02', 'NOT FOUND')}")
         
         print("\n\nFULL JSON:")
         print("=" * 80)
