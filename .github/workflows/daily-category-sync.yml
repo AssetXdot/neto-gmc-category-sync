@@ -26,12 +26,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: Debug Neto Pricing Fields
-        env:
-          NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
-          NETO_API_USERNAME: ${{ secrets.NETO_API_USERNAME }}
-        run: python debug_neto_pricing.py
-      
       - name: Run Neto to GMC sync
         env:
           NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
@@ -40,12 +34,7 @@ jobs:
           GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
           DATAFEEDWATCH_URL: ${{ secrets.DATAFEEDWATCH_URL }}
         run: |
-          echo "DEBUG: Checking environment variables..."
-          echo "NETO_API_KEY is set: $([ -z "$NETO_API_KEY" ] && echo 'NO' || echo 'YES')"
-          echo "NETO_API_USERNAME is set: $([ -z "$NETO_API_USERNAME" ] && echo 'NO' || echo 'YES')"
-          echo "GOOGLE_MERCHANT_ID: $GOOGLE_MERCHANT_ID"
-          echo "GOOGLE_CREDENTIALS_JSON length: ${#GOOGLE_CREDENTIALS_JSON}"
-          echo "---"
+          echo "Starting Neto to GMC sync..."
           python neto_to_gmc_categories.py 2>&1
           if [ $? -ne 0 ]; then
             echo "Script failed with exit code $?"
