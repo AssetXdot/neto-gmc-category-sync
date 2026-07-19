@@ -463,12 +463,6 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         if is_debug_sku or is_pizza_product:
             logger.info(f"  ✓ MATCHED in datafeedwatch: {datafeedwatch_id}")
         
-        # Build product type string from categories
-        product_type = " > ".join(categories)
-        
-        if is_debug_sku or is_pizza_product:
-            logger.info(f"  Product type: {product_type}")
-        
         # Determine availability
         availability = "in stock"  # Default
         
@@ -500,21 +494,31 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
                 except (ValueError, TypeError):
                     pass
         
-        if is_debug_sku or is_pizza_product:
-            logger.info(f"  ADDING TO FEED")
+        # CREATE ONE FEED ITEM PER CATEGORY (not combined!)
+        # This allows products to appear in their correct listing groups without duplication
+        # Example: Product with categories ["Smokers > Charcoal Smokers", "Portable Smokers"]
+        #   Creates 2 items: one for each category, both with same ID
         
-        feed_entries.append({
-            "id": datafeedwatch_id,
-            "product_type": product_type,
-            "availability": availability,
-            "sale_price": sale_price
-        })
+        if is_debug_sku or is_pizza_product:
+            logger.info(f"  Creating {len(categories)} feed items (one per category)")
+        
+        for category in categories:
+            if is_debug_sku or is_pizza_product:
+                logger.info(f"    → Adding item: {category}")
+            
+            feed_entries.append({
+                "id": datafeedwatch_id,
+                "product_type": category,  # SINGLE category per item, NOT combined
+                "availability": availability,
+                "sale_price": sale_price
+            })
     
     # Log debug info
     logger.info(f"Products with categories: {products_with_categories}")
     logger.info(f"Products without categories: {products_without_categories}")
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
+    logger.info(f"  (Note: Each product creates ONE entry per category to avoid listing group conflicts)")
     logger.info(f"Products with sale price: {products_with_sale_price} (PriceSpy not managing & discounted)")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
@@ -663,7 +667,6 @@ def main():
             logger.info("=" * 70)
             logger.info("✓ SYNC COMPLETED SUCCESSFULLY")
             logger.info("  Feed generated and ready for workflow to commit to GitHub")
-            logger.info("  Image cache updated and ready to commit")
             logger.info("=" * 70)
             return True
         else:
