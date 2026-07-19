@@ -29,59 +29,86 @@ def neto_api_call(action: str, payload: dict) -> dict:
     response.raise_for_status()
     return response.json()
 
-# Fetch the bar fridge product: 9351886001775
+# Search for products with "Bar Fridge" in name
 print("=" * 80)
-print("FETCHING BAR FRIDGE PRODUCT: 9351886001775")
+print("SEARCHING FOR PRODUCTS WITH 'BAR FRIDGE' IN NAME")
 print("=" * 80)
 print()
 
 payload = {
     "Filter": {
-        "SKU": "9351886001775",  # Use the product ID as SKU identifier
+        "IsActive": "True",
+        "Limit": 200,
         "OutputSelector": ["SKU", "Name", "Categories"]
     }
 }
 
 try:
     response = neto_api_call("GetItem", payload)
-    print("RAW API RESPONSE (full):")
-    print(json.dumps(response, indent=2))
-    print()
-    print("=" * 80)
-    print("CATEGORIES SECTION (extracted):")
-    print("=" * 80)
-    
     items = response.get("Item", [])
+    
     if isinstance(items, dict):
         items = [items]
     
+    # Find products with Bar Fridge in name or categories
+    bar_fridge_products = []
+    
     for item in items:
-        sku = item.get("SKU", "")
-        name = item.get("Name", "")
-        categories = item.get("Categories", [])
+        name = item.get("Name", "").lower()
+        if "bar fridge" in name or "bar-fridge" in name:
+            bar_fridge_products.append(item)
+    
+    print(f"Found {len(bar_fridge_products)} products with 'Bar Fridge' in name")
+    print()
+    
+    if bar_fridge_products:
+        # Show details of first bar fridge product
+        product = bar_fridge_products[0]
+        sku = product.get("SKU", "")
+        name = product.get("Name", "")
+        categories = product.get("Categories", [])
         
-        print(f"\nProduct: {name} (SKU: {sku})")
-        print(f"Categories structure type: {type(categories)}")
+        print("=" * 80)
+        print(f"PRODUCT: {name}")
+        print(f"SKU: {sku}")
+        print("=" * 80)
         print()
-        print("Full Categories object:")
+        print("RAW API RESPONSE for this product:")
+        print(json.dumps(product, indent=2))
+        print()
+        print("=" * 80)
+        print("CATEGORIES SECTION (extracted):")
+        print("=" * 80)
         print(json.dumps(categories, indent=2))
         print()
+        print("=" * 80)
+        print("DETAILED ANALYSIS:")
+        print("=" * 80)
         
-        # Try to parse different structures
         if isinstance(categories, dict):
             print("Categories is a DICT")
             cat_list = categories.get("Category", [])
             if isinstance(cat_list, dict):
                 cat_list = [cat_list]
-            print(f"  Number of categories: {len(cat_list)}")
+            print(f"Number of category paths: {len(cat_list)}")
+            print()
             for idx, cat in enumerate(cat_list):
-                print(f"  [{idx}] {cat}")
+                print(f"Category Path {idx + 1}:")
+                print(f"  {json.dumps(cat, indent=4)}")
+                print()
         
         elif isinstance(categories, list):
             print("Categories is a LIST")
-            print(f"  Number of categories: {len(categories)}")
+            print(f"Number of categories: {len(categories)}")
             for idx, cat in enumerate(categories):
-                print(f"  [{idx}] {cat}")
+                print(f"Category {idx + 1}: {json.dumps(cat, indent=2)}")
+    else:
+        print("ERROR: No products found with 'Bar Fridge' in name")
+        print("Showing first product as example...")
+        print()
+        if items:
+            product = items[0]
+            print(json.dumps(product, indent=2))
 
 except Exception as e:
     print(f"ERROR: {type(e).__name__}: {str(e)}")
