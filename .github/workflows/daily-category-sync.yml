@@ -2,7 +2,7 @@ name: Neto to Google Merchant Center - Daily Category Sync
 
 on:
   schedule:
-    - cron: '0 11 * * *'  # 10pm AEDT (UTC+11) / 9pm AEST (UTC+10) - ensures feed ready before GMC's midnight update
+    - cron: '0 11 * * *'  # 10pm Sydney time
   workflow_dispatch:
 
 permissions:
@@ -25,6 +25,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      
+      - name: Debug Neto Pricing Fields
+        env:
+          NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
+          NETO_API_USERNAME: ${{ secrets.NETO_API_USERNAME }}
+        run: python debug_neto_pricing.py
       
       - name: Run Neto to GMC sync
         env:
