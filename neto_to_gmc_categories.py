@@ -407,23 +407,25 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         if not sku:
             continue
         
-        # DEBUG: Ultra-verbose logging for problem SKUs
+        # DEBUG: Ultra-verbose logging for problem SKUs + pizza ovens
         is_debug_sku = sku in ['THX4000DC', 'TREK2.0', 'TFT18KLDA']
-        if is_debug_sku:
+        is_pizza_product = 'pizza' in product.get('Name', '').lower()
+        if is_debug_sku or is_pizza_product:
             logger.info(f"\n*** DEBUG SKU {sku} ***")
+            logger.info(f"  Name: {product.get('Name', '')[:100]}")
             logger.info(f"  Raw product keys: {list(product.keys())}")
         
         # Extract categories from Neto's nested structure
         categories = extract_categories(product, normalize=True)
         
-        if is_debug_sku:
+        if is_debug_sku or is_pizza_product:
             logger.info(f"  Extracted categories: {categories}")
         
         if not categories:
             products_without_categories += 1
             unmatched_skus.append(sku)
             unmatched_details.append(f"{sku} (no categories)")
-            if is_debug_sku:
+            if is_debug_sku or is_pizza_product:
                 logger.info(f"  RESULT: SKIPPED - No categories found")
             logger.debug(f"SKU {sku}: SKIPPED - No categories found")
             continue
@@ -450,7 +452,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             products_not_in_datafeedwatch += 1
             unmatched_skus.append(sku)
             unmatched_details.append(f"{sku} (not in datafeedwatch)")
-            if is_debug_sku:
+            if is_debug_sku or is_pizza_product:
                 logger.info(f"  RESULT: NOT FOUND in datafeedwatch")
                 logger.info(f"  Product IDs searched: {product_ids}")
             logger.debug(f"SKU {sku}: ✗ NOT FOUND in datafeedwatch - Skipping")
@@ -458,13 +460,13 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             logger.debug(f"  Categories found: {categories}")
             continue
         
-        if is_debug_sku:
+        if is_debug_sku or is_pizza_product:
             logger.info(f"  ✓ MATCHED in datafeedwatch: {datafeedwatch_id}")
         
         # Build product type string from categories
         product_type = " > ".join(categories)
         
-        if is_debug_sku:
+        if is_debug_sku or is_pizza_product:
             logger.info(f"  Product type: {product_type}")
         
         # Determine availability
@@ -474,7 +476,7 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         sale_price = None
         priceSpy_field = product.get("Misc02", "").strip().upper()  # Misc02 is the API name for MISC2
         
-        if is_debug_sku:
+        if is_debug_sku or is_pizza_product:
             logger.info(f"  Misc02/PriceSpy: {priceSpy_field}")
             logger.info(f"  RRP: {product.get('RRP')}, DefaultPrice: {product.get('DefaultPrice')}")
         
@@ -492,13 +494,13 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
                     if website_price_float < rrp_float:
                         sale_price = website_price_float
                         products_with_sale_price += 1
-                        if is_debug_sku:
+                        if is_debug_sku or is_pizza_product:
                             logger.info(f"  Sale price included: {sale_price}")
                         logger.debug(f"SKU {sku}: Sale price included (PriceSpy not managing, discounted: ${rrp_float} → ${website_price_float})")
                 except (ValueError, TypeError):
                     pass
         
-        if is_debug_sku:
+        if is_debug_sku or is_pizza_product:
             logger.info(f"  ADDING TO FEED")
         
         feed_entries.append({
