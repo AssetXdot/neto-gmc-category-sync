@@ -26,16 +26,17 @@ def neto_api_call(action: str, payload: dict) -> dict:
     response.raise_for_status()
     return response.json()
 
-# Fetch 1 product with all fields to see pricing structure
+# Fetch 1 product with pricing fields to verify they're available
 payload = {
     "Filter": {
         "IsActive": "True",
+        "OutputSelector": ["SKU", "Name", "[@retail@]", "[@store_price@]", "MISC2"],
         "Page": 0,
         "Limit": 1,
     }
 }
 
-print("Fetching 1 product from Neto API...")
+print("Fetching 1 product from Neto API with pricing fields...")
 print("=" * 80)
 
 try:
@@ -54,16 +55,15 @@ try:
             value = product[key]
             print(f"{key}: {str(value)[:150]}")
         
-        print("\n\nPRICING-RELATED FIELDS:")
+        print("\n\nPRICING FIELDS:")
         print("=" * 80)
-        for key in sorted(product.keys()):
-            if 'price' in key.lower() or 'cost' in key.lower() or 'rrp' in key.lower():
-                value = product[key]
-                print(f"{key}: {value}")
+        print(f"[@retail@] (RRP): {product.get('[@retail@]', 'NOT FOUND')}")
+        print(f"[@store_price@] (Website Price): {product.get('[@store_price@]', 'NOT FOUND')}")
+        print(f"MISC2 (PriceSpy): {product.get('MISC2', 'NOT FOUND')}")
         
-        print("\n\nFULL JSON (First 2000 chars):")
+        print("\n\nFULL JSON:")
         print("=" * 80)
-        print(json.dumps(product, indent=2)[:2000])
+        print(json.dumps(product, indent=2))
         
     else:
         print("No products returned")
