@@ -335,7 +335,7 @@ def fetch_all_products() -> List[Dict[str, Any]]:
                 "Filter": {
                     "IsActive": "True",
                     "OutputSelector": [
-                        "SKU", "Name", "Brand", "DefaultPrice", "Categories", "MISC2", "[@retail@]", "[@store_price@]"
+                        "SKU", "Name", "Brand", "DefaultPrice", "Categories", "RRP", "Misc02"
                     ],
                     "Page": page,
                     "Limit": 200,
@@ -426,12 +426,12 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         
         # Check pricing - only add sale price if PriceSpy is NOT managing it AND price is discounted
         sale_price = None
-        priceSpy_field = product.get("MISC2", "").strip().upper()
+        priceSpy_field = product.get("Misc02", "").strip().upper()  # Misc02 is the API name for MISC2
         
         if priceSpy_field != "TRUE":  # PriceSpy is NOT managing the price
-            # Get RRP (retail/recommended price) and website price
-            rrp = product.get("[@retail@]")
-            website_price = product.get("[@store_price@]")
+            # Get RRP (retail/recommended price) and DefaultPrice (website selling price)
+            rrp = product.get("RRP")
+            website_price = product.get("DefaultPrice")
             
             # Check if there's a discount (website price < RRP)
             if website_price and rrp:
