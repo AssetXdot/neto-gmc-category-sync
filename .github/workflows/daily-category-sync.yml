@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  sync-categories:
+  sync-feeds:
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -27,29 +27,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Neto to GMC sync
+      - name: Run debug script (inspect Categories structure)
         env:
           NETO_API_KEY: ${{ secrets.NETO_API_KEY }}
           NETO_API_USERNAME: ${{ secrets.NETO_API_USERNAME }}
-          DATAFEEDWATCH_URL: ${{ secrets.DATAFEEDWATCH_URL }}
         run: |
-          echo "Starting Neto to GMC sync..."
-          python neto_to_gmc_categories.py
-
-      - name: Commit feed to repo
-        if: success()
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          cp /tmp/neto_gmc_feed_*.xml neto_gmc_feed.xml 2>/dev/null || true
-          if [ -f neto_gmc_feed.xml ]; then
-            git add neto_gmc_feed.xml
-            git commit -m "Update Neto category feed - $(date -u +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-            git push || echo "Nothing to push"
-          fi
+          echo "Starting debug script to inspect Neto Categories structure..."
+          python debug_categories.py
 
       - name: Check for errors
         if: failure()
         run: |
-          echo "❌ SYNC FAILED"
-          echo "Check the 'Run Neto to GMC sync' step above for detailed error message"
+          echo "❌ DEBUG SCRIPT FAILED"
+          echo "Check the logs above for detailed error messages"
