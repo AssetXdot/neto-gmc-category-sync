@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-Neto to Google Merchant Center Category Feed
-Extracts multiple categories from Neto products and generates supplementary feed with images
-Intelligent image caching - only re-verifies changed products
-Git commit/push is handled by GitHub Actions workflow
+Neto to Google Merchant Center Supplementary Feed
+Generates a supplementary feed (product_type, availability, conditional sale_price)
+by matching Neto products to the datafeedwatch/PriceSpy primary feed.
+Git commit/push is handled by the GitHub Actions workflow.
 """
 
 import os
-import json
 import time
 import requests
 from datetime import datetime
@@ -15,7 +14,6 @@ from typing import List, Dict, Any
 import logging
 import xml.etree.ElementTree as ET
 import re
-import hashlib
 
 # ============================================================================
 # SECURE LOGGING - Masks credentials in all log output
@@ -58,47 +56,17 @@ for handler in logger.handlers:
 
 NETO_API_KEY = os.getenv('NETO_API_KEY', '').strip()
 NETO_API_USERNAME = os.getenv('NETO_API_USERNAME', '').strip()
-GOOGLE_MERCHANT_ID = os.getenv('GOOGLE_MERCHANT_ID', '').strip()
-GOOGLE_CREDENTIALS_JSON = os.getenv('GOOGLE_CREDENTIALS_JSON', '').strip()
 DATAFEEDWATCH_URL = os.getenv('DATAFEEDWATCH_URL', '').strip()
 
-# Image cache file
-IMAGE_CACHE_FILE = "image_cache.json"
-
 # Validate environment variables
+# NOTE: Google Merchant credentials are NOT needed - GMC fetches the feed
+# from the public GitHub raw URL, so no Google API access is required.
 if not NETO_API_KEY:
     raise ValueError("NETO_API_KEY not set in environment variables")
 if not NETO_API_USERNAME:
     raise ValueError("NETO_API_USERNAME not set in environment variables")
-if not GOOGLE_CREDENTIALS_JSON:
-    raise ValueError("GOOGLE_CREDENTIALS_JSON not set in environment variables")
 if not DATAFEEDWATCH_URL:
     raise ValueError("DATAFEEDWATCH_URL not set in environment variables")
-if not GOOGLE_MERCHANT_ID:
-    raise ValueError("GOOGLE_MERCHANT_ID not set in environment variables")
-
-# Parse Google credentials
-try:
-    GOOGLE_CREDS = json.loads(GOOGLE_CREDENTIALS_JSON)
-except json.JSONDecodeError as e:
-    logger.error("GOOGLE_CREDENTIALS_JSON is not valid JSON")
-    raise ValueError("Invalid GOOGLE_CREDENTIALS_JSON")
-
-# ============================================================================
-# IMAGE CACHE FUNCTIONS
-# ============================================================================
-
-def load_image_cache() -> Dict[str, Dict[str, Any]]:
-    """Not used - images removed from feed"""
-    return {}
-
-def save_image_cache(cache: Dict[str, Dict[str, Any]]) -> bool:
-    """Not used - images removed from feed"""
-    return True
-
-def get_product_hash(product: Dict[str, Any]) -> str:
-    """Not used - images removed from feed"""
-    return ""
 
 # ============================================================================
 # DATAFEEDWATCH FEED FUNCTIONS
@@ -306,16 +274,6 @@ def extract_categories(item: Dict[str, Any], normalize: bool = True) -> List[str
     
     return categories
 
-# REMOVED: No more HEAD request checking - too slow and gets blocked
-# Just build URLs for all formats in order, GMC will validate them
-
-def build_product_images(sku: str, product: Dict[str, Any], cache: Dict[str, Dict[str, Any]]) -> List[str]:
-    """
-    NOT USED - Images removed from feed
-    Kept as stub to avoid errors
-    """
-    return []
-
 def extract_product_ids(item: Dict[str, Any]) -> Dict[str, str]:
     """
     Extract product identifiers from Neto item.
@@ -354,7 +312,7 @@ def fetch_all_products() -> List[Dict[str, Any]]:
                 "Filter": {
                     "IsActive": "True",
                     "OutputSelector": [
-                        "SKU", "Name", "Brand", "DefaultPrice", "Categories", "RRP", "Misc02"
+                        "SKU", "Name", "Brand", "DefaultPrice", "Categories", "RRP", "Misc02", "AvailableSellQuantity", "Misc01"
                     ],
                     "Page": page,
                     "Limit": 200,
@@ -383,7 +341,7 @@ def fetch_all_products() -> List[Dict[str, Any]]:
     logger.info(f"Total products fetched: {len(all_items)}")
     return all_items
 
-def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: Dict[str, Dict[str, Any]], cache: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
+def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
     Build feed entries matching Neto products with datafeedwatch product IDs.
     
@@ -407,26 +365,13 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
         if not sku:
             continue
         
-        # DEBUG: Ultra-verbose logging for problem SKUs + pizza ovens
-        is_debug_sku = sku in ['THX4000DC', 'TREK2.0', 'TFT18KLDA']
-        is_pizza_product = 'pizza' in product.get('Name', '').lower()
-        if is_debug_sku or is_pizza_product:
-            logger.info(f"\n*** DEBUG SKU {sku} ***")
-            logger.info(f"  Name: {product.get('Name', '')[:100]}")
-            logger.info(f"  Raw product keys: {list(product.keys())}")
-        
         # Extract categories from Neto's nested structure
         categories = extract_categories(product, normalize=True)
-        
-        if is_debug_sku or is_pizza_product:
-            logger.info(f"  Extracted categories: {categories}")
         
         if not categories:
             products_without_categories += 1
             unmatched_skus.append(sku)
             unmatched_details.append(f"{sku} (no categories)")
-            if is_debug_sku or is_pizza_product:
-                logger.info(f"  RESULT: SKIPPED - No categories found")
             logger.debug(f"SKU {sku}: SKIPPED - No categories found")
             continue
         
@@ -452,29 +397,43 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
             products_not_in_datafeedwatch += 1
             unmatched_skus.append(sku)
             unmatched_details.append(f"{sku} (not in datafeedwatch)")
-            if is_debug_sku or is_pizza_product:
-                logger.info(f"  RESULT: NOT FOUND in datafeedwatch")
-                logger.info(f"  Product IDs searched: {product_ids}")
             logger.debug(f"SKU {sku}: ✗ NOT FOUND in datafeedwatch - Skipping")
-            logger.debug(f"  Product IDs searched: {product_ids}")
-            logger.debug(f"  Categories found: {categories}")
             continue
         
-        if is_debug_sku or is_pizza_product:
-            logger.info(f"  ✓ MATCHED in datafeedwatch: {datafeedwatch_id}")
+        # Build product type as a hierarchy path.
+        # IMPORTANT: Google requires each item ID to appear only ONCE per feed
+        # (duplicate IDs get dropped/overwritten), so we create ONE item per
+        # product and join its categories into a single hierarchy path.
+        # Google Ads splits on " > " to build listing group levels,
+        # e.g. "Pizza ovens > Gas" appears as pizza ovens → gas.
+        product_type = " > ".join(categories)
         
-        # Determine availability
+        # Determine availability based on stock quantity and backorder status.
+        # Default to "in stock" for all products.
+        # Mark "out of stock" ONLY when:
+        #   - Quantity available = 0 AND
+        #   - Backorder enabled (Misc01 = "TRUE")
+        # Otherwise default to "in stock" (never omit, never override primary feed)
         availability = "in stock"  # Default
+        
+        qty_raw = product.get("AvailableSellQuantity")
+        backorder_enabled = product.get("Misc01", "").strip().upper() in ("TRUE", "Y", "YES", "1")
+        
+        if qty_raw is not None and str(qty_raw).strip() != "":
+            try:
+                qty = float(qty_raw)
+                if qty == 0 and backorder_enabled:
+                    availability = "out of stock"
+            except (ValueError, TypeError):
+                pass  # Any parse error -> stay at default "in stock"
         
         # Check pricing - only add sale price if PriceSpy is NOT managing it AND price is discounted
         sale_price = None
-        priceSpy_field = product.get("Misc02", "").strip().upper()  # Misc02 is the API name for MISC2
+        # Misc02 is the API name for the MISC2 "PriceSpy" custom field.
+        # Neto stores it as Y/N (confirmed in run logs), so accept common truthy forms.
+        priceSpy_managed = product.get("Misc02", "").strip().upper() in ("TRUE", "Y", "YES", "1")
         
-        if is_debug_sku or is_pizza_product:
-            logger.info(f"  Misc02/PriceSpy: {priceSpy_field}")
-            logger.info(f"  RRP: {product.get('RRP')}, DefaultPrice: {product.get('DefaultPrice')}")
-        
-        if priceSpy_field != "TRUE":  # PriceSpy is NOT managing the price
+        if not priceSpy_managed:  # PriceSpy is NOT managing the price
             # Get RRP (retail/recommended price) and DefaultPrice (website selling price)
             rrp = product.get("RRP")
             website_price = product.get("DefaultPrice")
@@ -488,37 +447,23 @@ def build_category_feed(products: List[Dict[str, Any]], datafeedwatch_products: 
                     if website_price_float < rrp_float:
                         sale_price = website_price_float
                         products_with_sale_price += 1
-                        if is_debug_sku or is_pizza_product:
-                            logger.info(f"  Sale price included: {sale_price}")
                         logger.debug(f"SKU {sku}: Sale price included (PriceSpy not managing, discounted: ${rrp_float} → ${website_price_float})")
                 except (ValueError, TypeError):
                     pass
         
-        # CREATE ONE FEED ITEM PER CATEGORY (not combined!)
-        # This allows products to appear in their correct listing groups without duplication
-        # Example: Product with categories ["Smokers > Charcoal Smokers", "Portable Smokers"]
-        #   Creates 2 items: one for each category, both with same ID
-        
-        if is_debug_sku or is_pizza_product:
-            logger.info(f"  Creating {len(categories)} feed items (one per category)")
-        
-        for category in categories:
-            if is_debug_sku or is_pizza_product:
-                logger.info(f"    → Adding item: {category}")
-            
-            feed_entries.append({
-                "id": datafeedwatch_id,
-                "product_type": category,  # SINGLE category per item, NOT combined
-                "availability": availability,
-                "sale_price": sale_price
-            })
+        feed_entries.append({
+            "id": datafeedwatch_id,
+            "product_type": product_type,
+            "availability": availability,
+            "sale_price": sale_price
+        })
     
     # Log debug info
     logger.info(f"Products with categories: {products_with_categories}")
     logger.info(f"Products without categories: {products_without_categories}")
     logger.info(f"Products not in datafeedwatch: {products_not_in_datafeedwatch}")
     logger.info(f"Total feed entries: {len(feed_entries)}")
-    logger.info(f"  (Note: Each product creates ONE entry per category to avoid listing group conflicts)")
+    logger.info(f"  (One entry per product; multiple categories joined into a single hierarchy path)")
     logger.info(f"Products with sale price: {products_with_sale_price} (PriceSpy not managing & discounted)")
     logger.info(f"")
     logger.info(f"Sample matched SKUs: {matched_skus[:5]}")
@@ -559,7 +504,7 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
     for entry in feed_entries:
         sku = entry['id']
         product_type = entry['product_type']
-        availability = entry.get('availability', 'in stock')
+        availability = entry.get('availability')
         sale_price = entry.get('sale_price')
         
         feed_content += '  <item>\n'
@@ -568,7 +513,7 @@ def upload_supplementary_feed(feed_entries: List[Dict[str, Any]]) -> bool:
         if product_type:
             feed_content += f'    <g:product_type>{escape_xml(product_type)}</g:product_type>\n'
         
-        # Add availability status
+        # Add availability status (always present, default is "in stock")
         feed_content += f'    <g:availability>{escape_xml(availability)}</g:availability>\n'
         
         # Add sale price if applicable
@@ -627,10 +572,6 @@ def main():
     logger.info("=" * 70)
     
     try:
-        # Load image cache
-        logger.info("")
-        image_cache = load_image_cache()
-        
         # Fetch datafeedwatch products first
         logger.info("")
         datafeedwatch_products = fetch_datafeedwatch_products()
@@ -649,15 +590,11 @@ def main():
         
         # Build feed with datafeedwatch product matching
         logger.info("")
-        feed_entries = build_category_feed(products, datafeedwatch_products, image_cache)
+        feed_entries = build_category_feed(products, datafeedwatch_products)
         
         if not feed_entries:
             logger.error("No feed entries built. Aborting.")
             return False
-        
-        # Save updated cache
-        logger.info("")
-        save_image_cache(image_cache)
         
         # Generate feed file
         logger.info("")
