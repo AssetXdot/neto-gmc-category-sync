@@ -231,7 +231,7 @@
   <item>
     <g:id>HDVSM-0222</g:id>
     <g:product_type>Spit Motors</g:product_type>
-    <g:availability>in stock</g:availability>
+    <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>SSBBQSS</g:id>
@@ -1431,7 +1431,7 @@
   <item>
     <g:id>9351886002444</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9351886001737</g:id>
