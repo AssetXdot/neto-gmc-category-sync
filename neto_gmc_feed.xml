@@ -106,7 +106,7 @@
   </item>
   <item>
     <g:id>PRS-3065</g:id>
-    <g:product_type>Portable bbqs &gt; Portable Spit &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
+    <g:product_type>Portable Spit &gt; Portable bbqs &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -391,7 +391,7 @@
   </item>
   <item>
     <g:id>950010-03001206</g:id>
-    <g:product_type>Built In bbqs &gt; myGRILL &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -401,7 +401,7 @@
   </item>
   <item>
     <g:id>950010-03002111</g:id>
-    <g:product_type>Built In bbqs &gt; myGRILL &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -411,7 +411,7 @@
   </item>
   <item>
     <g:id>950010-03003015</g:id>
-    <g:product_type>Built In bbqs &gt; myGRILL &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -421,17 +421,17 @@
   </item>
   <item>
     <g:id>950015-03001206</g:id>
-    <g:product_type>Built In bbqs &gt; myGRILL &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>950015-03002111</g:id>
-    <g:product_type>Built In bbqs &gt; myGRILL &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>950015-03003015</g:id>
-    <g:product_type>Built In bbqs &gt; myGRILL &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -446,25 +446,25 @@
   </item>
   <item>
     <g:id>CS1206-15-PLUS-BUNDLE</g:id>
-    <g:product_type>Trolley bbqs &gt; myGRILL &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Trolley bbqs &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>4590.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>CS2111-15-PLUS-BUNDLE</g:id>
-    <g:product_type>Trolley bbqs &gt; myGRILL &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Trolley bbqs &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>5085.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>CS3015-15-PLUS-BUNDLE</g:id>
-    <g:product_type>Trolley bbqs &gt; myGRILL &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Trolley bbqs &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>out of stock</g:availability>
     <g:sale_price>5580.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>CS3015-15-PLUS-BIGSPIT</g:id>
-    <g:product_type>Trolley bbqs &gt; Large Spit Rotisseries &gt; myGRILL &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Large Spit Rotisseries &gt; Trolley bbqs &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>out of stock</g:availability>
     <g:sale_price>6385.50 AUD</g:sale_price>
   </item>
@@ -495,12 +495,12 @@
   </item>
   <item>
     <g:id>SL1205-10</g:id>
-    <g:product_type>Built In bbqs &gt; myGRILL &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>SL2111-10</g:id>
-    <g:product_type>Built In bbqs &gt; myGRILL &gt; All Rotisseries</g:product_type>
+    <g:product_type>myGRILL &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -785,12 +785,12 @@
   </item>
   <item>
     <g:id>9316561058291</g:id>
-    <g:product_type>Built In bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>ARG-0718</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -920,7 +920,7 @@
   </item>
   <item>
     <g:id>SSBBQTC</g:id>
-    <g:product_type>Trolley bbqs &gt; Portable bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Trolley bbqs &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -940,7 +940,7 @@
   </item>
   <item>
     <g:id>9347726003078</g:id>
-    <g:product_type>Built In bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -965,12 +965,12 @@
   </item>
   <item>
     <g:id>629162133731</g:id>
-    <g:product_type>Portable bbqs &gt; Trolley bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Portable bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>629162133717</g:id>
-    <g:product_type>Portable bbqs &gt; Trolley bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Portable bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -1245,12 +1245,12 @@
   </item>
   <item>
     <g:id>9316561067552</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9316561067576</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -1280,12 +1280,12 @@
   </item>
   <item>
     <g:id>CG-9000</g:id>
-    <g:product_type>Built In bbqs &gt; Cyprus grills &gt; All Rotisseries</g:product_type>
+    <g:product_type>Cyprus grills &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>CG-9000A-BUNDLE</g:id>
-    <g:product_type>Built In bbqs &gt; Cyprus grills &gt; All Rotisseries</g:product_type>
+    <g:product_type>Cyprus grills &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -1660,7 +1660,7 @@
   </item>
   <item>
     <g:id>9316561073164</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -1670,7 +1670,7 @@
   </item>
   <item>
     <g:id>9316561073454</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -1777,17 +1777,17 @@
   </item>
   <item>
     <g:id>099143020877</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>099143020884</g:id>
-    <g:product_type>Charcoal Smokers &gt; Portable bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Portable bbqs &gt; Charcoal Smokers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>099143021416</g:id>
-    <g:product_type>Charcoal Smokers &gt; Trolley bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Portable bbqs &gt; Charcoal Smokers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2093,7 +2093,7 @@
   </item>
   <item>
     <g:id>9316561079661</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2148,12 +2148,12 @@
   </item>
   <item>
     <g:id>629162142191</g:id>
-    <g:product_type>Built In bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>629162142214</g:id>
-    <g:product_type>Built In bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2193,12 +2193,12 @@
   </item>
   <item>
     <g:id>629162142207</g:id>
-    <g:product_type>Built In bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>BILEX485SS-BUNDLE</g:id>
-    <g:product_type>Built In bbqs &gt; 3 Burner bbqs &gt; Gas BBQs &gt; BBQ Bundles</g:product_type>
+    <g:product_type>BBQ Bundles &gt; Built In bbqs &gt; 3 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>2549.00 AUD</g:sale_price>
   </item>
@@ -2300,7 +2300,7 @@
   </item>
   <item>
     <g:id>CROSS-BUNDLE</g:id>
-    <g:product_type>Trolley bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; BBQ Bundles</g:product_type>
+    <g:product_type>BBQ Bundles &gt; Trolley bbqs &gt; 4 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2377,7 +2377,7 @@
   </item>
   <item>
     <g:id>9314388082925</g:id>
-    <g:product_type>Trolley bbqs &gt; 2 Burner bbqs &gt; Electric bbqs</g:product_type>
+    <g:product_type>Electric bbqs &gt; Trolley bbqs &gt; 2 Burner bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2397,13 +2397,13 @@
   </item>
   <item>
     <g:id>BSL158SA-BUNDLE</g:id>
-    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs &gt; BBQ Bundles</g:product_type>
+    <g:product_type>BBQ Bundles &gt; Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>4199.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>BSH158SA-BUNDLE</g:id>
-    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs &gt; BBQ Bundles</g:product_type>
+    <g:product_type>BBQ Bundles &gt; Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>4249.00 AUD</g:sale_price>
   </item>
@@ -2450,7 +2450,7 @@
   </item>
   <item>
     <g:id>634868929380</g:id>
-    <g:product_type>Portable bbqs &gt; Pellet Smokers</g:product_type>
+    <g:product_type>Pellet Smokers &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2490,12 +2490,12 @@
   </item>
   <item>
     <g:id>720968956958</g:id>
-    <g:product_type>Built In bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Charcoal Smokers &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>651772007713</g:id>
-    <g:product_type>Built In bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Charcoal Smokers &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2505,17 +2505,17 @@
   </item>
   <item>
     <g:id>720968956552</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>720968956828</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>651772007737</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2686,7 +2686,7 @@
   </item>
   <item>
     <g:id>811738021522</g:id>
-    <g:product_type>Built In bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Charcoal Smokers &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2756,12 +2756,12 @@
   </item>
   <item>
     <g:id>9314388082956</g:id>
-    <g:product_type>Built In bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314388084011</g:id>
-    <g:product_type>Built In bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2791,7 +2791,7 @@
   </item>
   <item>
     <g:id>9314388084455</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2801,7 +2801,7 @@
   </item>
   <item>
     <g:id>9314388084479</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2941,7 +2941,7 @@
   </item>
   <item>
     <g:id>TCBUILTIN-BUNDLE</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; BBQ Bundles</g:product_type>
+    <g:product_type>BBQ Bundles &gt; Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3013,12 +3013,12 @@
   </item>
   <item>
     <g:id>9334038006101</g:id>
-    <g:product_type>Built In bbqs &gt; 2 Burner bbqs &gt; Electric bbqs</g:product_type>
+    <g:product_type>Electric bbqs &gt; Built In bbqs &gt; 2 Burner bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9334038006293</g:id>
-    <g:product_type>Trolley bbqs &gt; 2 Burner bbqs &gt; Electric bbqs</g:product_type>
+    <g:product_type>Electric bbqs &gt; Trolley bbqs &gt; 2 Burner bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3058,7 +3058,7 @@
   </item>
   <item>
     <g:id>602573868997</g:id>
-    <g:product_type>Accessories &gt; Smokers Accessories &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Smokers Accessories &gt; Side Burner (Wok) &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3069,7 +3069,7 @@
   </item>
   <item>
     <g:id>9314388084820</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3084,12 +3084,12 @@
   </item>
   <item>
     <g:id>099143021669</g:id>
-    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>099143021645</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal Smokers</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3347,17 +3347,17 @@
   </item>
   <item>
     <g:id>8720663984289</g:id>
-    <g:product_type>Built In bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Charcoal Smokers &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>8720365856167</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>8720365856143</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3397,7 +3397,7 @@
   </item>
   <item>
     <g:id>CG-9900</g:id>
-    <g:product_type>Built In bbqs &gt; Cyprus grills &gt; All Rotisseries</g:product_type>
+    <g:product_type>Cyprus grills &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3452,7 +3452,7 @@
   </item>
   <item>
     <g:id>SSBBQHW</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3508,7 +3508,7 @@
   </item>
   <item>
     <g:id>BX101-BUNDLE</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs &gt; BBQ Bundles</g:product_type>
+    <g:product_type>BBQ Bundles &gt; Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3554,12 +3554,12 @@
   </item>
   <item>
     <g:id>BQ2047BL-HOOD-BUNDLE</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; BBQ Bundles</g:product_type>
+    <g:product_type>BBQ Bundles &gt; Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>BQ2047BLNG-HOOD-BUNDLE</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; BBQ Bundles</g:product_type>
+    <g:product_type>BBQ Bundles &gt; Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3861,12 +3861,12 @@
   </item>
   <item>
     <g:id>9314388082932</g:id>
-    <g:product_type>Electric bbqs</g:product_type>
+    <g:product_type>Electric bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314388084844</g:id>
-    <g:product_type>Electric bbqs</g:product_type>
+    <g:product_type>Electric bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3911,7 +3911,7 @@
   </item>
   <item>
     <g:id>9314388085681</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3966,7 +3966,7 @@
   </item>
   <item>
     <g:id>9314388085698</g:id>
-    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs</g:product_type>
+    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3976,7 +3976,7 @@
   </item>
   <item>
     <g:id>9314388085711</g:id>
-    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs</g:product_type>
+    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4033,17 +4033,17 @@
   </item>
   <item>
     <g:id>9314388085728</g:id>
-    <g:product_type>5 and 6 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314388085735</g:id>
-    <g:product_type>5 and 6 Burner bbqs &gt; Built In bbqs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314388085759</g:id>
-    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs</g:product_type>
+    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4272,7 +4272,7 @@
   </item>
   <item>
     <g:id>062703882444</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4337,32 +4337,32 @@
   </item>
   <item>
     <g:id>629162155443</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>629162155436</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>629162155559</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>629162155542</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>629162147011</g:id>
-    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Charcoal Smokers &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>629162147028</g:id>
-    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Charcoal Smokers &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4593,12 +4593,12 @@
   </item>
   <item>
     <g:id>9312646029569</g:id>
-    <g:product_type>Trolley bbqs &gt; Portable bbqs &gt; Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Portable bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646040052</g:id>
-    <g:product_type>Charcoal bbqs &gt; Trolley bbqs &gt; Portable bbqs &gt; Charcoal Smokers</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4613,32 +4613,32 @@
   </item>
   <item>
     <g:id>9312646038431</g:id>
-    <g:product_type>2 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646038462</g:id>
-    <g:product_type>2 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646034839</g:id>
-    <g:product_type>2 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646034836</g:id>
-    <g:product_type>3 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 3 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646038516</g:id>
-    <g:product_type>3 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 3 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646038486</g:id>
-    <g:product_type>3 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 3 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4653,7 +4653,7 @@
   </item>
   <item>
     <g:id>9334038007160</g:id>
-    <g:product_type>Built In bbqs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4683,7 +4683,7 @@
   </item>
   <item>
     <g:id>ARG-0720</g:id>
-    <g:product_type>Trolley bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
   <item>
@@ -4693,12 +4693,12 @@
   </item>
   <item>
     <g:id>9316561090031</g:id>
-    <g:product_type>3 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Built In bbqs &gt; 3 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9316561090024</g:id>
-    <g:product_type>3 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Built In bbqs &gt; 3 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4729,17 +4729,17 @@
   </item>
   <item>
     <g:id>629162155320</g:id>
-    <g:product_type>2 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>629162155337</g:id>
-    <g:product_type>3 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 3 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>629162155344</g:id>
-    <g:product_type>4 Burner bbqs &gt; Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; 4 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4953,7 +4953,7 @@
   </item>
   <item>
     <g:id>9312646041103</g:id>
-    <g:product_type>Portable bbqs &gt; Large Spit Rotisseries &gt; Portable Spit &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
+    <g:product_type>Portable Spit &gt; Portable bbqs &gt; Charcoal bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5182,7 +5182,7 @@
   </item>
   <item>
     <g:id>062703892443</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>6499.00 AUD</g:sale_price>
   </item>
@@ -5353,12 +5353,12 @@
   </item>
   <item>
     <g:id>9314654134983</g:id>
-    <g:product_type>Built In bbqs &gt; Side Burner (Wok) &gt; Electric bbqs</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Electric bbqs &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654134976</g:id>
-    <g:product_type>Built In bbqs &gt; Side Burner (Wok) &gt; Electric bbqs</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Electric bbqs &gt; Built In bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5558,7 +5558,7 @@
   </item>
   <item>
     <g:id>9312646027466</g:id>
-    <g:product_type>Charcoal bbqs &gt; Trolley bbqs &gt; Large Spit Rotisseries &gt; All Rotisseries</g:product_type>
+    <g:product_type>Large Spit Rotisseries &gt; Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6085,7 +6085,7 @@
   </item>
   <item>
     <g:id>CG-9000-BI</g:id>
-    <g:product_type>Built In bbqs &gt; Cyprus grills &gt; All Rotisseries</g:product_type>
+    <g:product_type>Cyprus grills &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6095,32 +6095,32 @@
   </item>
   <item>
     <g:id>9312646046801</g:id>
-    <g:product_type>Trolley bbqs &gt; Large Spit Rotisseries &gt; Charcoal bbqs &gt; All Rotisseries</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646046788</g:id>
-    <g:product_type>Portable bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646046771</g:id>
-    <g:product_type>Portable bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646046764</g:id>
-    <g:product_type>Portable bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646046740</g:id>
-    <g:product_type>Portable bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646046733</g:id>
-    <g:product_type>Portable bbqs &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6330,13 +6330,13 @@
   </item>
   <item>
     <g:id>629162150622</g:id>
-    <g:product_type>All Barbeques &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; All Barbeques</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>4195.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>629162150639</g:id>
-    <g:product_type>Built In bbqs</g:product_type>
+    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6392,57 +6392,57 @@
   </item>
   <item>
     <g:id>9314654121020</g:id>
-    <g:product_type>Built In bbqs &gt; 3 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; 3 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654121037</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; 4 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654101411</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; 4 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654101428</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; 4 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654101367</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; 4 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654101374</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; 4 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654101381</g:id>
-    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; 5 and 6 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654101398</g:id>
-    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; 5 and 6 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654051679</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654051662</g:id>
-    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9314654056117</g:id>
-    <g:product_type>Built In bbqs &gt; 3 Burner bbqs &gt; Gas BBQs &gt; Side Burner (Wok)</g:product_type>
+    <g:product_type>Side Burner (Wok) &gt; 3 Burner bbqs &gt; Built In bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7051,7 +7051,7 @@
   </item>
   <item>
     <g:id>9314388084820</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
