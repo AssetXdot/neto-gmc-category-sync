@@ -10561,6 +10561,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325353309</g:gtin>
     <g:mpn>BBQ02SI</g:mpn>
     <g:product_type>Charcoal BBQ &gt; Trolley BBQ</g:product_type>
     <g:shipping_weight>400.00 kg</g:shipping_weight>
@@ -10576,6 +10577,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325354269</g:gtin>
     <g:mpn>BBQ02SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>420.00 kg</g:shipping_weight>
@@ -10591,6 +10593,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325355495</g:gtin>
     <g:mpn>BBQ12SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>430.00 kg</g:shipping_weight>
@@ -10606,6 +10609,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325354573</g:gtin>
     <g:mpn>BBQ22SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>450.00 kg</g:shipping_weight>
@@ -10621,6 +10625,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325353316</g:gtin>
     <g:mpn>BBQ03SI</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>230.00 kg</g:shipping_weight>
@@ -10636,6 +10641,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325353323</g:gtin>
     <g:mpn>BBQ03SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>200.00 kg</g:shipping_weight>
@@ -10651,6 +10657,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325354566</g:gtin>
     <g:mpn>BBQ06SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>310.00 kg</g:shipping_weight>
@@ -10666,6 +10673,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325354467</g:gtin>
     <g:mpn>BBQ23SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>170.00 kg</g:shipping_weight>
@@ -10681,6 +10689,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325354771</g:gtin>
     <g:mpn>BBQ26SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>400.00 kg</g:shipping_weight>
@@ -10696,6 +10705,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325353521</g:gtin>
     <g:mpn>BBQ05SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>160.00 kg</g:shipping_weight>
@@ -10711,6 +10721,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325355501</g:gtin>
     <g:mpn>BBQ09SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>75.00 kg</g:shipping_weight>
@@ -10726,6 +10737,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325354481</g:gtin>
     <g:mpn>BBQ25SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>170.00 kg</g:shipping_weight>
@@ -10756,6 +10768,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325354788</g:gtin>
     <g:mpn>BBQ28SS</g:mpn>
     <g:product_type>Charcoal BBQ</g:product_type>
     <g:shipping_weight>360.00 kg</g:shipping_weight>
@@ -10867,6 +10880,7 @@
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Tagwood</g:brand>
+    <g:gtin>7798325354306</g:gtin>
     <g:mpn>BBQ52SS</g:mpn>
     <g:product_type>Barbecues Accessories</g:product_type>
     <g:shipping_weight>5.00 kg</g:shipping_weight>
@@ -11018,6 +11032,96 @@
     <g:condition>New</g:condition>
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-NAM-L79-CS</g:mpn>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:shipping_weight>0.00 kg</g:shipping_weight>
+    <g:shipping_height>0 cm</g:shipping_height>
+    <g:shipping_length>0 cm</g:shipping_length>
+    <g:shipping_width>0 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>AR-SES-L75-SS</g:id>
+    <g:title>ALFRED RIESS Sesiakampis Stainless Steel Fire Pit - AR-SES-L75-SS</g:title>
+    <g:description>ALFRED RIESS Sesiakampis Stainless Steel Fire Pit - AR-SES-L75-SS The ALFRED RIESS Sesiakampis Stainless Steel Fire Pit is a striking statement piece that combines contemporary design with exceptional European craftsmanship. Its distinctive geometric form creates a bold focal point, bringing warmth, style, and atmosphere to any outdoor entertaining space. Expertly handcrafted from premium stainless steel, this architectural fire pit is designed to complement both modern and traditional landscapes. Whether you&apos;re hosting friends on a cool evening, gathering with family around the fire, or adding a sophisticated feature to your patio or garden, the Sesiakampis delivers timeless appeal and lasting performance. With its clean lines, refined finish, and sculptural presence, the Sesiakampis is more than just a fire pit—it is an outdoor centrepiece that enhances your backyard with elegance and inviting ambience throughout every season.</g:description>
+    <g:price>1129.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Alfred Riess</g:brand>
+    <g:mpn>AR-SES-L75-SS</g:mpn>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:shipping_weight>0.00 kg</g:shipping_weight>
+    <g:shipping_height>0 cm</g:shipping_height>
+    <g:shipping_length>0 cm</g:shipping_length>
+    <g:shipping_width>0 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>AR-STR-L80-CC</g:id>
+    <g:title>ALFRED RIESS Stromboli Steel Fire Pit - Large - AR-STR-L80-CC</g:title>
+    <g:description>ALFRED RIESS Stromboli Steel Fire Pit - Large - AR-STR-L80-CC The ALFRED RIESS Stromboli Steel Fire Pit – Large is a beautifully crafted outdoor centrepiece that combines contemporary design with timeless European craftsmanship. Designed to bring warmth and ambience to your outdoor living space, it creates the perfect setting for entertaining guests, relaxing with family, or enjoying cosy evenings under the stars. Hand-finished from premium carbon steel with elegantly crafted stainless steel legs, the Stromboli is built to develop even more character over time. As it naturally forms a rich, weathered patina, each fire pit takes on a unique appearance that enhances its architectural appeal and complements a wide range of outdoor settings. Whether placed on a patio, in the garden, or as the focal point of an outdoor entertaining area, the Stromboli delivers both lasting durability and sophisticated style. Its clean lines and sculptural form make it a standout addition that offers years of enjoyment while creating a warm and inviting atmosphere in every season.</g:description>
+    <g:price>424.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Alfred Riess</g:brand>
+    <g:mpn>AR-STR-L80-CC</g:mpn>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:shipping_weight>0.00 kg</g:shipping_weight>
+    <g:shipping_height>0 cm</g:shipping_height>
+    <g:shipping_length>0 cm</g:shipping_length>
+    <g:shipping_width>0 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>FF293</g:id>
+    <g:title>ESSCHERT DESIGN Fire Ball Pre-Rusted Laser Cut - Leaves - FF293</g:title>
+    <g:description>ESSCHERT DESIGN Fire Ball Pre-Rusted Laser Cut - Leaves - FF293 The ESSCHERT DESIGN Fire Ball Pre-Rusted Laser Cut – Leaves is a stunning outdoor fire feature that brings warmth, ambience, and artistic style to your garden or entertaining area. Featuring an intricate leaf-inspired laser-cut design, it transforms a simple fire into a captivating display of dancing light and shadow, creating a cosy atmosphere for family gatherings and outdoor evenings. Crafted from durable mild steel with a pre-rusted finish, this decorative fire ball is designed to develop an even richer natural patina over time. Exposure to heat and the elements enhances its unique character, making each piece beautifully individual while blending effortlessly into natural landscapes and contemporary outdoor spaces alike. Whether you&apos;re relaxing on the patio, entertaining guests, or enjoying a quiet evening under the stars, the ESSCHERT DESIGN Fire Ball creates an inviting focal point that can be enjoyed throughout every season. Its combination of sculptural design and timeless craftsmanship makes it a standout addition to any outdoor living area.</g:description>
+    <g:price>840.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Esschert Design</g:brand>
+    <g:mpn>FF293</g:mpn>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:shipping_weight>0.00 kg</g:shipping_weight>
+    <g:shipping_height>0 cm</g:shipping_height>
+    <g:shipping_length>0 cm</g:shipping_length>
+    <g:shipping_width>0 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>FF526</g:id>
+    <g:title>ESSCHERT DESIGN Black Fire Bowl With Wood Storage - 60cm - FF526</g:title>
+    <g:description>ESSCHERT DESIGN Black Fire Bowl With Wood Storage - 60cm - FF526 The ESSCHERT DESIGN Black Fire Bowl With Wood Storage – 60cm is a stylish and practical addition to any outdoor entertaining area, combining modern design with the warmth and ambience of a traditional wood-burning fire. Its clean lines and contemporary finish create a striking focal point, making it the perfect centrepiece for patios, gardens, and outdoor living spaces. Thoughtfully designed to enhance both form and function, this fire bowl creates an inviting atmosphere for relaxing with family or entertaining friends throughout the year. The integrated wood storage keeps your firewood neatly organised and close at hand, allowing you to enjoy uninterrupted evenings around the fire. Whether you&apos;re gathering on cool evenings or adding a sophisticated feature to your backyard, the ESSCHERT DESIGN Black Fire Bowl delivers lasting style, warmth, and a welcoming outdoor experience that can be enjoyed season after season.</g:description>
+    <g:price>903.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Esschert Design</g:brand>
+    <g:mpn>FF526</g:mpn>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:shipping_weight>0.00 kg</g:shipping_weight>
+    <g:shipping_height>0 cm</g:shipping_height>
+    <g:shipping_length>0 cm</g:shipping_length>
+    <g:shipping_width>0 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>FF528</g:id>
+    <g:title>ESSCHERT DESIGN Black Fire Bowl With Wood Storage - 80cm - FF528</g:title>
+    <g:description>ESSCHERT DESIGN Black Fire Bowl With Wood Storage - 80cm - FF528 The ESSCHERT DESIGN Black Fire Bowl With Wood Storage – 80cm is a contemporary outdoor fire feature designed to bring warmth, style, and functionality to your backyard or entertaining area. Its bold, minimalist design creates a striking focal point while providing the perfect setting for gathering with family and friends on cool evenings. Combining modern aesthetics with practical convenience, this wood-burning fire bowl features an integrated storage space that keeps firewood neatly organised and within easy reach. The elevated design enhances the overall outdoor experience, creating a comfortable and inviting atmosphere for relaxing, entertaining, or simply enjoying the beauty of an open fire. Whether placed on a patio, deck, or in the garden, the ESSCHERT DESIGN Black Fire Bowl With Wood Storage is a timeless addition that blends seamlessly with a variety of outdoor styles, offering year-round ambience and making every outdoor gathering feel warm and welcoming.</g:description>
+    <g:price>1155.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Esschert Design</g:brand>
+    <g:mpn>FF528</g:mpn>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:shipping_weight>0.00 kg</g:shipping_weight>
+    <g:shipping_height>0 cm</g:shipping_height>
+    <g:shipping_length>0 cm</g:shipping_length>
+    <g:shipping_width>0 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>AR-FAR-FL</g:id>
+    <g:title>ALFRED RIESS Fairy Tales Brazier Basket - Flame - AR-FAR-FL</g:title>
+    <g:description>ALFRED RIESS Fairy Tales Brazier Basket - Flame - AR-FAR-FL The ALFRED RIESS Fairy Tales Brazier Basket – Flame is a beautifully crafted portable fire pit that combines artistic design with the warmth and ambience of a traditional open fire. Featuring an eye-catching laser-cut flame motif, it creates a stunning display of flickering light and shadow, making every outdoor gathering feel inviting and memorable. Designed for adventure as well as home entertaining, this innovative fire basket is easy to transport and set up wherever you want to enjoy the comfort of a real wood fire. Whether you&apos;re camping, spending an evening at the beach, relaxing in the backyard, or gathering with friends, it provides a safe and stylish focal point for creating lasting memories. Expertly crafted from premium European carbon steel, the Fairy Tales Brazier Basket naturally develops a rich, rustic patina over time, giving each piece its own unique character. Its combination of contemporary design, durability, and portability makes it an ideal choice for anyone who loves outdoor living and gathering around the warmth of a fire.</g:description>
+    <g:price>415.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Alfred Riess</g:brand>
+    <g:mpn>AR-FAR-FL</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
     <g:shipping_weight>0.00 kg</g:shipping_weight>
     <g:shipping_height>0 cm</g:shipping_height>
