@@ -809,7 +809,7 @@
     <g:price>544.00 AUD</g:price>
     <g:availability>out of stock</g:availability>
     <g:condition>New</g:condition>
-    <g:brand>MEATER</g:brand>
+    <g:brand>Meater</g:brand>
     <g:mpn>MBLOCK</g:mpn>
     <g:product_type>Accessories &gt; Thermometer &gt; Thermometer &gt; Thermometers</g:product_type>
     <g:shipping_weight>1.40 kg</g:shipping_weight>
@@ -2601,7 +2601,7 @@
     <g:price>753.00 AUD</g:price>
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
-    <g:brand>MASTERBUILT</g:brand>
+    <g:brand>Masterbuilt</g:brand>
     <g:mpn>MB20061321</g:mpn>
     <g:product_type>Charcoal Smokers</g:product_type>
     <g:shipping_weight>44.00 kg</g:shipping_weight>
@@ -2616,7 +2616,7 @@
     <g:price>1399.00 AUD</g:price>
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
-    <g:brand>MASTERBUILT</g:brand>
+    <g:brand>Masterbuilt</g:brand>
     <g:mpn>MB20042221</g:mpn>
     <g:product_type>Charcoal Smokers &gt; Trolley BBQ &gt; Charcoal BBQ</g:product_type>
     <g:shipping_weight>95.60 kg</g:shipping_weight>
@@ -4592,7 +4592,7 @@
     <g:price>499.00 AUD</g:price>
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
-    <g:brand>MASTERBUILT</g:brand>
+    <g:brand>Masterbuilt</g:brand>
     <g:mpn>MB20040622</g:mpn>
     <g:product_type>Portable BBQ &gt; Charcoal BBQ</g:product_type>
     <g:shipping_weight>15.79 kg</g:shipping_weight>
@@ -4607,7 +4607,7 @@
     <g:price>555.00 AUD</g:price>
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
-    <g:brand>MASTERBUILT</g:brand>
+    <g:brand>Masterbuilt</g:brand>
     <g:mpn>MB20040822</g:mpn>
     <g:product_type>Trolley BBQ &gt; Portable BBQ &gt; Charcoal BBQ</g:product_type>
     <g:shipping_weight>23.59 kg</g:shipping_weight>
@@ -5819,7 +5819,7 @@
     <g:price>1299.00 AUD</g:price>
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
-    <g:brand>MASTERBUILT</g:brand>
+    <g:brand>Masterbuilt</g:brand>
     <g:mpn>MB20041423</g:mpn>
     <g:product_type>Charcoal Smokers &gt; Trolley BBQ &gt; Charcoal BBQ</g:product_type>
     <g:shipping_weight>75.00 kg</g:shipping_weight>
@@ -6021,7 +6021,7 @@
     <g:id>SK422R-B-HD</g:id>
     <g:title>Schmick Classy Upright Heated Glass 1 Door Bar Fridge - Model SK422R-B-HD</g:title>
     <g:description>Schmick Classy Upright Heated Glass 1 Door Bar Fridge - Model SK422R-B-HD The Schmick SK422R-B-HD Upright Bar Fridge is a stylish, energy-efficient solution for storing drinks in any modern home, bar, or man cave. Featuring a triple-glazed LOW E heated glass door, it effectively prevents condensation, keeping visibility clear and ensuring a sleek, polished look. The interior boasts a premium stainless steel finish, adding durability and a high-end aesthetic. Designed for both flexibility and function, this fridge includes fully adjustable shelving and a reversible, lockable door—ideal for any space and added security. Blue or white LED strip lighting can be selected with the press of a button, letting you tailor the vibe to suit your setting. Equipped with quiet-running Schmick-branded internal fans and an advanced ECO controller, the SK422R-B-HD delivers consistent cooling performance with minimal energy use. Combining smart features, reliable components, and elegant styling, this fridge is perfect for keeping your brews chilled and your space looking sharp.</g:description>
-    <g:price>2497.00 AUD</g:price>
+    <g:price>2227.00 AUD</g:price>
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Schmick</g:brand>
@@ -6828,7 +6828,7 @@
     <g:price>1693.00 AUD</g:price>
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
-    <g:brand>MASTERBUILT</g:brand>
+    <g:brand>Masterbuilt</g:brand>
     <g:mpn>MB20041625</g:mpn>
     <g:product_type>Charcoal Smokers &gt; Trolley BBQ &gt; Charcoal BBQ</g:product_type>
     <g:shipping_weight>85.00 kg</g:shipping_weight>
@@ -8653,7 +8653,7 @@
     <g:id>SK156-COMBO-BM</g:id>
     <g:title>Schmick Quiet Running Under Bench Beer Wine Combination Fridge - Model SK156-COMBO-BM</g:title>
     <g:description>Schmick Quiet Running Under Bench Beer Wine Combination Fridge - Model SK156-COMBO-BM Enhance your kitchen or home bar with the Schmick Quiet Running Under Bench Beer &amp; Wine Combination Fridge. Designed to blend effortlessly into modern spaces, it offers a refined way to store and display your favourite beverages while maintaining a calm, quiet environment. Its thoughtful design allows for complete flexibility, making it easy to organize drinks just the way you like. Perfect for entertaining or everyday enjoyment, this fridge combines style, practicality, and reliability in one sleek under-bench solution. With its elegant glass presentation and customizable interior, it turns any space into a polished and inviting drinks area.</g:description>
-    <g:price>2637.00 AUD</g:price>
+    <g:price>2000.00 AUD</g:price>
     <g:availability>in stock</g:availability>
     <g:condition>New</g:condition>
     <g:brand>Schmick</g:brand>
@@ -10068,6 +10068,52 @@
     <g:shipping_width>0 cm</g:shipping_width>
   </item>
   <item>
+    <g:id>TOVL-1824</g:id>
+    <g:title>Tandoor Domestic Charcoal Tandoori Oven Stainless Steel (SS2) Large - 18 x 18 x 32 inch - TOVL-1824</g:title>
+    <g:description>Tanoor | S/Steel Home Tandoor | Domestic Tandoori Oven Large (SS2) - TOVL-1824 Experience the authentic art of tandoori cooking with the Stainless Steel Domestic Home Tandoor from Tanoor. Designed for home chefs who appreciate traditional flavors, this tandoor brings the rich culinary heritage of India into your kitchen or outdoor cooking space. It allows you to create delicious, restaurant-style meals while enjoying the unique cooking experience that only a tandoor can provide. Perfect for family gatherings, weekend cookouts, or everyday cooking, this home tandoor helps transform simple ingredients into flavorful dishes infused with the distinctive taste and aroma of traditional tandoori cuisine. From freshly baked breads to perfectly roasted meats and vegetables, every meal becomes a memorable dining experience. Hand made in India, this is a trusted name in tandoor production and innovation, this home tandoor reflects a commitment to quality craftsmanship and excellence. Combining traditional cooking methods with modern design, it is an ideal choice for anyone looking to explore authentic Indian cooking from the comfort of home.</g:description>
+    <g:price>950.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Tanoor</g:brand>
+    <g:mpn>TOVL-1824</g:mpn>
+    <g:product_type>Charcoal BBQ &gt; Portable BBQ</g:product_type>
+    <g:shipping_weight>70.00 kg</g:shipping_weight>
+    <g:shipping_height>80 cm</g:shipping_height>
+    <g:shipping_length>50 cm</g:shipping_length>
+    <g:shipping_width>50 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>TOVL-1832</g:id>
+    <g:title>Tandoor Domestic Charcoal Tandoori Oven Stainless Steel (SS3) XLarge - 18 x 18 x 32 inch - TOVL-1832</g:title>
+    <g:description>Tanoor | S/Steel Home Tandoor | Domestic Tandoori Oven XLarge (SS3) - TOVL-1832 Experience the authentic art of tandoori cooking with the Stainless Steel Domestic Home Tandoor from Tanoor. Designed for home chefs who appreciate traditional flavors, this tandoor brings the rich culinary heritage of India into your kitchen or outdoor cooking space. It allows you to create delicious, restaurant-style meals while enjoying the unique cooking experience that only a tandoor can provide. Perfect for family gatherings, weekend cookouts, or everyday cooking, this home tandoor helps transform simple ingredients into flavorful dishes infused with the distinctive taste and aroma of traditional tandoori cuisine. From freshly baked breads to perfectly roasted meats and vegetables, every meal becomes a memorable dining experience. Hand made in India, this is a trusted name in tandoor production and innovation, this home tandoor reflects a commitment to quality craftsmanship and excellence. Combining traditional cooking methods with modern design, it is an ideal choice for anyone looking to explore authentic Indian cooking from the comfort of home.</g:description>
+    <g:price>1100.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Tanoor</g:brand>
+    <g:mpn>TOVL-1832</g:mpn>
+    <g:product_type>Charcoal BBQ &gt; Portable BBQ</g:product_type>
+    <g:shipping_weight>70.00 kg</g:shipping_weight>
+    <g:shipping_height>90 cm</g:shipping_height>
+    <g:shipping_length>50 cm</g:shipping_length>
+    <g:shipping_width>50 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>ADW5003X</g:id>
+    <g:title>Artusi 60cm Freestanding Stainless Steel Dishwasher - ADW5003X</g:title>
+    <g:description>Artusi 60cm Freestanding Stainless Steel Dishwasher - ADW5003X Bring effortless cleanliness and modern elegance to your kitchen with the Artusi 60cm Freestanding Dishwasher. Designed to simplify everyday living, it delivers dependable washing performance that helps keep your cookware, dinnerware, and glassware spotless with minimal effort. Its contemporary design blends seamlessly into a variety of kitchen styles, creating a refined and practical addition to your home. Thoughtfully engineered for convenience, this dishwasher makes daily cleanup easier, whether you&apos;re tackling family meals, entertaining guests, or managing everyday household tasks. Flexible interior arrangements allow for a more organised loading experience, while advanced cleaning technology ensures dishes emerge fresh, hygienic, and ready to use. Quiet operation enhances comfort throughout your home, allowing the dishwasher to run discreetly in the background without disrupting daily activities. Efficient water and energy management support a more sustainable lifestyle while maintaining excellent cleaning results. Combining reliability, convenience, and stylish design, the Artusi 60cm Freestanding Dishwasher is a practical solution for households seeking exceptional performance and everyday ease.</g:description>
+    <g:price>949.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Artusi</g:brand>
+    <g:gtin>9347777001412</g:gtin>
+    <g:mpn>ADW5003X</g:mpn>
+    <g:product_type>Kitchens</g:product_type>
+    <g:shipping_weight>45.00 kg</g:shipping_weight>
+    <g:shipping_height>89 cm</g:shipping_height>
+    <g:shipping_length>67 cm</g:shipping_length>
+    <g:shipping_width>67 cm</g:shipping_width>
+  </item>
+  <item>
     <g:id>LUA190T14</g:id>
     <g:title>Lucia Bowl &amp; a Half with KTA014-BR Kitchen Mixer, Drain Tray &amp; Cutting Board - LUA190T14</g:title>
     <g:description>Lucia Bowl &amp; a Half with KTA014-BR Kitchen Mixer, Drain Tray &amp; Cutting Board - LUA190T14 Transform your kitchen with the timeless elegance and practical design of the Lucia Sinkware Package. Combining sophisticated styling with everyday functionality, this thoughtfully curated kitchen solution creates a seamless and efficient workspace while enhancing the overall look of your home. Inspired by contemporary design principles, the Lucia collection features clean lines and a refined aesthetic that effortlessly complements a wide range of kitchen interiors. Its sleek appearance adds a sense of modern luxury, making it an ideal choice for both renovations and new kitchen projects. Crafted with exceptional attention to detail, this package is designed to support the demands of everyday living while maintaining its stylish appeal for years to come. Whether preparing meals, cleaning up after family gatherings, or completing daily kitchen tasks, the Lucia Sinkware Package delivers a balance of beauty, convenience, and lasting quality that elevates the heart of your home. This Pack Includes: DTA16 Drain Tray, CBB245 Cutting Board &amp; KTA014-BR Kitchen Mixer (5 Star, 5.5L/min)</g:description>
@@ -10554,293 +10600,6 @@
     <g:shipping_width>82 cm</g:shipping_width>
   </item>
   <item>
-    <g:id>BBQ02SI</g:id>
-    <g:title>360° Open-Fire Grill Cold-roll steel - TAGWOOD - BBQ02SI</g:title>
-    <g:description>360° Open-Fire Grill Cold-roll steel - TAGWOOD - BBQ02SI The BBQ02SI is designed for those who appreciate the authentic experience of cooking over real fire. Combining traditional Argentine gaucho grilling with a striking modern design, it brings together timeless craftsmanship and contemporary style to create a standout centrepiece for any outdoor entertaining area. Whether you&apos;re preparing a family feast or hosting friends, this premium charcoal and firewood grill delivers the flavour, atmosphere, and versatility that only live-fire cooking can provide. Its thoughtfully designed cooking experience encourages you to experiment with different techniques, from slow roasting and searing to grilling over glowing embers, making every meal an occasion. Crafted from durable steel and built to withstand years of outdoor use, the BBQ02SI offers the confidence to cook with precision while embracing the ritual of tending a real fire. The distinctive black finish with wood-inspired accents adds a sophisticated touch, blending beautifully into modern alfresco spaces while celebrating the heritage of traditional gaucho barbecue. Perfect for passionate grillers and outdoor cooking enthusiasts, the BBQ02SI transforms every gathering into an unforgettable culinary experience, delivering authentic wood-fired flavour and the satisfaction of mastering the art of live-fire cooking.</g:description>
-    <g:price>10995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325353309</g:gtin>
-    <g:mpn>BBQ02SI</g:mpn>
-    <g:product_type>Charcoal BBQ &gt; Trolley BBQ</g:product_type>
-    <g:shipping_weight>400.00 kg</g:shipping_weight>
-    <g:shipping_height>150 cm</g:shipping_height>
-    <g:shipping_length>150 cm</g:shipping_length>
-    <g:shipping_width>125 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ02SS</g:id>
-    <g:title>360° Open-Fire Grill 304 Stainless Steel TAGWOOD - BBQ02SS</g:title>
-    <g:description>360° Open-Fire Grill 304 Stainless Steel TAGWOOD - BBQ02SS The Silver Bullet is a premium gaucho grill designed for those who appreciate the tradition, flavour, and craftsmanship of authentic live-fire cooking. Inspired by Argentine grilling techniques, it brings the theatre of cooking over wood or charcoal to your outdoor entertaining space, creating memorable meals and unforgettable gatherings. Crafted from high-quality stainless steel, The Silver Bullet is built to withstand the elements while maintaining its sleek, timeless appearance. Its refined design makes it a striking centrepiece for any alfresco kitchen, offering the perfect balance of professional performance and lasting durability. Whether you&apos;re searing premium steaks, slow-cooking large cuts, or preparing a feast for family and friends, this grill delivers the flexibility and control needed to explore the full potential of open-fire cooking. Every cook becomes an opportunity to experiment with flavour, embrace traditional grilling methods, and enjoy the rewarding experience that only real fire can provide. Perfect for passionate outdoor cooks and entertainers, The Silver Bullet transforms your backyard into a true gaucho-style cooking destination, combining authentic wood-fired flavour with exceptional craftsmanship for a grilling experience that&apos;s built to impress.</g:description>
-    <g:price>16995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354269</g:gtin>
-    <g:mpn>BBQ02SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>420.00 kg</g:shipping_weight>
-    <g:shipping_height>160 cm</g:shipping_height>
-    <g:shipping_length>155 cm</g:shipping_length>
-    <g:shipping_width>132 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ12SS</g:id>
-    <g:title>Argentine Charcoal &amp; Woodfired Parrilla Grill - BBQ12SS</g:title>
-    <g:description>Argentine Charcoal &amp; Woodfired Parrilla Grill - BBQ12SS The Tagwood BBQ12SS Argentine Charcoal &amp; Woodfired Parrilla Grill is the ultimate centrepiece for those who demand the very best in outdoor cooking. Inspired by the rich traditions of Argentine asado, this exceptional grill delivers an authentic wood-fired cooking experience that combines craftsmanship, performance, and unforgettable flavour. Designed for passionate entertainers and serious barbecue enthusiasts, the BBQ12SS makes it easy to create restaurant-quality meals while bringing family and friends together around the fire. From perfectly seared steaks to slow-roasted meats and flame-kissed vegetables, every cook becomes an immersive culinary experience fuelled by charcoal or hardwood. Its commanding presence, premium construction, and unmistakable Argentine heritage make it far more than an outdoor grill—it is a statement piece that transforms any alfresco kitchen into a professional-grade cooking space. Every detail reflects Tagwood BBQ&apos;s dedication to quality, giving you the confidence to cook with precision and authenticity for years to come. Produced in extremely limited numbers, the BBQ12SS is one of the most exclusive Argentine grills available. With only a single unit currently making its way to Australia, this is a rare opportunity to own a true masterpiece that few will ever experience. If you&apos;re looking to elevate your outdoor entertaining and embrace the timeless art of Argentine barbecue, the Tagwood BBQ12SS delivers an unrivalled cooking experience that is built to impress and designed to be remembered.</g:description>
-    <g:price>22995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325355495</g:gtin>
-    <g:mpn>BBQ12SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>430.00 kg</g:shipping_weight>
-    <g:shipping_height>170 cm</g:shipping_height>
-    <g:shipping_length>170 cm</g:shipping_length>
-    <g:shipping_width>160 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ22SS</g:id>
-    <g:title>360° Open-Fire Grill 304 Stainless Steel XXL TAGWOOD - BBQ22SS</g:title>
-    <g:description>360° Open-Fire Grill 304 Stainless Steel XXL TAGWOOD - BBQ22SS The Silver Bullet XL is the pinnacle of live-fire cooking, created for those who want the ultimate outdoor grilling experience. Inspired by the rich traditions of Argentine asado and Santa Maria grilling, this premium grill combines exceptional craftsmanship, striking design, and uncompromising performance to become the centrepiece of any outdoor kitchen. Built entirely from high-quality stainless steel, The Silver Bullet XL is designed to deliver years of reliable performance while maintaining its sophisticated appearance. Its impressive size and professional-quality construction make it ideal for passionate grillers who love entertaining, whether preparing intimate family meals or hosting large gatherings. With the freedom to explore a variety of live-fire cooking techniques, The Silver Bullet XL allows you to create everything from perfectly seared steaks and slow-roasted meats to authentic wood-fired feasts bursting with flavour. The experience of cooking over real wood or charcoal brings an unmatched depth of taste and creates memorable moments around the fire. Designed for serious outdoor chefs, The Silver Bullet XL offers the perfect balance of tradition, innovation, and versatility. It transforms every cook into an immersive culinary experience, delivering authentic wood-fired flavour and the confidence to master the art of live-fire grilling for years to come.</g:description>
-    <g:price>29995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354573</g:gtin>
-    <g:mpn>BBQ22SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>450.00 kg</g:shipping_weight>
-    <g:shipping_height>175 cm</g:shipping_height>
-    <g:shipping_length>180 cm</g:shipping_length>
-    <g:shipping_width>180 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ03SI</g:id>
-    <g:title>Cold-roll steel and SS304 Santa Maria Style grill TAGWOOD - BBQ03SI</g:title>
-    <g:description>Cold-roll steel and SS304 Santa Maria Style grill TAGWOOD - BBQ03SI The BBQ03SI is a premium Santa Maria grill designed for outdoor cooking enthusiasts who appreciate authentic live-fire flavour and professional-quality craftsmanship. Blending traditional grilling techniques with a sleek all-black design, it creates a striking focal point that enhances any backyard or alfresco entertaining area. Built for those who enjoy cooking over wood or charcoal, the BBQ03SI delivers the freedom to explore a wide range of live-fire cooking styles. Whether you&apos;re searing premium steaks, slow-roasting meats, or preparing a feast for family and friends, it offers the control and versatility needed to achieve outstanding results every time. Crafted with durability in mind, this grill is engineered to provide years of reliable performance while maintaining its refined appearance. Its solid construction and thoughtful design make it a dependable choice for frequent entertainers and passionate grillers who demand both style and substance from their outdoor cooking equipment. Perfect for everything from relaxed weekend barbecues to special celebrations, the BBQ03SI transforms every meal into an unforgettable experience. Combining authentic Santa Maria grilling traditions with modern craftsmanship, it delivers exceptional flavour, lasting quality, and the satisfaction of mastering the art of live-fire cooking.</g:description>
-    <g:price>3495.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325353316</g:gtin>
-    <g:mpn>BBQ03SI</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>230.00 kg</g:shipping_weight>
-    <g:shipping_height>102 cm</g:shipping_height>
-    <g:shipping_length>138 cm</g:shipping_length>
-    <g:shipping_width>65 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ03SS</g:id>
-    <g:title>Open Fire Santa Maria Grill TAGWOOD - BBQ03SS</g:title>
-    <g:description>Open Fire Santa Maria Grill TAGWOOD - BBQ03SS The BBQ03SS is the grill that established the TAGWOOD BBQ legacy, bringing the authentic traditions of Argentine live-fire cooking to outdoor enthusiasts who value quality, craftsmanship, and unforgettable flavour. Designed for those who enjoy cooking over real wood or charcoal, it offers a truly immersive grilling experience that celebrates the art of open-fire cooking. Crafted from premium stainless steel, the BBQ03SS is built to provide exceptional durability and long-lasting performance in any outdoor environment. Its timeless design blends seamlessly into modern alfresco spaces while offering the reliability and precision that passionate grillers expect from a professional-quality barbecue. Whether you&apos;re preparing perfectly seared steaks, slow-roasting large cuts of meat, or creating an authentic asado feast for family and friends, the BBQ03SS delivers the flexibility to explore a variety of traditional grilling techniques. Every meal becomes an opportunity to enjoy the rich flavours, aromas, and atmosphere that only live-fire cooking can provide. Ideal for backyard entertainers and dedicated outdoor chefs alike, the BBQ03SS combines authentic Argentine heritage with premium craftsmanship to create a barbecue that&apos;s built for memorable gatherings, exceptional performance, and years of wood-fired cooking enjoyment.</g:description>
-    <g:price>4995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325353323</g:gtin>
-    <g:mpn>BBQ03SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>200.00 kg</g:shipping_weight>
-    <g:shipping_height>107 cm</g:shipping_height>
-    <g:shipping_length>141 cm</g:shipping_length>
-    <g:shipping_width>65 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ06SS</g:id>
-    <g:title>360° Open Fire Santa Maria Grill TAGWOOD - BBQ06SS</g:title>
-    <g:description>360° Open Fire Santa Maria Grill TAGWOOD - BBQ06SS The BBQ03SS is the grill that established the TAGWOOD BBQ legacy, bringing the authentic traditions of Argentine live-fire cooking to outdoor enthusiasts who value quality, craftsmanship, and unforgettable flavour. Designed for those who enjoy cooking over real wood or charcoal, it offers a truly immersive grilling experience that celebrates the art of open-fire cooking. Crafted from premium stainless steel, the BBQ03SS is built to provide exceptional durability and long-lasting performance in any outdoor environment. Its timeless design blends seamlessly into modern alfresco spaces while offering the reliability and precision that passionate grillers expect from a professional-quality barbecue. Whether you&apos;re preparing perfectly seared steaks, slow-roasting large cuts of meat, or creating an authentic asado feast for family and friends, the BBQ03SS delivers the flexibility to explore a variety of traditional grilling techniques. Every meal becomes an opportunity to enjoy the rich flavours, aromas, and atmosphere that only live-fire cooking can provide. Ideal for backyard entertainers and dedicated outdoor chefs alike, the BBQ03SS combines authentic Argentine heritage with premium craftsmanship to create a barbecue that&apos;s built for memorable gatherings, exceptional performance, and years of wood-fired cooking enjoyment.</g:description>
-    <g:price>9995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354566</g:gtin>
-    <g:mpn>BBQ06SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>310.00 kg</g:shipping_weight>
-    <g:shipping_height>124 cm</g:shipping_height>
-    <g:shipping_length>206 cm</g:shipping_length>
-    <g:shipping_width>60 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ23SS</g:id>
-    <g:title>XL Open Fire Santa Maria Grill TAGWOOD - BBQ23SS</g:title>
-    <g:description>XL Open Fire Santa Maria Grill TAGWOOD - BBQ23SS Experience the true art of Argentine-style grilling on a larger scale with the BBQ23SS XL. Designed for those who love cooking over wood or charcoal, this premium grill combines traditional live-fire cooking with exceptional craftsmanship, creating an unforgettable outdoor cooking experience for family gatherings, celebrations, and entertaining. With its generous cooking capacity and authentic Santa Maria-inspired design, the BBQ23SS XL gives you the freedom to prepare everything from perfectly seared steaks and slow-roasted meats to fresh seafood and seasonal vegetables over natural flames. The spacious layout allows you to cook multiple dishes at once while maintaining the precision and control that make Argentine grilling so distinctive. Crafted from premium stainless steel for lasting durability and timeless style, the BBQ23SS XL is built to withstand the demands of outdoor cooking while complementing any alfresco kitchen. Every detail has been designed to deliver a seamless cooking experience, making it equally suited to passionate home cooks and experienced grill enthusiasts. Whether you&apos;re hosting a weekend barbecue or embracing the tradition of authentic asado cooking, the BBQ23SS XL delivers the performance, versatility, and striking presence to become the heart of your outdoor entertaining space.</g:description>
-    <g:price>9995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354467</g:gtin>
-    <g:mpn>BBQ23SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>170.00 kg</g:shipping_weight>
-    <g:shipping_height>105 cm</g:shipping_height>
-    <g:shipping_length>141 cm</g:shipping_length>
-    <g:shipping_width>92 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ26SS</g:id>
-    <g:title>XL Open Fire Santa Maria Grill with Clamp grill TAGWOOD - BBQ26SS</g:title>
-    <g:description>XL Open Fire Santa Maria Grill with Clamp grill TAGWOOD - BBQ26SS The BBQ26SS is a premium Argentine-style Santa Maria grill designed for those who are passionate about authentic live-fire cooking. Combining timeless craftsmanship with a refined stainless steel finish, it delivers an exceptional outdoor cooking experience that celebrates the rich tradition of grilling over wood and charcoal. Whether you&apos;re hosting a backyard feast or preparing an intimate family meal, the BBQ26SS offers the space and flexibility to cook a wide variety of dishes with confidence. From perfectly seared steaks and slow-roasted meats to grilled seafood and fresh vegetables, it provides the control needed to achieve outstanding flavour with every cook. Built for long-lasting performance and effortless outdoor entertaining, the BBQ26SS is as impressive in appearance as it is in capability. Its robust construction and professional-quality design make it a striking addition to any outdoor kitchen while standing up to years of regular use. For those who appreciate the artistry of Argentine asado and the unmistakable taste of cooking over natural fire, the BBQ26SS delivers an authentic grilling experience that brings family and friends together around unforgettable meals.</g:description>
-    <g:price>12995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354771</g:gtin>
-    <g:mpn>BBQ26SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>400.00 kg</g:shipping_weight>
-    <g:shipping_height>130 cm</g:shipping_height>
-    <g:shipping_length>208 cm</g:shipping_length>
-    <g:shipping_width>87 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ05SS</g:id>
-    <g:title>Open Fire Santa Maria Built-in Grill TAGWOOD - BBQ05SS</g:title>
-    <g:description>Open Fire Santa Maria Built-in Grill TAGWOOD - BBQ05SS The TAGWOOD BBQ05SS is a premium built-in Argentine Santa Maria grill crafted for those who want to bring the tradition of authentic live-fire cooking into a custom outdoor kitchen. Combining timeless design with professional craftsmanship, it delivers an exceptional grilling experience that celebrates the unmistakable flavour of cooking over wood and charcoal. Designed to become the heart of your alfresco entertaining area, the BBQ05SS offers the freedom to prepare everything from perfectly seared steaks and slow-roasted meats to seafood and grilled vegetables with confidence. Inspired by the traditional Argentine asado, it gives you the precision and control needed to create unforgettable meals for family and friends. Manufactured from high-quality stainless steel, the BBQ05SS is built to withstand the demands of outdoor living while maintaining its sleek appearance for years to come. Its built-in design integrates beautifully into outdoor kitchens, creating a refined cooking space that is both functional and visually impressive. Whether you&apos;re hosting large gatherings or enjoying relaxed weekend barbecues, the TAGWOOD BBQ05SS delivers the authentic taste, premium quality, and enduring performance that make Argentine grilling a truly memorable experience. Shown with BBQ55SS Secondary grate not included on the grill.</g:description>
-    <g:price>3495.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325353521</g:gtin>
-    <g:mpn>BBQ05SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>160.00 kg</g:shipping_weight>
-    <g:shipping_height>102 cm</g:shipping_height>
-    <g:shipping_length>139 cm</g:shipping_length>
-    <g:shipping_width>58 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ09SS</g:id>
-    <g:title>Tagwood Insert-Style Argentine Parrilla Grill - BBQ09SS</g:title>
-    <g:description>Tagwood Insert-Style Argentine Parrilla Grill - BBQ09SS The TAGWOOD BBQ09SS is a premium insert-style Argentine Santa Maria grill designed to bring the tradition of authentic live-fire cooking to custom outdoor kitchens. Combining timeless craftsmanship with a sleek stainless steel finish, it delivers the unmistakable flavour and experience of cooking over wood and charcoal while integrating seamlessly into your outdoor entertaining space. Created for those who value both performance and design, the BBQ09SS provides the freedom to prepare everything from perfectly seared steaks and slow-roasted meats to fresh seafood and seasonal vegetables with confidence. Inspired by the traditional Argentine asado, it offers the precision and control needed to create memorable meals for family gatherings and outdoor celebrations. Built to become the centrepiece of a bespoke alfresco kitchen, the BBQ09SS blends premium materials with professional-quality construction to ensure lasting durability and reliable performance. Its refined design complements a wide range of outdoor kitchen styles while delivering the authentic character and versatility that live-fire cooking enthusiasts appreciate. Whether you&apos;re building your dream outdoor kitchen or upgrading an existing space, the TAGWOOD BBQ09SS offers an exceptional combination of craftsmanship, style, and authentic Argentine grilling that transforms every barbecue into a memorable experience.</g:description>
-    <g:price>2995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325355501</g:gtin>
-    <g:mpn>BBQ09SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>75.00 kg</g:shipping_weight>
-    <g:shipping_height>43 cm</g:shipping_height>
-    <g:shipping_length>117 cm</g:shipping_length>
-    <g:shipping_width>86 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ25SS</g:id>
-    <g:title>Argentine Charcoal &amp; Woodfired Built-In Parrilla Grill - BBQ25SS</g:title>
-    <g:description>Argentine Charcoal &amp; Woodfired Built-In Parrilla Grill - BBQ25SS The TAGWOOD BBQ25SS is a premium built-in Argentine Parrilla grill designed to bring the tradition of authentic asado cooking into your outdoor kitchen. Inspired by the iconic Santa Maria style of grilling, it delivers the unmistakable flavour and experience of cooking over natural wood and charcoal, creating memorable meals for family and friends. Crafted for passionate grillers and outdoor entertainers, the BBQ25SS combines timeless design with exceptional craftsmanship to become the centrepiece of any alfresco space. Whether you&apos;re preparing perfectly seared steaks, slow-roasted meats, fresh seafood, or seasonal vegetables, it offers the authentic live-fire experience that has made Argentine grilling famous around the world. Built from premium stainless steel for lasting durability, the BBQ25SS is designed to complement luxury outdoor kitchens while standing up to years of outdoor use. Its elegant built-in design blends seamlessly into custom installations, creating a sophisticated cooking space that is as visually impressive as it is enjoyable to use. For those who appreciate the artistry of live-fire cooking, the TAGWOOD BBQ25SS delivers an authentic Argentine grilling experience that combines tradition, craftsmanship, and unforgettable flavour in every meal. HALF ASSEMBLED ON DELIVERY</g:description>
-    <g:price>7995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354481</g:gtin>
-    <g:mpn>BBQ25SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>170.00 kg</g:shipping_weight>
-    <g:shipping_height>106 cm</g:shipping_height>
-    <g:shipping_length>142 cm</g:shipping_length>
-    <g:shipping_width>88 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>UU-P31300</g:id>
-    <g:title>Ooni Halo Pro Spiral Dough Mixer - UU-P31300</g:title>
-    <g:description>Ooni Halo Pro Spiral Dough Mixer - UU-P31300 The Ooni Halo Pro Stand Mixer is designed for passionate home bakers who want professional-quality results with ease. Combining precision engineering with a sleek, modern design, it transforms everyday baking into an effortless and enjoyable experience, whether you&apos;re preparing artisan pizza dough, fresh bread, or delicious desserts. Built to inspire confidence in every batch, the Halo Pro delivers the consistency and control needed to achieve exceptional results time after time. From mixing and kneading to whipping and beating, it helps you create everything from light, airy bakes to rich, indulgent treats with minimal effort. Perfect for home kitchens where performance and style matter equally, the Halo Pro blends premium craftsmanship with intuitive operation, making it a standout addition to any countertop. Its refined design not only complements contemporary kitchens but also supports bakers who enjoy creating for family gatherings, celebrations, or everyday meals. Whether you&apos;re mastering homemade pizza, experimenting with artisan bread, or expanding your baking repertoire, the Ooni Halo Pro provides the reliability, precision, and quality to help bring every recipe to life.</g:description>
-    <g:price>1099.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Ooni</g:brand>
-    <g:mpn>UU-P31300</g:mpn>
-    <g:product_type>Appliances</g:product_type>
-    <g:shipping_weight>19.50 kg</g:shipping_weight>
-    <g:shipping_height>40 cm</g:shipping_height>
-    <g:shipping_length>67 cm</g:shipping_length>
-    <g:shipping_width>40 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ28SS</g:id>
-    <g:title>Argentine Santa Maria Charcoal &amp; Woodfired Gaucho Grill - BBQ28SS</g:title>
-    <g:description>Argentine Santa Maria Charcoal &amp; Woodfired Gaucho Grill - BBQ28SS The Tagwood BBQ28SS Argentine Santa Maria Charcoal &amp; Woodfired Gaucho Grill brings the timeless tradition of Argentine asado to the heart of your outdoor entertaining space. Combining refined craftsmanship with an unmistakable presence, this premium grill is designed for those who appreciate exceptional food, authentic fire cooking, and unforgettable gatherings. Cooking over charcoal or hardwood creates rich, natural flavours that simply can&apos;t be replicated with conventional gas grilling. Whether you&apos;re preparing perfectly seared steaks, slow-roasted cuts, fresh seafood, or seasonal vegetables, the BBQ28SS delivers an immersive wood-fired experience that celebrates the art of open-fire cooking. More than just a barbecue, the BBQ28SS is a stunning centrepiece for luxury outdoor kitchens. Its elegant design and professional-quality construction create a space where family and friends naturally gather, turning every meal into an occasion and every cook into a memorable event. Inspired by the heritage of traditional Argentine parrilla cooking, this grill offers the freedom to experiment with different cooking styles while enjoying complete control over every stage of the cooking process. The result is beautifully cooked food with incredible flavour, texture, and authenticity. For those who refuse to compromise on quality, craftsmanship, or performance, the Tagwood BBQ28SS delivers a truly elevated outdoor cooking experience—bringing the passion of Argentine fire cooking to every celebration. HALF ASSEMBLED ON DELIVERY</g:description>
-    <g:price>10495.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354788</g:gtin>
-    <g:mpn>BBQ28SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>360.00 kg</g:shipping_weight>
-    <g:shipping_height>103 cm</g:shipping_height>
-    <g:shipping_length>208 cm</g:shipping_length>
-    <g:shipping_width>87 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ08SS</g:id>
-    <g:title>Argentine Santa Maria Wood Fire &amp; Charcoal Gaucho Grill - BBQ08SS</g:title>
-    <g:description>Argentine Santa Maria Wood Fire &amp; Charcoal Gaucho Grill - BBQ08SS The Tagwood BBQ08SS Argentine Santa Maria Grill brings the authentic spirit of Argentine asado to the modern outdoor kitchen, delivering a premium wood-fired cooking experience that combines timeless tradition with exceptional craftsmanship. Designed for those who appreciate fine food and unforgettable entertaining, this grill transforms every gathering into a celebration of flavour and fire. Whether you&apos;re cooking perfectly seared steaks, slow-roasting premium cuts, or preparing fresh seafood and vegetables over glowing embers, the BBQ08SS creates the unmistakable taste and aroma that only charcoal and hardwood can deliver. Every meal becomes an opportunity to embrace the art of open-fire cooking while enjoying complete control over the cooking process. With its refined design and commanding presence, the BBQ08SS is more than just a barbecue—it is a statement piece that enhances any luxury outdoor living space. Inspired by the heritage of traditional Argentine parrilla cooking, it offers an authentic grilling experience while complementing contemporary outdoor kitchens with effortless style. Built with a focus on quality, durability, and long-lasting performance, the BBQ08SS is made to be enjoyed for years of memorable meals and special occasions. Produced in limited quantities, it is an exclusive addition for those who seek premium craftsmanship and the true essence of Argentine barbecue. For homeowners and outdoor cooking enthusiasts who demand excellence, the Tagwood BBQ08SS delivers an unrivalled combination of authenticity, performance, and elegance that turns every cook into an unforgettable experience. HALF ASSEMBLED ON DELIVERY</g:description>
-    <g:price>8995.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354764</g:gtin>
-    <g:mpn>BBQ08SS</g:mpn>
-    <g:product_type>Charcoal BBQ</g:product_type>
-    <g:shipping_weight>275.00 kg</g:shipping_weight>
-    <g:shipping_height>103 cm</g:shipping_height>
-    <g:shipping_length>208 cm</g:shipping_length>
-    <g:shipping_width>62 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ07SS</g:id>
-    <g:title>Tagwood Table Top Warming Brazier - BBQ07SS</g:title>
-    <g:description>Tagwood Table Top Warming Brazier - BBQ07SS The Tagwood BBQ07SS Table Top Warming Brazier is the perfect finishing touch for an authentic Argentine-style dining experience. Designed to keep freshly grilled food warm while enhancing its presentation, it allows you to serve every meal with the same quality and flavour as the moment it left the fire. Ideal for entertaining, the BBQ07SS creates an inviting centrepiece that encourages guests to gather around the table and enjoy perfectly warm steaks, sausages, seafood, vegetables, and other barbecue favourites at their own pace. It brings the atmosphere of a traditional asado to your outdoor dining space, where great food and conversation come together. With its refined craftsmanship and timeless design, the warming brazier complements both contemporary outdoor kitchens and rustic entertaining areas. It adds a touch of sophistication to every occasion, making family dinners, celebrations, and weekend barbecues feel truly special. Built to pair seamlessly with your Tagwood BBQ, the BBQ07SS extends the outdoor cooking experience beyond the grill, allowing you to present and enjoy your creations exactly as they were intended. It&apos;s an essential accessory for anyone who values authentic fire cooking, premium presentation, and memorable outdoor entertaining.</g:description>
-    <g:price>795.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354412</g:gtin>
-    <g:mpn>BBQ07SS</g:mpn>
-    <g:product_type>Barbecues Accessories</g:product_type>
-    <g:shipping_weight>22.00 kg</g:shipping_weight>
-    <g:shipping_height>23 cm</g:shipping_height>
-    <g:shipping_length>51 cm</g:shipping_length>
-    <g:shipping_width>39 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ50SS</g:id>
-    <g:title>Tagwood Stainless Steel Rotisserie Kit - BBQ50SS</g:title>
-    <g:description>Tagwood Stainless Steel Rotisserie Kit - BBQ50SS The Tagwood BBQ50SS Stainless Steel Rotisserie Kit is the perfect addition for anyone looking to expand the possibilities of authentic Argentine-style barbecue. Designed to bring the rich tradition of slow roasting to your outdoor kitchen, it allows you to create beautifully cooked meals with incredible flavour, tenderness, and that unmistakable wood-fired aroma. Slow roasting over charcoal or hardwood produces juicy, evenly cooked results that simply can&apos;t be achieved with conventional cooking methods. From succulent whole chickens and tender ribs to premium cuts of meat, the BBQ50SS helps transform every barbecue into an unforgettable dining experience that family and friends will love. Whether you&apos;re hosting a weekend gathering or preparing a special celebration, this rotisserie kit opens the door to new cooking techniques and greater culinary creativity. It encourages you to experiment with traditional asado methods while delivering restaurant-quality results from the comfort of your own backyard. Crafted to complement compatible Tagwood Santa Maria grills, the BBQ50SS integrates seamlessly into your outdoor cooking setup and enhances the versatility of your barbecue. It&apos;s an essential accessory for passionate grillers who want to elevate every cook, embrace authentic fire cooking, and enjoy the timeless flavour that only slow roasting over live fire can deliver. IMPORTANT: The brackets need to be installed on the back of the elevation system, for proper functioning.</g:description>
-    <g:price>795.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354290</g:gtin>
-    <g:mpn>BBQ50SS</g:mpn>
-    <g:product_type>All Rotisseries &gt; Rotisseries Accessories</g:product_type>
-    <g:shipping_weight>14.00 kg</g:shipping_weight>
-    <g:shipping_height>13 cm</g:shipping_height>
-    <g:shipping_length>102 cm</g:shipping_length>
-    <g:shipping_width>13 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BBQ51SS</g:id>
-    <g:title>Tagwood Stainless Steel Wind Guard - BBQ51SS</g:title>
-    <g:description>Tagwood Stainless Steel Wind Guard - BBQ51SS The Tagwood BBQ51SS Stainless Steel Wind Guard is an essential addition for anyone who enjoys authentic Argentine-style barbecue in the great outdoors. Designed to help create a more consistent cooking environment, it allows you to maintain the performance of your grill even when the weather is less than ideal. Outdoor cooking is at its best when you have complete control over the fire. By helping to minimise the effects of wind, the BBQ51SS supports steady heat and a more reliable cooking experience, allowing you to focus on creating perfectly grilled steaks, slow-roasted meats, and wood-fired favourites with confidence. Whether you&apos;re entertaining family, hosting a weekend barbecue, or preparing an authentic asado feast, this wind guard enhances your outdoor cooking setup while complementing the premium craftsmanship of your Tagwood grill. Its refined design blends seamlessly into your barbecue, making it a practical upgrade that preserves both performance and appearance. Built to withstand the demands of outdoor entertaining, the Tagwood BBQ51SS is a valuable accessory for grillers who want dependable results in every season. It&apos;s the ideal companion for anyone seeking to enjoy uninterrupted wood-fired cooking and make the most of every outdoor gathering.</g:description>
-    <g:price>495.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354313</g:gtin>
-    <g:mpn>BBQ51SS</g:mpn>
-    <g:product_type>Barbecues Accessories</g:product_type>
-    <g:shipping_weight>11.00 kg</g:shipping_weight>
-    <g:shipping_height>16 cm</g:shipping_height>
-    <g:shipping_length>97 cm</g:shipping_length>
-    <g:shipping_width>41 cm</g:shipping_width>
-  </item>
-  <item>
     <g:id>UU-P3A300</g:id>
     <g:title>Ooni Halo Core Spiral Mixer - Foundry Black  - UU-P3A300</g:title>
     <g:description>Ooni Halo Core Spiral Mixer - Foundry Black - UU-P3A300 The perfect balance of performance, style, and everyday convenience, this premium dough mixer is designed to help home bakers create exceptional results with confidence. Whether you&apos;re preparing artisan pizza dough, fresh bread, pastries, or delicious desserts, it delivers the consistency and reliability needed to elevate every bake. Built for passionate home cooks and aspiring pizzaiolos, this mixer takes the hard work out of kneading and mixing, allowing you to focus on creating recipes you&apos;ll be proud to share. From family pizza nights to weekend baking sessions, it provides a smooth and enjoyable mixing experience that helps you achieve professional-quality results in your own kitchen. Its modern design blends seamlessly into any kitchen while offering the durability and craftsmanship expected from a premium appliance. Easy to use and thoughtfully engineered, it&apos;s equally suited to everyday baking and more ambitious culinary creations, making it a valuable companion for anyone who enjoys cooking from scratch. Whether you&apos;re perfecting homemade pizza dough, baking fresh loaves of bread, or experimenting with new recipes, this dough mixer is designed to inspire creativity and deliver consistent results time after time. It&apos;s the ideal addition to any kitchen for those who value quality, convenience, and exceptional homemade food.</g:description>
@@ -10873,22 +10632,6 @@
     <g:shipping_width>36 cm</g:shipping_width>
   </item>
   <item>
-    <g:id>BBQ52SS</g:id>
-    <g:title>Tagwood Warming Rack - BBQ52SS</g:title>
-    <g:description>Tagwood Warming Rack - BBQ52SS The Tagwood BBQ52SS Warming Rack is the perfect addition for anyone who wants to maximise the efficiency and enjoyment of outdoor cooking. Designed to complement your Tagwood barbecue, it provides a dedicated space to keep food warm while you continue grilling, ensuring every dish is served at its best. Whether you&apos;re preparing an authentic Argentine asado, hosting a family barbecue, or entertaining a crowd, the BBQ52SS helps you coordinate multiple dishes with ease. It allows freshly cooked meats to rest naturally, keeps sides warm until serving, and ensures everything comes together perfectly for a seamless dining experience. More than just a practical accessory, the warming rack enhances the flow of your barbecue, giving you greater flexibility when cooking for larger gatherings. From perfectly rested steaks and grilled sausages to warm bread rolls and roasted vegetables, it helps every element of your meal reach the table at the ideal time. Crafted to integrate seamlessly with compatible Tagwood grills, the BBQ52SS combines premium quality with thoughtful functionality. It&apos;s an essential accessory for barbecue enthusiasts who value authentic fire cooking, organised food preparation, and exceptional outdoor entertaining.</g:description>
-    <g:price>495.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Tagwood</g:brand>
-    <g:gtin>7798325354306</g:gtin>
-    <g:mpn>BBQ52SS</g:mpn>
-    <g:product_type>Barbecues Accessories</g:product_type>
-    <g:shipping_weight>5.00 kg</g:shipping_weight>
-    <g:shipping_height>7 cm</g:shipping_height>
-    <g:shipping_length>88 cm</g:shipping_length>
-    <g:shipping_width>20 cm</g:shipping_width>
-  </item>
-  <item>
     <g:id>FF261</g:id>
     <g:title>ESSCHERT DESIGN Fire Ball Pre-Rusted Laser Cut - Forest Scene - FF261</g:title>
     <g:description>ESSCHERT DESIGN Fire Ball Pre-Rusted Laser Cut - Forest Scene - FF261 Bring warmth and character to your outdoor entertaining area with the ESSCHERT DESIGN Fire Ball Pre-Rusted Laser Cut – Forest Scene. Designed to become a striking focal point, this decorative fire pit combines artistic craftsmanship with the natural beauty of an authentic rusted finish, creating a captivating ambience long after the sun goes down. The intricately laser-cut forest scene comes to life as the flames flicker inside, casting enchanting silhouettes of trees and deer across your patio or garden. Whether you&apos;re gathering with family, hosting friends, or simply unwinding outdoors, it creates a cosy atmosphere that transforms any evening into a memorable experience. Crafted from durable mild steel with a pre-rusted finish, the fire ball is designed to develop an even richer patina over time as it is exposed to heat and the elements. This evolving finish enhances its rustic appeal, making every piece unique and perfectly suited to natural outdoor settings. Ideal for modern gardens, country landscapes, and alfresco entertaining spaces, the ESSCHERT DESIGN Fire Ball is both a practical source of warmth and a stunning piece of outdoor garden art.</g:description>
@@ -10898,10 +10641,10 @@
     <g:brand>Esschert Design</g:brand>
     <g:mpn>FF261</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>11.86 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>15.00 kg</g:shipping_weight>
+    <g:shipping_height>49 cm</g:shipping_height>
+    <g:shipping_length>59 cm</g:shipping_length>
+    <g:shipping_width>59 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-GUN-L79-CC</g:id>
@@ -10913,10 +10656,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-GUN-L79-CC</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>20.00 kg</g:shipping_weight>
+    <g:shipping_height>30 cm</g:shipping_height>
+    <g:shipping_length>84 cm</g:shipping_length>
+    <g:shipping_width>84 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-DAR-L79-SS</g:id>
@@ -10928,10 +10671,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-DAR-L79-SS</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>19.60 kg</g:shipping_weight>
+    <g:shipping_height>44 cm</g:shipping_height>
+    <g:shipping_length>81 cm</g:shipping_length>
+    <g:shipping_width>81 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-DAR-M63-CS</g:id>
@@ -10943,10 +10686,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-DAR-M63-CS</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>15.70 kg</g:shipping_weight>
+    <g:shipping_height>38 cm</g:shipping_height>
+    <g:shipping_length>65 cm</g:shipping_length>
+    <g:shipping_width>65 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-HEK-M63-CS</g:id>
@@ -10958,10 +10701,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-HEK-M63-CS</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>17.30 kg</g:shipping_weight>
+    <g:shipping_height>18 cm</g:shipping_height>
+    <g:shipping_length>67 cm</g:shipping_length>
+    <g:shipping_width>67 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-INU-L79-CS</g:id>
@@ -10973,10 +10716,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-INU-L79-CS</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>21.50 kg</g:shipping_weight>
+    <g:shipping_height>43 cm</g:shipping_height>
+    <g:shipping_length>81 cm</g:shipping_length>
+    <g:shipping_width>81 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-INU-M63-CS</g:id>
@@ -10988,10 +10731,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-INU-M63-CS</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>16.80 kg</g:shipping_weight>
+    <g:shipping_height>38 cm</g:shipping_height>
+    <g:shipping_length>65 cm</g:shipping_length>
+    <g:shipping_width>65 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-KUB-M63CS</g:id>
@@ -11003,10 +10746,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-KUB-M63CS</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>20.00 kg</g:shipping_weight>
+    <g:shipping_height>37 cm</g:shipping_height>
+    <g:shipping_length>65 cm</g:shipping_length>
+    <g:shipping_width>65 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-YAN-M63-CS</g:id>
@@ -11018,10 +10761,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-YAN-M63-CS</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>15.70 kg</g:shipping_weight>
+    <g:shipping_height>30 cm</g:shipping_height>
+    <g:shipping_length>70 cm</g:shipping_length>
+    <g:shipping_width>70 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-NAM-L79-CS</g:id>
@@ -11033,10 +10776,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-NAM-L79-CS</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>21.60 kg</g:shipping_weight>
+    <g:shipping_height>36 cm</g:shipping_height>
+    <g:shipping_length>80 cm</g:shipping_length>
+    <g:shipping_width>80 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-SES-L75-SS</g:id>
@@ -11048,10 +10791,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-SES-L75-SS</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>13.50 kg</g:shipping_weight>
+    <g:shipping_height>27 cm</g:shipping_height>
+    <g:shipping_length>81 cm</g:shipping_length>
+    <g:shipping_width>81 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-STR-L80-CC</g:id>
@@ -11063,10 +10806,10 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-STR-L80-CC</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>18.00 kg</g:shipping_weight>
+    <g:shipping_height>25 cm</g:shipping_height>
+    <g:shipping_length>82 cm</g:shipping_length>
+    <g:shipping_width>82 cm</g:shipping_width>
   </item>
   <item>
     <g:id>FF293</g:id>
@@ -11078,10 +10821,10 @@
     <g:brand>Esschert Design</g:brand>
     <g:mpn>FF293</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>15.00 kg</g:shipping_weight>
+    <g:shipping_height>49 cm</g:shipping_height>
+    <g:shipping_length>59 cm</g:shipping_length>
+    <g:shipping_width>59 cm</g:shipping_width>
   </item>
   <item>
     <g:id>FF526</g:id>
@@ -11093,10 +10836,10 @@
     <g:brand>Esschert Design</g:brand>
     <g:mpn>FF526</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>21.00 kg</g:shipping_weight>
+    <g:shipping_height>53 cm</g:shipping_height>
+    <g:shipping_length>62 cm</g:shipping_length>
+    <g:shipping_width>62 cm</g:shipping_width>
   </item>
   <item>
     <g:id>FF528</g:id>
@@ -11108,10 +10851,10 @@
     <g:brand>Esschert Design</g:brand>
     <g:mpn>FF528</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>32.00 kg</g:shipping_weight>
+    <g:shipping_height>53 cm</g:shipping_height>
+    <g:shipping_length>83 cm</g:shipping_length>
+    <g:shipping_width>82 cm</g:shipping_width>
   </item>
   <item>
     <g:id>AR-FAR-FL</g:id>
@@ -11123,10 +10866,25 @@
     <g:brand>Alfred Riess</g:brand>
     <g:mpn>AR-FAR-FL</g:mpn>
     <g:product_type>Outdoor Firepits</g:product_type>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
+    <g:shipping_weight>14.00 kg</g:shipping_weight>
+    <g:shipping_height>75 cm</g:shipping_height>
+    <g:shipping_length>80 cm</g:shipping_length>
+    <g:shipping_width>39 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>AR-STA-S36-SS</g:id>
+    <g:title>ALFRED RIESS Stalvirsis Portable Hibachi Grill - AR-STA-S36-SS</g:title>
+    <g:description>ALFRED RIESS Stalvirsis Portable Hibachi Grill - AR-STA-S36-SS The ALFRED RIESS Stalvirsis Table Grill brings the authentic experience of outdoor charcoal grilling to your table, creating a fun and interactive way to cook and dine with family and friends. Inspired by traditional hibachi-style cooking, it encourages everyone to gather around, grill together, and enjoy freshly cooked food in a relaxed outdoor setting. Expertly handcrafted from premium European stainless steel, this elegant table grill combines contemporary design with exceptional durability. Its refined finish complements a wide range of outdoor entertaining spaces, making it equally at home on a patio, balcony, or garden table. Whether you&apos;re hosting a casual lunch, an evening barbecue, or a social gathering, the Stalvirsis Table Grill transforms every meal into a shared culinary experience. Built to provide years of reliable performance, it is a stylish and practical addition for anyone who enjoys outdoor cooking and memorable moments around the table.</g:description>
+    <g:price>543.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Alfred Riess</g:brand>
+    <g:mpn>AR-STA-S36-SS</g:mpn>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:shipping_weight>6.00 kg</g:shipping_weight>
+    <g:shipping_height>19 cm</g:shipping_height>
+    <g:shipping_length>39 cm</g:shipping_length>
+    <g:shipping_width>39 cm</g:shipping_width>
   </item>
 </channel>
 </rss>

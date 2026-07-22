@@ -1382,6 +1382,7 @@
     <g:id>9351886000150</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
+    <g:sale_price>1125.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>9351886000747</g:id>
@@ -3064,7 +3065,7 @@
   <item>
     <g:id>TRS-24L20-DIS</g:id>
     <g:product_type>Portable Spit &gt; All Rotisseries</g:product_type>
-    <g:availability>in stock</g:availability>
+    <g:availability>out of stock</g:availability>
     <g:sale_price>600.00 AUD</g:sale_price>
   </item>
   <item>
@@ -3362,7 +3363,7 @@
   </item>
   <item>
     <g:id>8720663982292</g:id>
-    <g:product_type>Accessories &gt; Barbecues Accessories &gt; Smokers Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Smokers Accessories</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
   <item>
@@ -6305,7 +6306,7 @@
     <g:id>9351886007869</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>1177.00 AUD</g:sale_price>
+    <g:sale_price>1217.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>TCS2-IBL-KITCH-DIS</g:id>
@@ -6987,7 +6988,7 @@
     <g:id>9351886007227</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>1177.00 AUD</g:sale_price>
+    <g:sale_price>1217.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>9351886006541</g:id>
@@ -7003,6 +7004,7 @@
     <g:id>9351886002741</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
+    <g:sale_price>2227.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>9351886008392</g:id>
@@ -7385,6 +7387,91 @@
     <g:sale_price>4027.00 AUD</g:sale_price>
   </item>
   <item>
+    <g:id>7798325353309</g:id>
+    <g:product_type>Charcoal bbqs &gt; Trolley bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354269</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325355495</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354573</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325353316</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325353323</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354566</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354467</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354771</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325353521</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325355501</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354481</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354788</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354764</g:id>
+    <g:product_type>Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354412</g:id>
+    <g:product_type>Barbecues Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354290</g:id>
+    <g:product_type>All Rotisseries &gt; Rotisseries Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354313</g:id>
+    <g:product_type>Barbecues Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>100000488</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
@@ -7392,6 +7479,16 @@
   <item>
     <g:id>100000489</g:id>
     <g:product_type>Gas</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>7798325354306</g:id>
+    <g:product_type>Barbecues Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>BBQ56SS</g:id>
+    <g:product_type>Barbecues Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
 </channel>
