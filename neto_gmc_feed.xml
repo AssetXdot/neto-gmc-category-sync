@@ -3069,11 +3069,6 @@
     <g:sale_price>600.00 AUD</g:sale_price>
   </item>
   <item>
-    <g:id>9314388084820</g:id>
-    <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
     <g:id>9334038006200</g:id>
     <g:product_type>Appliances</g:product_type>
     <g:availability>in stock</g:availability>
@@ -3258,6 +3253,12 @@
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>497.00 AUD</g:sale_price>
+  </item>
+  <item>
+    <g:id>8395596562724</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+    <g:sale_price>2227.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>9351886006800</g:id>
@@ -4039,7 +4040,7 @@
   </item>
   <item>
     <g:id>9314388085735</g:id>
-    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
+    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5188,6 +5189,12 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>SK156-COMBO-BM</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+    <g:sale_price>2000.00 AUD</g:sale_price>
+  </item>
+  <item>
     <g:id>9331865002658</g:id>
     <g:product_type>Accessories &gt; Plates &amp; Grills</g:product_type>
     <g:availability>in stock</g:availability>
@@ -6075,6 +6082,11 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>SG1L-B-HD</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>CG-9000-BI</g:id>
     <g:product_type>Cyprus grills &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
@@ -6369,6 +6381,16 @@
   <item>
     <g:id>9314388086633</g:id>
     <g:product_type>Electric Heaters</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>5060967395309</g:id>
+    <g:product_type>Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>5060967395316</g:id>
+    <g:product_type>Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7482,13 +7504,108 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>5060967397549</g:id>
+    <g:product_type>Appliances</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>5060967397587</g:id>
+    <g:product_type>Appliances</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>7798325354306</g:id>
     <g:product_type>Barbecues Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>BBQ56SS</g:id>
+    <g:id>7798325354351</g:id>
     <g:product_type>Barbecues Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>FF261</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-GUN-L79-CC</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-DAR-L79-SS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-DAR-M63-CS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-HEK-M63-CS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-INU-L79-CS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-INU-M63-CS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-KUB-M63CS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-YAN-M63-CS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-NAM-L79-CS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-SES-L75-SS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-STR-L80-CC</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>FF293</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>FF526</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>FF528</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-FAR-FL</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-STA-S36-SS</g:id>
+    <g:product_type>Outdoor Firepits</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
 </channel>
