@@ -92,7 +92,7 @@
   <item>
     <g:id>DIY-40A-BUNDLE</g:id>
     <g:product_type>DIY Spit Packages &gt; Portable Spit &gt; All Rotisseries</g:product_type>
-    <g:availability>in stock</g:availability>
+    <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>DIY-CGKIT-VAR-BUNDLE</g:id>
@@ -920,7 +920,7 @@
   </item>
   <item>
     <g:id>SSBBQTC</g:id>
-    <g:product_type>Charcoal bbqs &gt; Trolley bbqs &gt; Portable bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2198,12 +2198,6 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>BILEX485SS-BUNDLE</g:id>
-    <g:product_type>BBQ Bundles &gt; Built In bbqs &gt; 3 Burner bbqs &gt; Gas BBQs</g:product_type>
-    <g:availability>in stock</g:availability>
-    <g:sale_price>2549.00 AUD</g:sale_price>
-  </item>
-  <item>
     <g:id>HARK-TEXAS-BUNDLE</g:id>
     <g:product_type>Offset Smokers</g:product_type>
     <g:availability>in stock</g:availability>
@@ -3063,12 +3057,6 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>TRS-24L20-DIS</g:id>
-    <g:product_type>Portable Spit &gt; All Rotisseries</g:product_type>
-    <g:availability>out of stock</g:availability>
-    <g:sale_price>600.00 AUD</g:sale_price>
-  </item>
-  <item>
     <g:id>9334038006200</g:id>
     <g:product_type>Appliances</g:product_type>
     <g:availability>in stock</g:availability>
@@ -3596,32 +3584,32 @@
   </item>
   <item>
     <g:id>9347777002686</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9347777004628</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9347777004635</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9347777003928</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9347777003959</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9347777001818</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3631,12 +3619,12 @@
   </item>
   <item>
     <g:id>9347777003485</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9347777001801</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3646,7 +3634,7 @@
   </item>
   <item>
     <g:id>9347777003478</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3903,7 +3891,7 @@
   </item>
   <item>
     <g:id>9347777002679</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4591,12 +4579,12 @@
   </item>
   <item>
     <g:id>9312646029569</g:id>
-    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Portable bbqs &gt; Trolley bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Portable bbqs &gt; Electric bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646040052</g:id>
-    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs &gt; Portable bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Portable bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4950,7 +4938,7 @@
   </item>
   <item>
     <g:id>9312646041103</g:id>
-    <g:product_type>Portable Spit &gt; Portable bbqs &gt; Charcoal bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries</g:product_type>
+    <g:product_type>Portable Spit &gt; Portable bbqs &gt; Charcoal bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries &gt; Electric bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5561,7 +5549,7 @@
   </item>
   <item>
     <g:id>9312646027466</g:id>
-    <g:product_type>Large Spit Rotisseries &gt; Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries</g:product_type>
+    <g:product_type>Large Spit Rotisseries &gt; Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries &gt; Electric bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5783,7 +5771,7 @@
   </item>
   <item>
     <g:id>9347777005656</g:id>
-    <g:product_type>Accessories &gt; BBQ covers &gt; Brackets &amp; Fittings</g:product_type>
+    <g:product_type>Accessories &gt; Brackets &amp; Fittings</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6098,7 +6086,7 @@
   </item>
   <item>
     <g:id>9312646046801</g:id>
-    <g:product_type>Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries &gt; Electric bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7410,7 +7398,7 @@
   </item>
   <item>
     <g:id>7798325353309</g:id>
-    <g:product_type>Charcoal bbqs &gt; Trolley bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7606,6 +7594,31 @@
   <item>
     <g:id>AR-STA-S36-SS</g:id>
     <g:product_type>Outdoor Firepits</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-COV-L79-SS</g:id>
+    <g:product_type>Heater Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-COV-M63-SS</g:id>
+    <g:product_type>Heater Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-GRI-L81-SS</g:id>
+    <g:product_type>Heater Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-GRI-M65-SS</g:id>
+    <g:product_type>Heater Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>AR-GGR-L81-SS</g:id>
+    <g:product_type>Heater Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
 </channel>
