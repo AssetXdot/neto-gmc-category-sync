@@ -3443,7 +3443,7 @@
   <item>
     <g:id>SSBBQHW</g:id>
     <g:product_type>Charcoal bbqs &gt; Trolley bbqs</g:product_type>
-    <g:availability>in stock</g:availability>
+    <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>639114059415</g:id>
@@ -7619,6 +7619,16 @@
   <item>
     <g:id>AR-GGR-L81-SS</g:id>
     <g:product_type>Heater Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886001737</g:id>
+    <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886001737</g:id>
+    <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
 </channel>
