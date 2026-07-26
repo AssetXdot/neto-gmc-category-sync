@@ -6070,6 +6070,11 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>BBQM-0201</g:id>
+    <g:product_type>Cyprus grills</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>SG1L-B-HD</g:id>
     <g:product_type>Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
