@@ -6465,7 +6465,6 @@
     <g:id>ARCXL-BUN-BLK</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>2007.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>9314654142100</g:id>
@@ -6491,7 +6490,6 @@
     <g:id>ARCXL-BUN-BNE</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>2007.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>9314654121983</g:id>
@@ -7110,43 +7108,36 @@
     <g:id>ARC-STARTER-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>1543.71 AUD</g:sale_price>
   </item>
   <item>
     <g:id>ARC-PERFORMANCE-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>1965.51 AUD</g:sale_price>
   </item>
   <item>
     <g:id>ARCXL-PERF-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>2260.95 AUD</g:sale_price>
   </item>
   <item>
     <g:id>ARCXL-ENT-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>2408.18 AUD</g:sale_price>
   </item>
   <item>
     <g:id>DOME-ESSENTIALS-BUN</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>3818.97 AUD</g:sale_price>
   </item>
   <item>
     <g:id>DOME-COOKING-BUN</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>4208.45 AUD</g:sale_price>
   </item>
   <item>
     <g:id>DOMEXL-COOKING-BUN</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>5205.95 AUD</g:sale_price>
   </item>
   <item>
     <g:id>TREAD-ADVENTURE-BUN</g:id>
@@ -7157,25 +7148,21 @@
     <g:id>TREAD-TRAVEL-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>1177.98 AUD</g:sale_price>
   </item>
   <item>
     <g:id>PIZZANIGHT-ACC-BUN</g:id>
     <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>313.46 AUD</g:sale_price>
   </item>
   <item>
     <g:id>PRO-TOOLKIT-BUN</g:id>
     <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>460.71 AUD</g:sale_price>
   </item>
   <item>
     <g:id>PIZZA-PARTY-BUN</g:id>
     <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>484.45 AUD</g:sale_price>
   </item>
   <item>
     <g:id>9351886004493</g:id>
@@ -7321,85 +7308,71 @@
     <g:id>ARC-ESSENTIALS-BUNDLE</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>906.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>DOMEGEN2-BUN</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>5042.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>ARCLITE-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>708.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>TREAD-TRAIL-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>1417.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>TREAD-TRAIL-OL-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>1417.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>TREAD-PEAK-OL-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>2003.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>TREAD-PEAK-BLK-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>2003.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>ARCXL-BONE-TABLETOP-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>1698.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>ARCXL-BLK-TABLETOP-BUN</g:id>
     <g:product_type>Gas</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>1698.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>GMPOBAU1625-STAND</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>3848.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>GMPOBAU1825-BUNDLE</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>4848.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>GMNOBAU1826-BUNDLE</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>4848.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>GMPBNAU1625-BUNDLE</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>4027.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>GMPOBAU1625-BUNDLE</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>4027.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>7798325353309</g:id>
