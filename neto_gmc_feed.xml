@@ -143,6 +143,7 @@
     <g:id>853682005043</g:id>
     <g:product_type>Accessories</g:product_type>
     <g:availability>in stock</g:availability>
+    <g:sale_price>89.50 AUD</g:sale_price>
   </item>
   <item>
     <g:id>CG-8100B-BUNDLE</g:id>
@@ -997,11 +998,6 @@
     <g:id>9347726002705</g:id>
     <g:product_type>Accessories</g:product_type>
     <g:availability>in stock</g:availability>
-  </item>
-  <item>
-    <g:id>629162120915</g:id>
-    <g:product_type>Built In bbqs &gt; 3 Burner bbqs &gt; Gas BBQs</g:product_type>
-    <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>4000810118045</g:id>
@@ -2421,7 +2417,7 @@
   <item>
     <g:id>634868940590</g:id>
     <g:product_type>Pellet Smokers</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>634868929007</g:id>
@@ -2439,13 +2435,8 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>634868929021</g:id>
-    <g:product_type>Pellet Smokers</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
     <g:id>634868929380</g:id>
-    <g:product_type>Pellet Smokers &gt; Portable bbqs</g:product_type>
+    <g:product_type>Pellet Smokers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2846,7 +2837,7 @@
   </item>
   <item>
     <g:id>602573868447</g:id>
-    <g:product_type>Pellet Smokers &gt; Portable bbqs</g:product_type>
+    <g:product_type>Pellet Smokers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4938,7 +4929,7 @@
   </item>
   <item>
     <g:id>9312646041103</g:id>
-    <g:product_type>Portable Spit &gt; Portable bbqs &gt; Charcoal bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries &gt; Electric bbqs</g:product_type>
+    <g:product_type>Portable Spit &gt; Portable bbqs &gt; Charcoal bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5549,7 +5540,7 @@
   </item>
   <item>
     <g:id>9312646027466</g:id>
-    <g:product_type>Large Spit Rotisseries &gt; Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries &gt; Electric bbqs</g:product_type>
+    <g:product_type>Large Spit Rotisseries &gt; Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6091,7 +6082,7 @@
   </item>
   <item>
     <g:id>9312646046801</g:id>
-    <g:product_type>Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries &gt; Electric bbqs</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Trolley bbqs &gt; All Rotisseries &gt; Large Spit Rotisseries</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6326,7 +6317,7 @@
   </item>
   <item>
     <g:id>629162150622</g:id>
-    <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs &gt; All Barbeques</g:product_type>
+    <g:product_type>Built In bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs &gt; All Barbeques</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>4195.00 AUD</g:sale_price>
   </item>
@@ -6374,16 +6365,6 @@
   <item>
     <g:id>9314388086633</g:id>
     <g:product_type>Electric Heaters</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
-    <g:id>5060967395309</g:id>
-    <g:product_type>Accessories</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
-    <g:id>5060967395316</g:id>
-    <g:product_type>Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7467,16 +7448,6 @@
   <item>
     <g:id>100000489</g:id>
     <g:product_type>Gas</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
-    <g:id>5060967397549</g:id>
-    <g:product_type>Appliances</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
-    <g:id>5060967397587</g:id>
-    <g:product_type>Appliances</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
