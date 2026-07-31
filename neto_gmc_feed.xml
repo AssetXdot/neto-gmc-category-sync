@@ -1784,7 +1784,7 @@
   </item>
   <item>
     <g:id>099143021416</g:id>
-    <g:product_type>Charcoal bbqs &gt; Portable bbqs &gt; Charcoal Smokers</g:product_type>
+    <g:product_type>Charcoal bbqs &gt; Charcoal Smokers &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4645,7 +4645,7 @@
   </item>
   <item>
     <g:id>720968953827</g:id>
-    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; BBQ Bundles</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5575,12 +5575,12 @@
   </item>
   <item>
     <g:id>BQ2047BL-LPG-BUN</g:id>
-    <g:product_type>Kitchens</g:product_type>
+    <g:product_type>Kitchens &gt; Gas BBQs &gt; BBQ Bundles &gt; 4 Burner bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>BQ2047BLNG-NG-BUN</g:id>
-    <g:product_type>Kitchens</g:product_type>
+    <g:product_type>Kitchens &gt; Gas BBQs &gt; BBQ Bundles &gt; 4 Burner bbqs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6328,7 +6328,7 @@
   </item>
   <item>
     <g:id>720968953858</g:id>
-    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; BBQ Bundles</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6368,13 +6368,23 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>5060967395309</g:id>
+    <g:product_type>Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>5060967395316</g:id>
+    <g:product_type>Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>GMPOBAU1825-BUN</g:id>
     <g:product_type>Gas &gt; Wood &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>GOZPTBUN</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7603,6 +7613,11 @@
     <g:product_type>All Barbeques &gt; 4 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>4055.00 AUD</g:sale_price>
+  </item>
+  <item>
+    <g:id>TREK2.0-CART-BUN</g:id>
+    <g:product_type>Pellet Smokers</g:product_type>
+    <g:availability>in stock</g:availability>
   </item>
 </channel>
 </rss>
