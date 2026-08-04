@@ -3130,6 +3130,11 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>9351886004530</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>9351886006619</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
@@ -3170,6 +3175,16 @@
   <item>
     <g:id>8393904062756</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886004547</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886004554</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3324,6 +3339,11 @@
   <item>
     <g:id>8850386420004</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886003878</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
