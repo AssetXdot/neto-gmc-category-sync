@@ -1561,6 +1561,11 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>TGH34PL-2-CART</g:id>
+    <g:product_type>Accessories &gt; Heater Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>9320688018274</g:id>
     <g:product_type>Electric Heaters</g:product_type>
     <g:availability>in stock</g:availability>
@@ -1598,11 +1603,6 @@
   <item>
     <g:id>099143020891</g:id>
     <g:product_type>Smokers &gt; Charcoal Smokers</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
-    <g:id>9351886003120</g:id>
-    <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -1803,7 +1803,7 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>8393362833700</g:id>
+    <g:id>9351886000884</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
@@ -1983,7 +1983,7 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>8394078585124</g:id>
+    <g:id>9351886005469</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
@@ -2018,7 +2018,7 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>8394822779172</g:id>
+    <g:id>9351886005421</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
@@ -2106,6 +2106,11 @@
   <item>
     <g:id>602573868454</g:id>
     <g:product_type>Smokers Accessories &gt; Trolley</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>TGH34PL-2-HEAD</g:id>
+    <g:product_type>Outdoor Gas Heaters</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3188,6 +3193,11 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>9351886004516</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>9351886004141</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
@@ -3213,6 +3223,11 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>9351886004578</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>9351886003854</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
@@ -3220,6 +3235,11 @@
   <item>
     <g:id>9351886005841</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886005872</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7481,6 +7501,16 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>5060967397549</g:id>
+    <g:product_type>Appliances</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>5060967397587</g:id>
+    <g:product_type>Appliances</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>7798325354306</g:id>
     <g:product_type>Barbecues Accessories</g:product_type>
     <g:availability>in stock</g:availability>
@@ -7637,6 +7667,31 @@
   <item>
     <g:id>TREK2.0-CART-BUN</g:id>
     <g:product_type>Pellet Smokers</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886008668</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886008415</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886008170</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886007975</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886005230</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
 </channel>
