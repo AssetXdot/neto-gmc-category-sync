@@ -1352,7 +1352,7 @@
   <item>
     <g:id>9351886002147</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
-    <g:availability>in stock</g:availability>
+    <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>9351886002130</g:id>
@@ -1676,11 +1676,6 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>9045630812452</g:id>
-    <g:product_type>Double Door Bar Fridges &gt; Bar Fridges</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
     <g:id>TK-RS30-3824</g:id>
     <g:product_type>Accessories &gt; Heater Accessories</g:product_type>
     <g:availability>in stock</g:availability>
@@ -1988,7 +1983,7 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>8394056040740</g:id>
+    <g:id>9351886005445</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
@@ -2008,12 +2003,12 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>8393513861412</g:id>
+    <g:id>9351886002925</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>8394069573924</g:id>
+    <g:id>9351886005452</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
@@ -6087,7 +6082,7 @@
   <item>
     <g:id>PROLINE</g:id>
     <g:product_type>Kitchens</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
     <g:sale_price>19658.00 AUD</g:sale_price>
   </item>
   <item>
@@ -7636,11 +7631,6 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>9351886001737</g:id>
-    <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
     <g:id>ABBQM-Bun</g:id>
     <g:product_type>Built In bbqs &gt; 4 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
@@ -7692,6 +7682,36 @@
   <item>
     <g:id>9351886005230</g:id>
     <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886005261</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886001881</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886007739</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886005278</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886008378</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886005803</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
 </channel>
