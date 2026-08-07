@@ -1804,7 +1804,7 @@
   </item>
   <item>
     <g:id>5060568345192</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2383,7 +2383,7 @@
   </item>
   <item>
     <g:id>5060568348841</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3096,7 +3096,7 @@
   </item>
   <item>
     <g:id>5060967393121</g:id>
-    <g:product_type>Accessories &gt; Spare Parts</g:product_type>
+    <g:product_type>Accessories &gt; Spare Parts &gt; Accessories</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
   <item>
@@ -3761,7 +3761,7 @@
   </item>
   <item>
     <g:id>5060967393985</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3801,7 +3801,7 @@
   </item>
   <item>
     <g:id>5060967394876</g:id>
-    <g:product_type>Spare Parts</g:product_type>
+    <g:product_type>Accessories &gt; Accessories &gt; Spare Parts</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3817,17 +3817,17 @@
   </item>
   <item>
     <g:id>5745000138029</g:id>
-    <g:product_type>Accessories &gt; thermometers</g:product_type>
+    <g:product_type>Accessories &gt; thermometers &gt; Thermometers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5707582026156</g:id>
-    <g:product_type>Accessories &gt; thermometers</g:product_type>
+    <g:product_type>Accessories &gt; thermometers &gt; Thermometers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>48651062</g:id>
-    <g:product_type>Accessories &gt; thermometers</g:product_type>
+    <g:product_type>Accessories &gt; thermometers &gt; Thermometers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3857,7 +3857,7 @@
   </item>
   <item>
     <g:id>5060480243545</g:id>
-    <g:product_type>Accessories &gt; thermometers &gt; thermometers &gt; Thermometers</g:product_type>
+    <g:product_type>thermometers &gt; thermometers &gt; Thermometers &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3907,12 +3907,12 @@
   </item>
   <item>
     <g:id>5060967394982</g:id>
-    <g:product_type>Spare Parts</g:product_type>
+    <g:product_type>Accessories &gt; Accessories &gt; Spare Parts</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5060967393978</g:id>
-    <g:product_type>Appliances &gt; Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories &gt; Appliances</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4064,7 +4064,7 @@
   </item>
   <item>
     <g:id>RTE-MT-MP01</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; thermometers &gt; Thermometers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4089,27 +4089,27 @@
   </item>
   <item>
     <g:id>5056591608687</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591608540</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591608625</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591608663</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591608649</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4129,17 +4129,17 @@
   </item>
   <item>
     <g:id>5056591604894</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591604207</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591604368</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4154,22 +4154,22 @@
   </item>
   <item>
     <g:id>5056591606430</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591601022</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591603996</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5056591604009</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4199,7 +4199,7 @@
   </item>
   <item>
     <g:id>5056591607178</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6404,12 +6404,12 @@
   </item>
   <item>
     <g:id>5060967395309</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5060967395316</g:id>
-    <g:product_type>Accessories</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6419,7 +6419,7 @@
   </item>
   <item>
     <g:id>GOZPTBUN</g:id>
-    <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7177,17 +7177,17 @@
   </item>
   <item>
     <g:id>PIZZANIGHT-ACC-BUN</g:id>
-    <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>PRO-TOOLKIT-BUN</g:id>
-    <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>PIZZA-PARTY-BUN</g:id>
-    <g:product_type>Accessories &gt; Pizza ovens</g:product_type>
+    <g:product_type>Accessories &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7497,12 +7497,12 @@
   </item>
   <item>
     <g:id>5060967397549</g:id>
-    <g:product_type>Appliances</g:product_type>
+    <g:product_type>Accessories &gt; Appliances &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5060967397587</g:id>
-    <g:product_type>Appliances</g:product_type>
+    <g:product_type>Accessories &gt; Appliances &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
