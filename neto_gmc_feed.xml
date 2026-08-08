@@ -1000,11 +1000,6 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>4000810118045</g:id>
-    <g:product_type>Outdoor Firepits</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
     <g:id>8392804335908</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
@@ -3228,8 +3223,18 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
+    <g:id>9351886007159</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>9351886005841</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886005865</g:id>
+    <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7713,6 +7718,12 @@
     <g:id>9351886005803</g:id>
     <g:product_type>Bar Fridges &gt; Single Door Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>25203118-BUN</g:id>
+    <g:product_type>Offset Smokers &gt; Charcoal Smokers &gt; Gas Smokers</g:product_type>
+    <g:availability>in stock</g:availability>
+    <g:sale_price>2040.00 AUD</g:sale_price>
   </item>
 </channel>
 </rss>
