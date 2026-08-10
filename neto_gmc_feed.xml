@@ -1347,7 +1347,7 @@
   <item>
     <g:id>9351886002147</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9351886002130</g:id>
@@ -7721,7 +7721,7 @@
   </item>
   <item>
     <g:id>25203118-BUN</g:id>
-    <g:product_type>Offset Smokers &gt; Charcoal Smokers &gt; Gas Smokers</g:product_type>
+    <g:product_type>Gas Smokers &gt; Offset Smokers &gt; Charcoal Smokers</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>2040.00 AUD</g:sale_price>
   </item>
