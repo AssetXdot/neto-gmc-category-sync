@@ -1869,7 +1869,7 @@
   </item>
   <item>
     <g:id>0060162684920</g:id>
-    <g:product_type>BBQ covers &gt; Accessories</g:product_type>
+    <g:product_type>BBQ Covers &gt; Accessories</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -2949,7 +2949,7 @@
   </item>
   <item>
     <g:id>5713958300119</g:id>
-    <g:product_type>BBQ covers</g:product_type>
+    <g:product_type>BBQ Covers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -3297,6 +3297,11 @@
   <item>
     <g:id>9351886002598</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9351886002499</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4308,7 +4313,7 @@
   </item>
   <item>
     <g:id>60162685927</g:id>
-    <g:product_type>Accessories &gt; BBQ covers</g:product_type>
+    <g:product_type>Accessories &gt; BBQ Covers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -4483,7 +4488,7 @@
   </item>
   <item>
     <g:id>9334038006989</g:id>
-    <g:product_type>Accessories &gt; BBQ covers</g:product_type>
+    <g:product_type>Accessories &gt; BBQ Covers</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -5832,13 +5837,13 @@
   </item>
   <item>
     <g:id>9347777002815</g:id>
-    <g:product_type>Accessories &gt; BBQ covers</g:product_type>
+    <g:product_type>Accessories &gt; BBQ Covers</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>142.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>9347777002822</g:id>
-    <g:product_type>Accessories &gt; BBQ covers</g:product_type>
+    <g:product_type>Accessories &gt; BBQ Covers</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>142.00 AUD</g:sale_price>
   </item>
