@@ -1765,7 +1765,7 @@
   <item>
     <g:id>099143020877</g:id>
     <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>099143020884</g:id>
@@ -2349,7 +2349,7 @@
   <item>
     <g:id>9334038002363</g:id>
     <g:product_type>Accessories &gt; Heater Accessories</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9334038006033</g:id>
@@ -2752,11 +2752,6 @@
   </item>
   <item>
     <g:id>850011491720</g:id>
-    <g:product_type>Electric Fireplaces &gt; Electric Heaters</g:product_type>
-    <g:availability>out of stock</g:availability>
-  </item>
-  <item>
-    <g:id>850011491744</g:id>
     <g:product_type>Electric Fireplaces &gt; Electric Heaters</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
@@ -3600,7 +3595,7 @@
   <item>
     <g:id>POSITANO</g:id>
     <g:product_type>Kitchens</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9347726028422</g:id>
@@ -3731,12 +3726,12 @@
   <item>
     <g:id>ROMA</g:id>
     <g:product_type>Kitchens</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>OXFORD</g:id>
     <g:product_type>Kitchens</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9351886006350</g:id>
@@ -3751,12 +3746,12 @@
   <item>
     <g:id>SAN-MARINO</g:id>
     <g:product_type>Kitchens</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>MONACO</g:id>
     <g:product_type>Kitchens</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>MADRID</g:id>
@@ -3868,12 +3863,12 @@
   <item>
     <g:id>9312646039568</g:id>
     <g:product_type>Gas</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646039575</g:id>
     <g:product_type>Gas</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>9312646040762</g:id>
