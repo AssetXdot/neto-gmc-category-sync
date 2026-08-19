@@ -960,19 +960,9 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>629162120151</g:id>
-    <g:product_type>Spare Parts</g:product_type>
-    <g:availability>out of stock</g:availability>
-  </item>
-  <item>
     <g:id>629162133731</g:id>
     <g:product_type>Trolley bbqs &gt; Portable bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>out of stock</g:availability>
-  </item>
-  <item>
-    <g:id>629162133717</g:id>
-    <g:product_type>Trolley bbqs &gt; Portable bbqs &gt; 2 Burner bbqs &gt; Gas BBQs</g:product_type>
-    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>629162692344</g:id>
@@ -2480,16 +2470,6 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>720968956552</g:id>
-    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
-    <g:id>720968956828</g:id>
-    <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
     <g:id>651772007737</g:id>
     <g:product_type>Charcoal Smokers &gt; Charcoal bbqs &gt; Trolley bbqs</g:product_type>
     <g:availability>in stock</g:availability>
@@ -2741,12 +2721,12 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>850011491713</g:id>
+    <g:id>850011491157</g:id>
     <g:product_type>Electric Fireplaces &gt; Electric Heaters</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>850011491720</g:id>
+    <g:id>850011491164</g:id>
     <g:product_type>Electric Fireplaces &gt; Electric Heaters</g:product_type>
     <g:availability>out of stock</g:availability>
   </item>
@@ -2764,11 +2744,6 @@
     <g:id>9314388084455</g:id>
     <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
-  </item>
-  <item>
-    <g:id>9314388084462</g:id>
-    <g:product_type>Trolley bbqs &gt; 4 Burner bbqs &gt; Gas BBQs</g:product_type>
-    <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>9314388084479</g:id>
@@ -3078,11 +3053,6 @@
     <g:id>634868943379</g:id>
     <g:product_type>Accessories &gt; Smoker covers</g:product_type>
     <g:availability>in stock</g:availability>
-  </item>
-  <item>
-    <g:id>5060967393121</g:id>
-    <g:product_type>Accessories &gt; Spare Parts &gt; Accessories</g:product_type>
-    <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>8392958804260</g:id>
@@ -3403,7 +3373,7 @@
   <item>
     <g:id>5707582024800</g:id>
     <g:product_type>Gas</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5707582024732</g:id>
@@ -3448,12 +3418,12 @@
   <item>
     <g:id>5707582035790</g:id>
     <g:product_type>Gas</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>5707582035806</g:id>
     <g:product_type>Gas</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>639114060015</g:id>
@@ -3529,7 +3499,6 @@
     <g:id>TFB93RLGG-BUNDLE</g:id>
     <g:product_type>Pellet Smokers</g:product_type>
     <g:availability>in stock</g:availability>
-    <g:sale_price>4595.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>BX101-BUNDLE</g:id>
@@ -4691,7 +4660,7 @@
   <item>
     <g:id>9351886008095</g:id>
     <g:product_type>Double Door Bar Fridges &gt; Bar Fridges</g:product_type>
-    <g:availability>in stock</g:availability>
+    <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>720968953827</g:id>
@@ -6118,7 +6087,7 @@
   <item>
     <g:id>CG-9000-BI</g:id>
     <g:product_type>Cyprus grills &gt; Built In bbqs &gt; All Rotisseries</g:product_type>
-    <g:availability>in stock</g:availability>
+    <g:availability>out of stock</g:availability>
   </item>
   <item>
     <g:id>9312646031678</g:id>
@@ -6158,6 +6127,11 @@
   <item>
     <g:id>9312646031975</g:id>
     <g:product_type>Portable Spit &gt; Rotisseries Accessories &gt; BBQ Spit rotisseries &gt; All Rotisseries</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>859347002990</g:id>
+    <g:product_type>Indoor Heating</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -6815,6 +6789,31 @@
   <item>
     <g:id>629162155245</g:id>
     <g:product_type>Charcoal Smokers &gt; Charcoal bbqs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9344981004925</g:id>
+    <g:product_type>Electric Fireplaces</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9344981004956</g:id>
+    <g:product_type>Electric Fireplaces</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9344981004963</g:id>
+    <g:product_type>Outdoor Heating</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9344981004949</g:id>
+    <g:product_type>Electric Heaters</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9344981004932</g:id>
+    <g:product_type>Electric Fireplaces</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7780,6 +7779,11 @@
   </item>
   <item>
     <g:id>9351886008385</g:id>
+    <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>9344981002884</g:id>
     <g:product_type>Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
   </item>

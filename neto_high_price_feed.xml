@@ -440,18 +440,6 @@
     <g:shipping_width>0 cm</g:shipping_width>
   </item>
   <item>
-    <g:id>BS28200-DIS</g:id>
-    <g:title>DISPLAY - Beefeater Stainless Steel Double Door Bar Fridge</g:title>
-    <g:price>1699.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:mpn>BS28200-DIS</g:mpn>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
-  </item>
-  <item>
     <g:id>BS23140-DIS</g:id>
     <g:title>Beefeater Stainless Steel Single Door - DISPLAY</g:title>
     <g:price>249.00 AUD</g:price>
@@ -508,35 +496,6 @@
     <g:shipping_width>0 cm</g:shipping_width>
   </item>
   <item>
-    <g:id>BB722BA</g:id>
-    <g:title>BB722BA</g:title>
-    <g:description>Beefeater Bigg Bugg Graphite 2 Burner BBQ &amp; Trolley - BB722BA Powerful Performance: Two powerful, independently controlled stainless steel burners ensure a superior performance. BUGGs high performance Quartz Start Ignition fires up the first time, every time. Heat Control Without Flare-Ups: Dual temperature control ensures even heat without flare-ups, while the integrated thermometer ensures perfect results. The spring-assist hood lowers gently for smooth operation. Whether you’re hosting an intimate gathering or a big occasion. Extra Large Cooking Surface: A must for those who love to entertain with an extra large versatile plate grill rust resistant enamelled cast iron cooking surface, it doubles your cooking choices. Barbecue your way with the hood up or down. The spring-assist hood lowers gently for smooth operation. Plus an integrated thermometer comes standard. Great Storage for Condiments Enjoy efficient storage and easy access for all of your meals with a large tray for all your favourite BBQ condiments. Side trays lock in for extra preparation space and then simply store away. On The Roll Easy to move, the smart wheel balance mechanism ensures extra stability. Set up anywhere from the balcony and patio to the outdoor entertaining area and backyard. Your Bugg, Your Way Customise your BUGG with our range of functional accessories including baking dish, roast holder, pizza stone set and Teflon liners. Convenient accessory hooks and weather proof stand cover are also available. #customers { font-family: &quot;Trebuchet MS&quot;, Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; } #customers td, #customers th { border: 1px solid #ddd; padding: 8px; } #customers tr:nth-child(even){background-color: #f2f2f2;} #customers tr:hover {background-color: #ddd;} #customers th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #f25b12; color: white; } #description p.small { display: none; }</g:description>
-    <g:price>799.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Beefeater</g:brand>
-    <g:gtin>9316561029529</g:gtin>
-    <g:mpn>BB722BA</g:mpn>
-    <g:product_type>Trolley BBQ &gt; 2 Burner BBQ &gt; Gas BBQs</g:product_type>
-    <g:shipping_weight>38.00 kg</g:shipping_weight>
-    <g:shipping_height>29 cm</g:shipping_height>
-    <g:shipping_length>62 cm</g:shipping_length>
-    <g:shipping_width>84 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>BB722BA-DIS</g:id>
-    <g:title>Bigg Bugg Black Mobile Barbecue - Display Model</g:title>
-    <g:price>999.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Beefeater</g:brand>
-    <g:mpn>BB722BA-DIS</g:mpn>
-    <g:shipping_weight>0.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>0 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
-  </item>
-  <item>
     <g:id>BSH158SA-DIS</g:id>
     <g:title>Beefeater Signature ProLine Integrated FFD barbecue and hood - DISPLAY MODEL</g:title>
     <g:price>4996.00 AUD</g:price>
@@ -563,22 +522,6 @@
     <g:shipping_height>0 cm</g:shipping_height>
     <g:shipping_length>0 cm</g:shipping_length>
     <g:shipping_width>0 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>RH200</g:id>
-    <g:title>Gasmate Natural Gas Solaris Deluxe Ceramic Radiant Heater with Electric Wall Switch - RH200</g:title>
-    <g:description>#customers { font-family: &quot;Trebuchet MS&quot;, Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; } #customers td, #customers th { border: 1px solid #ddd; padding: 8px; } #customers tr:nth-child(even){background-color: #f2f2f2;} #customers tr:hover {background-color: #ddd; } #customers th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #f25b12; color: white; }#description p.small { display: none !important; Gasmate Solaris Deluxe Ceramic Radiant Heater - Electric Wall Switch - RH200 The Gasmate Solaris Deluxe Ceramic Radiant Heaters provide loads of comfortable radiant warmth so you can enjoy the outdoors all year round. Package Includes: 1 x Solaris Deluxe Ceramic Radiant Heater - 35 MJ/h heat output</g:description>
-    <g:price>999.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Gasmate</g:brand>
-    <g:gtin>9314388074104</g:gtin>
-    <g:mpn>RH200</g:mpn>
-    <g:product_type>Outdoor Gas Heaters</g:product_type>
-    <g:shipping_weight>17.00 kg</g:shipping_weight>
-    <g:shipping_height>41 cm</g:shipping_height>
-    <g:shipping_length>49 cm</g:shipping_length>
-    <g:shipping_width>68 cm</g:shipping_width>
   </item>
   <item>
     <g:id>BS23650</g:id>
@@ -876,21 +819,6 @@
     <g:shipping_width>0 cm</g:shipping_width>
   </item>
   <item>
-    <g:id>ERB120SS</g:id>
-    <g:title>Euro Appliances 120cm Alfresco Canopy Range Hood - ERB120SS</g:title>
-    <g:description>#customers { font-family: &quot;Trebuchet MS&quot;, Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; } #customers td, #customers th { border: 1px solid #ddd; padding: 8px; } #customers tr:nth-child(even){background-color: #f2f2f2;} #customers tr:hover {background-color: #ddd; } #customers th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #f25b12; color: white; }#description p.small { display: none !important; Euro Appliances 120cm Alfresco Canopy Range Hood - ERB120SS This Alfresco Canopy Range hood is both stylish and functional, designed with three different speed levels capable of operating at low, medium, or high operational standards. The extraction capacity of this range hood is impressive at 2000m3/hr. Powerful as it is; noise is kept to a minimum with decibel ratings of 52 dB, 60 dB, and 65 dB. NB *This canopy is not an outdoor appliance but it can be installed in an alfresco area so long as the product is not exposed to rain, moisture, or dust. The range hood must not be installed in a location where winds may blow water or dust onto the canopy. Package Includes: 1 x Alfresco Canopy Range Hood 1 x Remote Control 1 x Packet of Screws 1 x Operating Instructions</g:description>
-    <g:price>2803.90 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Euro Appliances</g:brand>
-    <g:mpn>ERB120SS</g:mpn>
-    <g:product_type>Range Hood</g:product_type>
-    <g:shipping_weight>85.00 kg</g:shipping_weight>
-    <g:shipping_height>0 cm</g:shipping_height>
-    <g:shipping_length>150 cm</g:shipping_length>
-    <g:shipping_width>0 cm</g:shipping_width>
-  </item>
-  <item>
     <g:id>ECPZ21BK</g:id>
     <g:title>EURO 21 Inch Ceramic Table Top Pizza Oven - ECPZ21BK</g:title>
     <g:description>ECPZ21BK 21 Inch Ceramic Table Top Pizza Oven This 21 Inch Ceramic Table Top Pizza Oven is made in Italy with high-quality materials. Cook easily and avoid burning your pizza thanks to the temperature indicator which allows you to clearly see your cooking temperature. The 3 leg stand isolates the heat from where it’s sited and makes for easy portability. You’ll never burn your fingers because of the presence of the sustainable bamboo handles. Add this practical pizza oven to your outdoor kitchen today. #customers { font-family: &quot;Trebuchet MS&quot;, Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; } #customers td, #customers th { border: 1px solid #ddd; padding: 8px; } #customers tr:nth-child(even){background-color: #f2f2f2;} #customers tr:hover {background-color: #ddd;} #customers th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #93c846; color: white; } Package Includes: 1 x 21 Inch Ceramic Table Top Pizza Oven #customers { font-family: &quot;Trebuchet MS&quot;, Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; } #customers td, #customers th { border: 1px solid #ddd; padding: 8px; } #customers tr:nth-child(even){background-color: #f2f2f2;} #customers tr:hover {background-color: #ddd;} #customers th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #191919; color: white; }</g:description>
@@ -1173,22 +1101,6 @@
     <g:shipping_weight>28.00 kg</g:shipping_weight>
     <g:shipping_height>30 cm</g:shipping_height>
     <g:shipping_length>120 cm</g:shipping_length>
-    <g:shipping_width>62 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>NK22K-LEG-2</g:id>
-    <g:title>Napoleon Rodeo Charcoal Leg - NK22K-LEG-2</g:title>
-    <g:description>#customers { font-family: &quot;Trebuchet MS&quot;, Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; } #customers td, #customers th { border: 1px solid #ddd; padding: 8px; } #customers tr:nth-child(even){background-color: #f2f2f2;} #customers tr:hover {background-color: #ddd; } #customers th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #f25b12; color: white; }#description p.small { display: none !important; Napoleon Rodeo Charcoal Leg - NK22K-LEG-2 The compact NK22K-LEG-2 Rodeo Charcoal Kettle Grill provides a traditional charcoal grill that can feed a big crowd, with tremendous manoeuvring capability, thanks to its solid all-weather wheels. The powder-coated aluminum cart is light and durable, allowing you to easily take this charcoal grill to wherever the action is. The heavy gauge steel charcoal grate and cast iron hinged cooking grids allow fast and easy, direct and indirect cooking. Enjoy grilling, roasting, and smoking with much ease. Ideal for charcoal enthusiasts, experience charcoal grilling with Napoleon&apos;s compact and mobile Charcoal Kettle Grill. Grilling, roasting, and smoking are a breeze, the hinged grids make it easy to reload charcoal or add wood for smoking. Charcoal is all about controlling heat and airflow, the stainless steel heat diffuser evenly distributes heat, and directs spent charcoal to the ash catcher. The improved PRO Air Control system increases airflow and temperature accuracy while preventing water from entering the grill. The lid features a built-in lid hanger and cool touch handle to keep your hands away from the heat while grilling.</g:description>
-    <g:price>307.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Napoleon</g:brand>
-    <g:gtin>629162127679</g:gtin>
-    <g:mpn>NK22K-LEG-2</g:mpn>
-    <g:product_type>Trolley BBQ &gt; Portable BBQ</g:product_type>
-    <g:shipping_weight>21.00 kg</g:shipping_weight>
-    <g:shipping_height>39 cm</g:shipping_height>
-    <g:shipping_length>62 cm</g:shipping_length>
     <g:shipping_width>62 cm</g:shipping_width>
   </item>
   <item>
@@ -4421,21 +4333,6 @@
     <g:shipping_width>43 cm</g:shipping_width>
   </item>
   <item>
-    <g:id>MB20040622</g:id>
-    <g:title>Masterbuilt Portable Charcoal Grill</g:title>
-    <g:description>Masterbuilt Portable Charcoal Grill Experience the unbeatable taste of charcoal and the convenience of a portable gas grill with the Masterbuilt® Portable Charcoal Grill. Say goodbye to the hassle of manually adjusting coals for the perfect temperature; instead, effortlessly control the SteadyTemp™ dial to maintain your desired heat for up to 4 hours. Master the art of charcoal grilling on the go with Masterbuilt and savour every moment of your grilling adventures. #customers { font-family: &quot;Trebuchet MS&quot;, Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; } #customers td, #customers th { border: 1px solid #ddd; padding: 8px; } #customers tr:nth-child(even){background-color: #f2f2f2;} #customers tr:hover {background-color: #ddd;} #customers th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #f25b12; color: white; }</g:description>
-    <g:price>499.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Masterbuilt</g:brand>
-    <g:mpn>MB20040622</g:mpn>
-    <g:product_type>Portable BBQ &gt; Charcoal BBQ</g:product_type>
-    <g:shipping_weight>15.79 kg</g:shipping_weight>
-    <g:shipping_height>38 cm</g:shipping_height>
-    <g:shipping_length>42 cm</g:shipping_length>
-    <g:shipping_width>71 cm</g:shipping_width>
-  </item>
-  <item>
     <g:id>MB20040822</g:id>
     <g:title>Masterbuilt Portable Charcoal Grill with Trolley Cart</g:title>
     <g:description>Masterbuilt Portable Charcoal Grill w/ Cart Discover the extraordinary taste of charcoal grilling blended seamlessly with the convenience of a portable gas grill - all in one with the Masterbuilt® Portable Charcoal Grill. No more tedious coal adjustments to reach the perfect temperature. Thanks to the SteadyTemp™ dial, maintaining your desired heat for up to 4 hours is a breeze. The grill comes equipped with a removable QuickCollapse™ cart for swift and effortless folding. What&apos;s more, enjoy the added convenience of two side shelves, providing ample preparation space, and beverage holders for your ultimate grilling pleasure. Experience the art of charcoal grilling on the go with Masterbuilt and elevate your outdoor cooking game like never before.</g:description>
@@ -7264,6 +7161,22 @@
     <g:shipping_width>22 cm</g:shipping_width>
   </item>
   <item>
+    <g:id>686243AU-LP</g:id>
+    <g:title>Broil King REGAL Q 690 PRO (LPG) - 686243AU-LP</g:title>
+    <g:description>Broil King REGAL Q 690 PRO - 686243AU-LP Take your outdoor cooking to the next level with the Broil King REGAL Q 690 PRO. Designed for passionate grillers and culinary enthusiasts, this powerful propane grill delivers precise temperature control and consistent heat for perfect results every time. Its durable construction and premium materials ensure long-lasting performance, whether you’re grilling, roasting, or smoking your favorite dishes. With intuitive controls and smart technology integration, you can effortlessly manage your cooking from start to finish, while the spacious cooking area gives you plenty of room to prepare meals for family and friends. Built for versatility, the REGAL Q 690 PRO adapts to any cooking style and occasion, making it an essential addition to any outdoor kitchen. Experience the perfect blend of power, precision, and convenience—upgrade your grilling game with the Broil King REGAL Q 690 PRO today.</g:description>
+    <g:price>6999.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Broil King</g:brand>
+    <g:gtin>062703892443</g:gtin>
+    <g:mpn>686243AU-LP</g:mpn>
+    <g:product_type>Trolley BBQ &gt; 5 and 6 Burner BBQ &gt; Gas BBQs</g:product_type>
+    <g:shipping_weight>122.47 kg</g:shipping_weight>
+    <g:shipping_height>66 cm</g:shipping_height>
+    <g:shipping_length>125 cm</g:shipping_length>
+    <g:shipping_width>112 cm</g:shipping_width>
+  </item>
+  <item>
     <g:id>40279980</g:id>
     <g:title>Custom Yakitori Grill with Lid</g:title>
     <g:price>2165.00 AUD</g:price>
@@ -9380,22 +9293,6 @@
     <g:shipping_width>23 cm</g:shipping_width>
   </item>
   <item>
-    <g:id>SPS-60BAUS</g:id>
-    <g:title>Modern Flames Spectrum 60 Inch Slimline Electric Fireplace with Log Set SPS-60B/AUS</g:title>
-    <g:description>Modern Flames Spectrum 60 Inch Slimline Electric Fireplace with Log Set SPS-60B/AUS Elevate your living space with the Modern Flames Spectrum Slimline Electric Fireplace with Log Set, a perfect blend of contemporary design and inviting ambience. Crafted to create a striking visual statement, this fireplace brings the warmth and charm of a traditional fire into a sleek, modern form. The lifelike flame display and beautifully detailed log set create a natural, soothing atmosphere, making it an ideal centrepiece for both everyday living and special occasions. Its refined aesthetic pairs effortlessly with a wide range of interior styles, from minimalist spaces to more classic settings. Designed to enhance comfort and style, this electric fireplace offers a relaxing environment without the hassle of traditional fireplaces. Its slim, versatile profile allows it to integrate seamlessly into your space, whether you’re updating an existing room or designing something entirely new. With its sophisticated presence and calming glow, the Modern Flames Spectrum Slimline transforms any room into a warm and welcoming retreat.</g:description>
-    <g:price>2199.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Modern Flames</g:brand>
-    <g:gtin>859347002990</g:gtin>
-    <g:mpn>SPS-60BAUS</g:mpn>
-    <g:product_type>Indoor Heating</g:product_type>
-    <g:shipping_weight>40.00 kg</g:shipping_weight>
-    <g:shipping_height>60 cm</g:shipping_height>
-    <g:shipping_length>165 cm</g:shipping_length>
-    <g:shipping_width>24 cm</g:shipping_width>
-  </item>
-  <item>
     <g:id>CEF-60B</g:id>
     <g:title>Modern Flames Challenger 60 Inch Electric Fireplace - CEF-60B</g:title>
     <g:description>Modern Flames Challenger 60 Inch Electric Fireplace - CEF-60B Enhance your home with the Modern Flames Challenger 60 Inch Electric Fireplace, a perfect fusion of contemporary design and inviting comfort. Created to be a standout feature, this fireplace brings a refined, modern touch to any room while delivering a warm and relaxing atmosphere. The captivating flame display creates a sense of depth and ambience, making it ideal for both everyday living and entertaining. Its sleek, minimalist profile complements a wide range of interiors, from modern open-plan spaces to more intimate, cosy settings. Designed with both style and practicality in mind, this electric fireplace offers the charm of a traditional fire without the complexity. Its versatile design allows it to integrate seamlessly into your space, whether you want a bold statement piece or a subtle architectural addition. With its clean lines and soothing presence, the Modern Flames Challenger 60 Inch Electric Fireplace transforms any space into a comfortable and visually striking retreat.</g:description>
@@ -9632,86 +9529,6 @@
     <g:shipping_height>0 cm</g:shipping_height>
     <g:shipping_length>0 cm</g:shipping_length>
     <g:shipping_width>0 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>KEN50-AU</g:id>
-    <g:title>Modern Flames Kensington Mantle Suite - KEN50-AU</g:title>
-    <g:description>Modern Flames Kensington Mantle Suite - KEN50-AU Bring warmth, sophistication, and contemporary style into your home with the Kensington Mantel Suite. Designed to create a striking focal point, this beautifully crafted fireplace suite combines classic mantel styling with modern elegance, making it a seamless addition to a wide range of interior spaces. The Kensington Mantel Suite transforms ordinary rooms into inviting retreats, offering a captivating flame display that enhances the atmosphere of any occasion. Whether you&apos;re relaxing with family, entertaining guests, or enjoying a quiet evening at home, it creates a welcoming environment filled with comfort and visual appeal. Its refined design effortlessly balances traditional charm with contemporary aesthetics, allowing it to complement both classic and modern décor. The realistic flame effects add depth and character to your living space, creating the comforting ambiance of a fireplace without the maintenance associated with traditional options. Perfect for homeowners seeking a statement piece that combines beauty and practicality, the Kensington Mantel Suite delivers an exceptional blend of style, warmth, and atmosphere, making it a timeless centrepiece for your home.</g:description>
-    <g:price>2999.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Modern Flames</g:brand>
-    <g:gtin>9344981004925</g:gtin>
-    <g:mpn>KEN50-AU</g:mpn>
-    <g:product_type>Electric Fireplaces</g:product_type>
-    <g:shipping_weight>50.00 kg</g:shipping_weight>
-    <g:shipping_height>40 cm</g:shipping_height>
-    <g:shipping_length>184 cm</g:shipping_length>
-    <g:shipping_width>40 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>PRE36RS-AU</g:id>
-    <g:title>Modern Flames Prescott Mantle Suite - PRE36RS-AU</g:title>
-    <g:description>Modern Flames Prescott Mantle Suite - PRE36RS-AU Create a warm and inviting focal point in your home with the Prescott Mantel Suite, a beautifully designed fireplace solution that combines timeless elegance with modern convenience. Crafted to enhance both comfort and style, this sophisticated mantel suite brings a sense of relaxation and refinement to any living space. The Prescott Mantel Suite captures the charm and atmosphere of a traditional fireplace, creating a welcoming environment for family gatherings, quiet evenings, and everyday living. Its classic design adds character and warmth to the room, while seamlessly complementing a variety of interior styles, from contemporary homes to more traditional settings. Designed to be enjoyed throughout the year, the captivating flame display creates a cosy ambience that transforms ordinary spaces into inviting retreats. Whether you&apos;re entertaining guests or unwinding after a long day, the Prescott Mantel Suite provides the perfect backdrop for memorable moments and comfortable living. With its elegant presence and timeless appeal, the Prescott Mantel Suite is more than just a fireplace—it is a statement piece that enhances the beauty, atmosphere, and overall comfort of your home.</g:description>
-    <g:price>3299.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Modern Flames</g:brand>
-    <g:gtin>9344981004956</g:gtin>
-    <g:mpn>PRE36RS-AU</g:mpn>
-    <g:product_type>Electric Fireplaces</g:product_type>
-    <g:shipping_weight>65.00 kg</g:shipping_weight>
-    <g:shipping_height>52 cm</g:shipping_height>
-    <g:shipping_length>167 cm</g:shipping_length>
-    <g:shipping_width>56 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>EVE36OR-AU</g:id>
-    <g:title>Modern Flames Everwood Mantle Suite - EVE36OR-AU</g:title>
-    <g:description>Modern Flames Everwood Mantle Suite - EVE36OR-AU The Everwood Mantel Suite with Orion Traditional electric fireplace is designed to bring a refined sense of warmth, comfort, and sophistication into the home. Serving as a striking focal point, it captures the essence of classic fireplace design while presenting it through a modern and effortlessly stylish form that suits a wide range of interiors. Its elegant presence enhances both contemporary and traditional living spaces, creating an inviting atmosphere that feels considered and timeless. The natural-inspired character of the mantel adds depth and visual appeal, helping to transform ordinary rooms into more welcoming and beautifully balanced environments. More than just a decorative centrepiece, this suite evokes the comforting feel of a traditional hearth, enriching the mood of a space with warmth and ambience. It encourages moments of relaxation and togetherness, becoming a natural gathering point within the home. With its seamless blend of heritage-inspired charm and modern design sensibility, the Everwood Mantel Suite offers a sophisticated way to elevate interior spaces while maintaining a calm, enduring sense of style.</g:description>
-    <g:price>5799.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Modern Flames</g:brand>
-    <g:gtin>9344981004963</g:gtin>
-    <g:mpn>EVE36OR-AU</g:mpn>
-    <g:product_type>Outdoor Heating</g:product_type>
-    <g:shipping_weight>65.00 kg</g:shipping_weight>
-    <g:shipping_height>52 cm</g:shipping_height>
-    <g:shipping_length>167 cm</g:shipping_length>
-    <g:shipping_width>56 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>STE30OR-AU</g:id>
-    <g:title>Modern Flames Sterling Mantle Suite - STE30OR-AU</g:title>
-    <g:description>Modern Flames Sterling Mantle Suite - STE30OR-AU The Sterling Mantel Suite offers a refined and contemporary approach to classic fireplace styling, creating an elegant focal point that elevates the atmosphere of any living space. With its balanced proportions and clean design language, it brings a sense of order and sophistication that complements a wide range of interior styles, from modern minimalism to more traditional home settings. At the heart of the composition is a design that prioritises comfort, ambience, and visual harmony. It naturally draws the eye, anchoring a room with a presence that feels both understated and impactful. Whether positioned in a main living area, open-plan space, or more intimate setting, it contributes to a welcoming environment that feels thoughtfully curated and lived-in. The Sterling Mantel Suite is designed to enhance the character of a home without overwhelming it, offering a timeless aesthetic that integrates seamlessly with surrounding décor. Its classic influence is subtly expressed through its form, while its contemporary finish ensures it remains relevant within modern interiors. Together with the Orion Traditional fireplace design, it creates a cohesive centrepiece that enriches the overall mood of a room. The result is a space that feels warmer, more inviting, and visually grounded—an ideal setting for relaxation, conversation, and everyday living.</g:description>
-    <g:price>4999.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Modern Flames</g:brand>
-    <g:gtin>9344981004949</g:gtin>
-    <g:mpn>STE30OR-AU</g:mpn>
-    <g:product_type>Electric Heaters</g:product_type>
-    <g:shipping_weight>37.00 kg</g:shipping_weight>
-    <g:shipping_height>43 cm</g:shipping_height>
-    <g:shipping_length>125 cm</g:shipping_length>
-    <g:shipping_width>39 cm</g:shipping_width>
-  </item>
-  <item>
-    <g:id>WIL30RS-AU</g:id>
-    <g:title>Modern Flames Willow Mantle Suite - WIL30RS-AU</g:title>
-    <g:description>Modern Flames Willow Mantle Suite - WIL30RS-AU The Willow Mantel Suite is a beautifully crafted centrepiece designed to bring warmth, style, and character to any living space. Blending timeless elegance with contemporary design influences, it creates an inviting focal point that enhances the atmosphere of a room while complementing a wide range of interior décor styles. Its refined appearance adds a sense of sophistication to the home, making it equally suited to modern interiors and more traditional settings. Thoughtfully designed to create a welcoming environment, the suite helps transform everyday living spaces into comfortable retreats where family and friends can gather, relax, and unwind. The Willow Mantel Suite captures the charm and ambience of a classic fireplace while offering a clean and polished aesthetic that fits seamlessly into contemporary homes. Its balanced proportions and elegant detailing contribute to a sense of warmth and harmony, elevating the overall look and feel of the surrounding space. Whether serving as the focal point of a living room, lounge, or entertainment area, the Willow Mantel Suite creates a lasting impression. Its timeless appeal and versatile design ensure it remains a stylish and functional addition to the home for years to come, bringing comfort, ambience, and understated luxury to everyday living.</g:description>
-    <g:price>2499.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Modern Flames</g:brand>
-    <g:gtin>9344981004932</g:gtin>
-    <g:mpn>WIL30RS-AU</g:mpn>
-    <g:product_type>Electric Fireplaces</g:product_type>
-    <g:shipping_weight>37.00 kg</g:shipping_weight>
-    <g:shipping_height>43 cm</g:shipping_height>
-    <g:shipping_length>125 cm</g:shipping_length>
-    <g:shipping_width>39 cm</g:shipping_width>
   </item>
   <item>
     <g:id>TOVL-1824</g:id>
@@ -10767,22 +10584,6 @@
     <g:shipping_width>72 cm</g:shipping_width>
   </item>
   <item>
-    <g:id>BOS180W2D</g:id>
-    <g:title>Bossworx Beer and Wine Dual Zone Alfresco Refrigerator - BOS180W2D</g:title>
-    <g:description>Bossworx Beer and Wine Dual Zone Alfresco Refrigerator - BOS180W2D Elevate your outdoor entertaining area with the Bosston Beer and Wine Dual Zone Alfresco Refrigerator, a stylish and practical addition designed to complement modern alfresco spaces. Its sleek appearance and versatile design make it a natural fit for outdoor kitchens, patios, home bars and entertainment areas. Whether you&apos;re hosting friends, enjoying a relaxed evening outdoors or creating a dedicated entertaining space, this refrigerator provides a convenient place to keep your favourite beverages organised and close at hand. Its sophisticated look blends effortlessly with contemporary outdoor settings while adding a refined touch to your entertaining area. Designed with entertaining in mind, the Bosston Beer and Wine Refrigerator is an excellent choice for anyone looking to create a polished and functional outdoor beverage station. From casual gatherings to larger celebrations, it brings convenience and style together in one impressive addition to your alfresco setup.</g:description>
-    <g:price>1999.00 AUD</g:price>
-    <g:availability>in stock</g:availability>
-    <g:condition>New</g:condition>
-    <g:brand>Bosston</g:brand>
-    <g:gtin>9344981002884</g:gtin>
-    <g:mpn>BOS180W2D</g:mpn>
-    <g:product_type>Bar Fridges</g:product_type>
-    <g:shipping_weight>60.00 kg</g:shipping_weight>
-    <g:shipping_height>60 cm</g:shipping_height>
-    <g:shipping_length>87 cm</g:shipping_length>
-    <g:shipping_width>75 cm</g:shipping_width>
-  </item>
-  <item>
     <g:id>BDIODK2TBK-CU-AU</g:id>
     <g:title>Bossworx ODK Black SS Grill with SS Door - BDIODK2TBK-CU-AU</g:title>
     <g:description>Bossworx ODK Black SS Grill with SS Door - BDIODK2TBK-CU-AU</g:description>
@@ -11029,6 +10830,84 @@
     <g:shipping_height>62 cm</g:shipping_height>
     <g:shipping_length>268 cm</g:shipping_length>
     <g:shipping_width>28 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>OR30-MULTIAU</g:id>
+    <g:title>ORION 30&quot; MULTI HELIOVISION FIREPLACE - OR30-MULTI/AU</g:title>
+    <g:description>ORION 30&quot; MULTI HELIOVISION FIREPLACE - OR30-MULTI/AU The Orion Multi Electric Fireplace brings the warmth and atmosphere of a traditional fire into your home with a sophisticated, contemporary design. Its remarkably realistic flame presentation creates a captivating focal point, adding depth, movement, and ambience to living rooms, entertainment areas, bedrooms, and other interior spaces. Designed with versatility in mind, the Orion Multi can complement a variety of interior styles and room layouts. Its adaptable design allows it to blend seamlessly into modern minimalist spaces as well as more traditional interiors, creating an elegant finish that feels purposeful and refined. Create a relaxing atmosphere with beautifully layered flames and a glowing ember effect that captures the inviting character of a real fireplace. The addition of ambient crackling sounds further enhances the experience, making it easy to unwind and enjoy the comforting presence of a fire without the maintenance associated with a traditional fireplace. Whether you&apos;re looking to create a cosy gathering space or add a striking centrepiece to your home, the Orion Multi Electric Fireplace combines sophisticated aesthetics with everyday convenience. It delivers the ambience of a real fire in a refined, low-maintenance design that&apos;s made to elevate your space.</g:description>
+    <g:price>4795.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Modern Flames</g:brand>
+    <g:gtin>850011491508</g:gtin>
+    <g:mpn>OR30-MULTIAU</g:mpn>
+    <g:product_type>Electric Heaters &gt; All Heaters</g:product_type>
+    <g:shipping_weight>50.00 kg</g:shipping_weight>
+    <g:shipping_height>75 cm</g:shipping_height>
+    <g:shipping_length>86 cm</g:shipping_length>
+    <g:shipping_width>36 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>OR52-MULTIAU</g:id>
+    <g:title>ORION 52&quot; MULTI HELIOVISION FIREPLACE - OR52-MULTI/AU</g:title>
+    <g:description>ORION 52&quot; MULTI HELIOVISION FIREPLACE - OR52-MULTI/AU The Modern Flames Orion Heliovision Virtual Multi-Sided Electric Fireplace creates a stunning focal point with an exceptionally realistic fire experience. Designed to bring warmth, atmosphere, and contemporary elegance into any interior, it offers the captivating appearance of a traditional fireplace without the maintenance of a real fire. Its lifelike flames and glowing ember ambience create a beautifully immersive effect, while the natural-looking log arrangement and reflective media add depth and realism to the overall presentation. The result is a sophisticated centrepiece that can transform a living room, entertainment area, bedroom, office, or other interior space. Designed for versatility, the Orion Multi-Sided Electric Fireplace can complement a range of interior styles and room layouts. Its multi-sided presentation allows the fire to become part of the architecture, providing an engaging view from different angles and adding a luxurious designer feel to your space. Whether you&apos;re creating a cosy atmosphere for quiet evenings or an impressive centrepiece for entertaining guests, the Orion Heliovision Virtual Multi-Sided Electric Fireplace delivers the visual comfort and ambience of a real fire in a refined, modern design. With its realistic appearance, soothing fire ambience, and elegant presence, it brings a new level of sophistication to contemporary interiors.</g:description>
+    <g:price>7995.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Modern Flames</g:brand>
+    <g:gtin>850011491461</g:gtin>
+    <g:mpn>OR52-MULTIAU</g:mpn>
+    <g:product_type>All Heaters &gt; Electric Heaters</g:product_type>
+    <g:shipping_weight>66.00 kg</g:shipping_weight>
+    <g:shipping_height>75 cm</g:shipping_height>
+    <g:shipping_length>144 cm</g:shipping_length>
+    <g:shipping_width>36 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>OR60-MULTIAU</g:id>
+    <g:title>ORION 60&quot;MULTI HELIOVISION FIREPLACE - OR60-MULTI/AU</g:title>
+    <g:description>ORION 60&quot;MULTI HELIOVISION FIREPLACE - OR60-MULTI/AU The Modern Flames Orion Heliovision Virtual Multi-Sided Electric Fireplace brings an extraordinary sense of realism and sophistication to any interior. Designed to become a captivating focal point, it recreates the visual warmth and atmosphere of a traditional fire while offering the clean, contemporary appeal of an electric fireplace. With its immersive, multidimensional flame presentation, the Orion creates a beautifully dynamic fire experience that can transform the ambience of a room. The realistic log appearance, glowing ember effect, and reflective interior work together to create remarkable depth, while the gentle sound of crackling flames adds another layer of comfort and relaxation. Its versatile multi-sided design makes the fireplace an impressive architectural feature, allowing the fire to complement different room layouts and interior styles. Whether incorporated into a modern living area, entertainment space, bedroom, or office, the Orion adds warmth, character, and an unmistakable sense of luxury. Enjoy the inviting atmosphere of a fireplace throughout the year, with or without heat. Effortless controls and smart-home convenience make it simple to create the perfect ambience whenever you want it. The Modern Flames Orion Heliovision Virtual Multi-Sided Electric Fireplace is more than a source of warmth—it is a statement piece designed to bring realistic fire ambience, modern elegance, and exceptional visual appeal into your space.</g:description>
+    <g:price>8495.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Modern Flames</g:brand>
+    <g:gtin>850011491478</g:gtin>
+    <g:mpn>OR60-MULTIAU</g:mpn>
+    <g:product_type>All Heaters &gt; Electric Heaters</g:product_type>
+    <g:shipping_weight>74.00 kg</g:shipping_weight>
+    <g:shipping_height>75 cm</g:shipping_height>
+    <g:shipping_length>166 cm</g:shipping_length>
+    <g:shipping_width>36 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>OTK-OR30-LG</g:id>
+    <g:title>ORION TRADITIONAL 30&quot; - 8&quot; TRIM - OTK-OR30-LG</g:title>
+    <g:description>ORION TRADITIONAL 30&quot; - 8&quot; TRIM - OTK-OR30-LG The Orion Traditional Electric Fireplace Surround provides a refined finishing touch for insert-style fireplace installations. Designed to complement the Orion Traditional Series, it creates a polished transition between the existing fireplace opening and the new electric fireplace. Ideal for updating an older fireplace, the surround helps conceal visible gaps around the firebox while giving the installation a more integrated, built-in appearance. Its clean and elegant design blends naturally with a variety of interior styles, making it an excellent choice for modernising an existing fireplace without extensive renovation. Pair the Orion Traditional Electric Fireplace Surround with your Orion fireplace to achieve a cohesive, sophisticated finish that enhances the overall appearance of your living space.</g:description>
+    <g:price>399.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Modern Flames</g:brand>
+    <g:mpn>OTK-OR30-LG</g:mpn>
+    <g:product_type>Heater Accessories</g:product_type>
+    <g:shipping_weight>7.00 kg</g:shipping_weight>
+    <g:shipping_height>11 cm</g:shipping_height>
+    <g:shipping_length>120 cm</g:shipping_length>
+    <g:shipping_width>27 cm</g:shipping_width>
+  </item>
+  <item>
+    <g:id>677183</g:id>
+    <g:title>Broil King Baron 490 IRX Shadow BBQ - 677183</g:title>
+    <g:description>Broil King Baron 490 IRX Shadow BBQ - 677183 Elevate your outdoor cooking experience with the Broil King Baron 490 IRX BBQ, designed for passionate home cooks who appreciate exceptional performance, versatility, and sophisticated style. Built to become the centrepiece of your outdoor entertaining area, this premium barbecue makes it easy to create memorable meals for family and friends. Combining rugged construction with refined design, the Baron 490 IRX brings confidence and convenience to every cooking occasion. Whether you&apos;re preparing a relaxed family dinner, hosting a weekend gathering, or enjoying an outdoor feast, this barbecue gives you the freedom to explore a wide range of cooking styles and flavours. From beautifully grilled favourites to impressive roast meals, the Baron 490 IRX is made to help you cook with confidence. Its thoughtful design and premium appearance complement any outdoor setting, while its versatile cooking capabilities make it an excellent choice for those who take their barbecue seriously. Built for entertaining and designed for everyday enjoyment, the Broil King Baron 490 IRX is a stylish and dependable addition to any outdoor kitchen, bringing together performance, versatility, and the pleasure of cooking outdoors.</g:description>
+    <g:price>2499.00 AUD</g:price>
+    <g:availability>in stock</g:availability>
+    <g:condition>New</g:condition>
+    <g:brand>Broil King</g:brand>
+    <g:mpn>677183</g:mpn>
+    <g:product_type>Barbeques &gt; Trolley BBQ</g:product_type>
+    <g:shipping_weight>0.00 kg</g:shipping_weight>
+    <g:shipping_height>0 cm</g:shipping_height>
+    <g:shipping_length>0 cm</g:shipping_length>
+    <g:shipping_width>0 cm</g:shipping_width>
   </item>
 </channel>
 </rss>
