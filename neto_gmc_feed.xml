@@ -3723,12 +3723,6 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>MB20041625</g:id>
-    <g:product_type>Charcoal Smokers &gt; Trolley bbqs &gt; Charcoal bbqs</g:product_type>
-    <g:availability>in stock</g:availability>
-    <g:sale_price>1500.00 AUD</g:sale_price>
-  </item>
-  <item>
     <g:id>9347777004710</g:id>
     <g:product_type>Single Door Bar Fridges &gt; Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
@@ -4269,6 +4263,11 @@
   <item>
     <g:id>062703882444</g:id>
     <g:product_type>Trolley bbqs &gt; Gas BBQs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>062703892443</g:id>
+    <g:product_type>Trolley bbqs &gt; 5 and 6 Burner bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
   <item>
@@ -7785,6 +7784,36 @@
   <item>
     <g:id>9344981002884</g:id>
     <g:product_type>Bar Fridges</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>850011491355</g:id>
+    <g:product_type>All Heaters &gt; Electric Heaters</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>850011491348</g:id>
+    <g:product_type>All Heaters &gt; Electric Heaters</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>850011491508</g:id>
+    <g:product_type>Electric Heaters &gt; All Heaters</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>850011491461</g:id>
+    <g:product_type>All Heaters &gt; Electric Heaters</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>OTK-OR30-LG</g:id>
+    <g:product_type>Heater Accessories</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>629162133717</g:id>
+    <g:product_type>All Barbeques &gt; Trolley bbqs &gt; Portable bbqs &gt; Gas BBQs</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
 </channel>
