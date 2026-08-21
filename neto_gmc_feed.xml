@@ -1295,11 +1295,6 @@
     <g:availability>in stock</g:availability>
   </item>
   <item>
-    <g:id>0080687420186</g:id>
-    <g:product_type>Offset Smokers &gt; Charcoal Smokers</g:product_type>
-    <g:availability>in stock</g:availability>
-  </item>
-  <item>
     <g:id>9320688017987</g:id>
     <g:product_type>Accessories &gt; Heater Accessories</g:product_type>
     <g:availability>in stock</g:availability>
@@ -2573,7 +2568,7 @@
   <item>
     <g:id>720968956743</g:id>
     <g:product_type>Accessories</g:product_type>
-    <g:availability>out of stock</g:availability>
+    <g:availability>in stock</g:availability>
   </item>
   <item>
     <g:id>PGHXL</g:id>
@@ -2895,12 +2890,6 @@
     <g:product_type>Accessories &gt; thermometers &gt; thermometers &gt; Thermometers</g:product_type>
     <g:availability>in stock</g:availability>
     <g:sale_price>199.00 AUD</g:sale_price>
-  </item>
-  <item>
-    <g:id>HK0537-BACKYARD-BUNDLE</g:id>
-    <g:product_type>Offset Smokers</g:product_type>
-    <g:availability>in stock</g:availability>
-    <g:sale_price>699.00 AUD</g:sale_price>
   </item>
   <item>
     <g:id>CG-0779SV</g:id>
@@ -7742,6 +7731,11 @@
     <g:sale_price>700.00 AUD</g:sale_price>
   </item>
   <item>
+    <g:id>GMPBNAU1825-Bund</g:id>
+    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
     <g:id>9351886008422</g:id>
     <g:product_type>Bar Fridges</g:product_type>
     <g:availability>in stock</g:availability>
@@ -7814,6 +7808,31 @@
   <item>
     <g:id>629162133717</g:id>
     <g:product_type>All Barbeques &gt; Trolley bbqs &gt; Portable bbqs &gt; Gas BBQs</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>GMPBNAU1625-Sale</g:id>
+    <g:product_type>Pizza ovens</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>GMPOBAU1625-Sale</g:id>
+    <g:product_type>Pizza ovens</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>GMPBNAU1825-Sale</g:id>
+    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>GMPOBAU1825-Sale</g:id>
+    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
+    <g:availability>in stock</g:availability>
+  </item>
+  <item>
+    <g:id>GMNOBAU1826-Sale</g:id>
+    <g:product_type>Pizza ovens &gt; Wood &gt; Gas</g:product_type>
     <g:availability>in stock</g:availability>
   </item>
 </channel>
